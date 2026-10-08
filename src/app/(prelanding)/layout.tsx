@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getSiteUrl } from "@/lib/site-url";
+import "./prelanding.css";
 
 const siteUrl = getSiteUrl();
 const indexable = Boolean(siteUrl) && process.env.NODE_ENV === "production";

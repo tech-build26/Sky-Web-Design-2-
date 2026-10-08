@@ -1,0 +1,9 @@
+/* Match the main landing page's circular Sky I logo backing. */
+.prelanding .brandbar-link--skyi {
+  background: #f3f8ff;
+  border-radius: 50%;
+}
+
+.prelanding .skyi-mark {
+  padding: 8px;
+}

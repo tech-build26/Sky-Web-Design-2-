@@ -86,8 +86,9 @@ try {
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
     assert.equal(overflow, 0, `Horizontal overflow: ${width}x${height}`);
     assert.equal(await page.locator('.choices .destination:visible').count(), 2);
-    const integratedImage = await page.screenshot({ fullPage: true });
-    const referenceImage = await source.screenshot({ fullPage: true });
+    // The user-approved white Sky I backing is the only intentional visual change.
+    const integratedImage = await page.screenshot({ fullPage: true, mask: [page.locator('.brandbar-link--skyi')] });
+    const referenceImage = await source.screenshot({ fullPage: true, mask: [source.locator('.brandbar-link--skyi')] });
     const [integratedPixels, referencePixels] = await Promise.all([
       sharp(integratedImage).raw().toBuffer(), sharp(referenceImage).raw().toBuffer(),
     ]);
@@ -98,7 +99,7 @@ try {
     }
     const changedFraction = changedChannels / integratedPixels.length;
     assert(changedFraction < .001, `Visual mismatch at ${width}x${height}: ${changedFraction}`);
-    if (width === 1918 || width === 390) await fs.writeFile(`docs/qa/prelanding-${width}x${height}.png`, integratedImage);
+    if (width === 1918 || width === 390) await fs.writeFile(`docs/qa/prelanding-${width}x${height}.png`, await page.screenshot({ fullPage: true }));
     layouts.push({ width, height, overflow, maximumGeometryDifference: maximumDifference, changedPixelChannelFraction: changedFraction });
   }
   assert.equal(await page.locator('a[data-brand-choice="skyriders"]').count(), 2);

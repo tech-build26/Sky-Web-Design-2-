@@ -2,6 +2,8 @@
 
 The site root (`/`) now serves the supplied pre-landing scene. Both Skyriders choices retain their original `/home/` href and departure animation, then reach the existing Skyriders hero. Next.js normalizes `/home/` to `/home`. Both Sky I choices retain `https://skyi.co.za/`. Existing website section anchors remain relative to `/home`, including navigation, services, contact, and back to top.
 
+The subsequent requested Sky I visibility fix uses a circular `#f3f8ff` backing and 8px image padding, matching the main landing page. This small override lives in `src/app/(prelanding)/prelanding.css`; supplied runtime files and logo artwork remain unchanged. Browser comparisons mask only that logo link to allow this approved difference.
+
 ## Permanent files
 
 - `src/app/(prelanding)/layout.tsx`: separate gateway root layout, supplied stylesheet/font preloads and metadata.
