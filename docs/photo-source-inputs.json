@@ -1,0 +1,44 @@
+[
+  {
+    "name": "hero-sa-urban-facade-01",
+    "source": "assets/source/hero/hero-sa-urban-facade-01.png",
+    "width": 2400,
+    "quality": 87
+  },
+  {
+    "name": "hero-sa-industrial-tower-02",
+    "source": "assets/source/hero/hero-sa-industrial-tower-02.png",
+    "width": 2400,
+    "quality": 87
+  },
+  {
+    "name": "hero-sa-steel-structure-03",
+    "source": "assets/source/hero/hero-sa-steel-structure-03.png",
+    "width": 2400,
+    "quality": 87
+  },
+  {
+    "name": "hero-support-team",
+    "source": "assets/source/hero/hero-support-team.png",
+    "width": 1400,
+    "quality": 85
+  },
+  {
+    "name": "hero-support-drone",
+    "source": "assets/source/hero/hero-support-drone.png",
+    "width": 1400,
+    "quality": 85
+  },
+  {
+    "name": "hero-support-infrastructure",
+    "source": "assets/source/hero/hero-support-infrastructure.png",
+    "width": 1400,
+    "quality": 85
+  },
+  {
+    "name": "hero-support-inspection",
+    "source": "assets/source/hero/hero-support-inspection.png",
+    "width": 1400,
+    "quality": 85
+  }
+]

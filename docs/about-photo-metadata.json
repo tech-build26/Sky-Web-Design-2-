@@ -1,0 +1,22 @@
+[
+  {
+    "name": "about-concrete-rope-access",
+    "source": "assets/source/about/about-concrete-rope-access.png",
+    "sourceWidth": 1024,
+    "sourceHeight": 1536,
+    "destination": "public/images/about/about-concrete-rope-access.webp",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 290542
+  },
+  {
+    "name": "about-johannesburg-facade",
+    "source": "assets/source/about/about-johannesburg-facade.png",
+    "sourceWidth": 1024,
+    "sourceHeight": 1536,
+    "destination": "public/images/about/about-johannesburg-facade.webp",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 213626
+  }
+]

@@ -1,0 +1,68 @@
+.about { background: #f1f4f8; }
+.stage { position: relative; max-width: 2048px; aspect-ratio: 2048 / 1143; margin: auto; container-type: inline-size; isolation: isolate; }
+.artwork { position: absolute; left: 0; top: 0; width: 53.418%; height: 100%; }
+.geometry { position: absolute; inset: 0; width: 100%; height: 100%; }
+.backdrop { position: absolute; left: 0; top: 0; width: 67.185%; height: 91%; clip-path: polygon(0 0, 73.1% 0, 100% 100%, 0 100%); background: #07345a; }
+.backdrop img { object-fit: cover; }
+.backdrop img:nth-child(1) { height: 34.5% !important; object-position: 55% 40%; }
+.backdrop img:nth-child(2) { top: 34.5% !important; height: 36% !important; object-position: 70% 45%; }
+.backdrop img:nth-child(3) { top: 70.5% !important; height: 29.5% !important; object-position: 63% 55%; }
+.backdrop::after { content: ""; position: absolute; inset: 0; background: linear-gradient(105deg, #042744d9, #07548ece); }
+.mainPhoto { position: absolute; left: 24.68%; top: 13.648%; width: 63.62%; height: 65.967%; clip-path: polygon(0 0, 75.29% 0, 100% 100%, 27.155% 100%); background: #bcc6cb; }
+.mainPhoto img { object-fit: cover; object-position: 52% 51%; }
+.insetFrame { position: absolute; left: 14.26%; top: 37.62%; width: 30.71%; height: 32.196%; border: 2px solid #e6e9e7; padding: 1.32cqw .73cqw; }
+.insetPhoto { position: relative; height: 100%; background: #80a6c4; overflow: hidden; }
+.insetPhoto img { object-fit: cover; object-position: 60% 50%; transform: scale(1.2); transform-origin: 65% 46%; }
+.since { position: absolute; left: 81.35%; top: 72.003%; width: 15.17%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 50% 40%, #063250, #061c31 72%); box-shadow: inset 0 0 0 .65cqw #071d32, inset 0 0 0 .8cqw #0074ce; display: flex; flex-direction: column; justify-content: center; align-items: center; font-family: Arial, sans-serif; font-weight: 700; text-transform: uppercase; }
+.since span { color: #fff; font-size: 1.46cqw; line-height: 1; }
+.since strong { color: #168eee; font-size: 2cqw; line-height: 1.08; }
+.copy { position: absolute; left: 51.61%; top: 11.2%; width: 40.4%; color: #06111f; }
+.eyebrow { margin: 0 0 .68cqw; color: #0071c6; font: 700 1.37cqw/1.2 Arial, sans-serif; text-transform: uppercase; }
+.copy h2 { font-family: var(--font-display), Arial, sans-serif; font-variation-settings: "wdth" 100; font-size: 4cqw; font-weight: 850; letter-spacing: -.045em; line-height: 1; margin: 0 0 .68cqw; }
+.copy h2 > span { display: block; width: fit-content; white-space: nowrap; transform: scaleX(1.17); transform-origin: left center; }
+.statement { font-family: var(--font-display), Arial, sans-serif; font-variation-settings: "wdth" 100; font-size: 3.46cqw; font-weight: 700; letter-spacing: -.04em; line-height: 1.08; margin: 0; }
+.statement > span { display: block; width: fit-content; white-space: nowrap; transform: scaleX(1.07); transform-origin: left center; }
+.statement span:last-child { color: #0072c7; }
+.body { font: 400 1.52cqw/1.38 Arial, sans-serif; margin-top: 1.75cqw; }
+.body p { margin: 0 0 1.75cqw; }
+.explore { position: relative; display: inline-flex; align-items: center; justify-content: space-between; gap: 3cqw; min-width: 19.92cqw; min-height: 4.2cqw; border-radius: 999px; padding: .9cqw 2.2cqw; margin-top: .2cqw; color: #fff; background: #006bd9; font: 500 1.37cqw/1 Arial, sans-serif; overflow: hidden; isolation: isolate; transition: background 220ms, box-shadow 220ms, transform 220ms; }
+.explore::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(110deg, transparent 15%, #fff3 50%, transparent 80%); transform: translateX(-110%); transition: transform 700ms var(--ease-out); }
+.exploreArrow { display: grid; place-items: center; }
+.explore svg { width: 1.6cqw; height: 1.6cqw; transition: transform 300ms var(--ease-out); }
+.explore:is(:hover, :focus-visible) { background: #005bc4; box-shadow: 0 12px 28px #006ad929; transform: translateY(-2px); }
+.explore:is(:hover, :focus-visible)::before { transform: translateX(110%); }
+.explore:is(:hover, :focus-visible) svg { transform: translateX(5px); }
+@media (max-width: 1250px) and (min-width: 701px) {
+  .stage { aspect-ratio: auto; min-height: 700px; display: grid; grid-template-columns: 48% 48%; gap: 4%; padding: 64px 32px 64px 0; }
+  .artwork { position: relative; width: 100%; height: auto; aspect-ratio: 1094 / 1143; align-self: center; }
+  .copy { position: static; width: auto; align-self: center; }
+  .eyebrow { font-size: 16px; margin-bottom: 14px; }
+  .copy h2 { font-variation-settings: "wdth" 100; font-size: clamp(33px, 4vw, 50px); margin-bottom: 18px; }
+  .statement { font-variation-settings: "wdth" 100; font-size: clamp(26px, 3.35vw, 42px); }
+  .copy h2 > span, .statement > span { transform: none; white-space: normal; }
+  .body { font-size: 18px; margin-top: 24px; }
+  .body p { margin-bottom: 24px; }
+  .referenceBreak { display: none; }
+  .explore { min-width: 210px; min-height: 56px; padding: 16px 24px; font-size: 18px; gap: 40px; }
+  .explore svg { width: 24px; height: 24px; }
+  .since span { font-size: clamp(11px, 1.4vw, 16px); }
+  .since strong { font-size: clamp(16px, 2vw, 23px); }
+}
+@media (max-width: 700px) {
+  .stage { display: flex; flex-direction: column; aspect-ratio: auto; padding-bottom: 64px; }
+  .artwork { position: relative; width: 100%; aspect-ratio: 1094 / 1143; height: auto; max-height: 620px; }
+  .copy { position: static; width: auto; margin: 0 24px; }
+  .eyebrow { font-size: 14px; margin-bottom: 16px; }
+  .copy h2 { font-variation-settings: "wdth" 100; font-size: clamp(31px, 7.7vw, 48px); margin-bottom: 20px; letter-spacing: -.045em; }
+  .statement { font-variation-settings: "wdth" 100; font-size: clamp(26px, 6.4vw, 40px); }
+  .copy h2 > span, .statement > span { transform: none; white-space: normal; }
+  .body { font-size: 17px; line-height: 1.65; margin-top: 28px; }
+  .body p { margin-bottom: 24px; }
+  .referenceBreak { display: none; }
+  .explore { min-width: 210px; min-height: 56px; font-size: 17px; gap: 40px; padding: 16px 26px; margin-top: 4px; }
+  .explore svg { width: 24px; height: 24px; }
+  .insetFrame { padding: 10px; border-width: 1px; }
+  .since { box-shadow: inset 0 0 0 5px #071d32, inset 0 0 0 6px #0074ce; }
+  .since span { font-size: clamp(11px, 3vw, 20px); }
+  .since strong { font-size: clamp(16px, 4vw, 27px); }
+}

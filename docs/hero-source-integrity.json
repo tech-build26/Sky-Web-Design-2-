@@ -1,0 +1,37 @@
+[
+  {
+    "name": "hero-sa-urban-facade-01",
+    "source": "assets/source/hero/hero-sa-urban-facade-01.png",
+    "sha256": "0C3BAA057532029FE8B02B5749D0DF2A5FD81800F364FF54B236D210C0C352D1"
+  },
+  {
+    "name": "hero-sa-industrial-tower-02",
+    "source": "assets/source/hero/hero-sa-industrial-tower-02.png",
+    "sha256": "4D005785EB4E5D686F8162007A5C7CC5E409F05CA4DA2994CC3CE93DAAB85189"
+  },
+  {
+    "name": "hero-sa-steel-structure-03",
+    "source": "assets/source/hero/hero-sa-steel-structure-03.png",
+    "sha256": "3EF2A77A91E34A88A32AD420D1E9DE6016AD94CD5DCCD1903B20CA2FFB7359FB"
+  },
+  {
+    "name": "hero-support-team",
+    "source": "assets/source/hero/hero-support-team.png",
+    "sha256": "12F1B06BF2AD790AAFADE42349A98D93DB3698A9CFECE9D81D59072F01A051EC"
+  },
+  {
+    "name": "hero-support-drone",
+    "source": "assets/source/hero/hero-support-drone.png",
+    "sha256": "A6351C8E0442204D8E95F6FF4111FFA9AD8018AFD5E3F04DD93DA89EFEF954AD"
+  },
+  {
+    "name": "hero-support-infrastructure",
+    "source": "assets/source/hero/hero-support-infrastructure.png",
+    "sha256": "5FC964AB5CBD94671B7E0586570AD4637B0504B61867207F83E7967CE5BE6186"
+  },
+  {
+    "name": "hero-support-inspection",
+    "source": "assets/source/hero/hero-support-inspection.png",
+    "sha256": "83CA7998C317EF3476BD16C633ADEC781FFF117016048D2FA9FB38F3B16E4DA2"
+  }
+]

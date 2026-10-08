@@ -1,0 +1,75 @@
+.safety { background: #f6fbff; }
+.stage { position: relative; max-width: var(--stage-max); margin: auto; aspect-ratio: 1778 / 885; container-type: inline-size; isolation: isolate; overflow: hidden; }
+.referenceArt { position: absolute; inset: 0; z-index: -2; }
+.referenceArt img { object-fit: fill; }
+.paper { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; }
+.copy { position: absolute; left: 6.862%; top: 12.994%; width: 46%; color: #07111e; }
+.eyebrow { display: flex; align-items: center; gap: .8cqw; color: #49658b; text-transform: uppercase; letter-spacing: .37em; font-size: .7874cqw; font-weight: 500; line-height: 1.5; margin: 0; }
+.eyebrow > span { width: 3.43cqw; height: 1px; background: #0079ff; }
+.copy h2 { font-family: var(--font-display), Arial, sans-serif; font-size: 3.037cqw; font-weight: 900; font-variation-settings: "wdth" 125; letter-spacing: -.035em; line-height: 1; text-transform: uppercase; margin: 1.35cqw 0 0; }
+.copy h2 > span { display: block; width: fit-content; white-space: nowrap; transform: scaleX(.958); transform-origin: left center; }
+.copy h2 > span + span { color: #0077f6; margin-top: .11cqw; transform: scaleX(.88); }
+.intro { font: 400 1.125cqw/1.43 Arial, sans-serif; color: #50698d; margin: 1.23cqw 0 0; }
+.steps { position: absolute; top: 49.9435%; left: 6.974%; width: 64%; margin: 0; padding: 0; list-style: none; }
+.step { position: absolute; top: 0; left: 0; width: 19.3cqw; }
+.step:nth-child(2) { left: 21.71cqw; }
+.step:nth-child(3) { left: 42.24cqw; }
+.icon { --icon-size: 5.062cqw; position: absolute; top: 0; left: 0; width: var(--icon-size); height: var(--icon-size); overflow: hidden; }
+.icon img { position: absolute; top: calc(var(--icon-size) * -4.911111); width: calc(var(--icon-size) * 19.755556); height: calc(var(--icon-size) * 9.833333); max-width: none; }
+.icon0 img { left: calc(var(--icon-size) * -1.377778); }
+.icon1 img { left: calc(var(--icon-size) * -5.666667); }
+.icon2 img { left: calc(var(--icon-size) * -9.722222); }
+.stepCopy { margin-left: 6.524cqw; padding-top: .72cqw; }
+.step:nth-child(2) .stepCopy, .step:nth-child(3) .stepCopy { margin-left: 6.355cqw; }
+.stepNumber { color: #bdcede; font-size: 1.47cqw; font-weight: 700; line-height: 1.2; margin: 0; }
+.stepNumber span { font-weight: 400; color: #0085ff; }
+.step h3 { font-family: var(--font-display), Arial, sans-serif; font-size: 1.66cqw; font-weight: 850; font-variation-settings: "wdth" 112; letter-spacing: -.045em; line-height: 1.12; margin: .2cqw 0 1.2cqw; }
+.subtitle { color: #496283; font: 700 .9cqw/1.5 Arial, sans-serif; margin: 0 0 .73cqw; }
+.description { color: #6c85a5; font: 400 .7874cqw/1.71 Arial, sans-serif; width: 12.16cqw; margin: 0; }
+.stepRule { display: block; width: 3.71cqw; height: 2px; background: #007aff; margin-top: 1.43cqw; }
+.contact { position: absolute; top: 82.0339%; left: 6.918%; display: inline-flex; align-items: center; justify-content: space-between; gap: 1.3cqw; min-width: 21.091cqw; height: 3.26cqw; padding: .78cqw 1.74cqw; border-radius: var(--radius-pill); color: #fff; background: #0068f3; font: 400 .956cqw/1.3 Arial, sans-serif; transition: background 220ms, box-shadow 220ms; }
+.contact svg { width: 1.35cqw; height: 1.35cqw; flex-shrink: 0; transition: transform 220ms; }
+.contact:is(:hover, :focus-visible) { background: #0057d4; box-shadow: 0 8px 24px #0068f329; }
+.contact:is(:hover, :focus-visible) svg { transform: translateX(4px); }
+@media (max-width: 1100px) {
+  .stage { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; aspect-ratio: auto; padding: 64px 32px; }
+  .referenceArt { position: relative; grid-column: 2; grid-row: 1; aspect-ratio: 400 / 430; align-self: start; overflow: hidden; z-index: auto; }
+  .referenceArt img { width: 444.5% !important; height: auto !important; max-width: none; left: -275% !important; top: 0 !important; }
+  .paper { display: none; }
+  .copy { position: static; width: auto; grid-column: 1; grid-row: 1; align-self: center; }
+  .eyebrow { font-size: 12px; gap: 16px; letter-spacing: .25em; }
+  .eyebrow > span { width: 44px; }
+  .copy h2 { font-size: clamp(30px, 3.5vw, 39px); font-variation-settings: "wdth" 100; margin-top: 24px; line-height: 1.02; }
+  .copy h2 > span { white-space: normal; transform: none; }
+  .copy h2 > span + span { margin-top: 8px; transform: none; }
+  .intro { font-size: 16px; line-height: 1.65; margin-top: 24px; }
+  .desktopBreak { display: none; }
+  .steps { position: static; width: auto; grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 8px; }
+  .step, .step:nth-child(2), .step:nth-child(3) { position: relative; left: auto; width: auto; padding-top: 88px; }
+  .icon { --icon-size: 68px; }
+  .stepCopy, .step:nth-child(2) .stepCopy, .step:nth-child(3) .stepCopy { margin: 0; padding: 0; }
+  .stepNumber { font-size: 22px; }
+  .step h3 { font-size: 26px; font-variation-settings: "wdth" 100; margin: 6px 0 22px; }
+  .subtitle { font-size: 15px; margin-bottom: 12px; }
+  .description { font-size: 14px; width: auto; }
+  .stepRule { width: 54px; margin-top: 24px; }
+  .contact { position: static; grid-column: 1 / -1; justify-self: start; min-width: 0; height: auto; min-height: 52px; font-size: 15px; padding: 16px 26px; gap: 24px; }
+  .contact svg { width: 24px; height: 24px; }
+}
+@media (max-width: 700px) {
+  .stage { display: flex; flex-direction: column; gap: 0; padding: 0 24px 64px; }
+  .referenceArt { order: 0; width: calc(100% + 48px); margin: 0 -24px 44px; max-height: 480px; }
+  .copy { order: 1; }
+  .eyebrow { font-size: 11px; letter-spacing: .2em; }
+  .copy h2 { font-size: clamp(28px, 7.5vw, 46px); margin-top: 24px; }
+  .intro { font-size: 16px; }
+  .steps { order: 2; grid-template-columns: 1fr; gap: 32px; margin-top: 40px; }
+  .step, .step:nth-child(2), .step:nth-child(3) { padding: 0 0 28px; border-bottom: 1px solid #d5e6f5; }
+  .icon { --icon-size: 64px; }
+  .stepCopy, .step:nth-child(2) .stepCopy, .step:nth-child(3) .stepCopy { margin-left: 84px; padding-top: 4px; }
+  .step h3 { font-size: 27px; margin-bottom: 22px; }
+  .description { font-size: 15px; }
+  .stepRule { margin-top: 24px; }
+  .contact { order: 3; align-self: flex-start; margin-top: 32px; font-size: 14px; gap: 18px; padding: 16px 20px; max-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .contact, .contact svg { transition: none; } }

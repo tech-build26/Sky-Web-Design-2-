@@ -1,0 +1,25 @@
+.technician {
+  position: fixed;
+  z-index: 80;
+  top: 0;
+  left: max(12px, calc((100vw - var(--stage-max)) / 2 - 110px));
+  width: 34px;
+  height: 100%;
+  pointer-events: none;
+  /* White artwork inverts its backdrop: dark on paper, light on navy/photos. */
+  mix-blend-mode: difference;
+}
+
+.ropes { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.ropes line { stroke: #fff; stroke-width: 1.1; }
+.worker { position: absolute; top: 0; left: 0; width: 100%; transform-origin: 59.7% 0; will-change: transform; }
+.worker img { display: block; width: 100%; height: auto; filter: brightness(0) invert(1); }
+
+@media (max-width: 900px) {
+  .technician { left: 3px; width: 18px; }
+  .ropes line { stroke-width: .8; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .technician { display: none; }
+}

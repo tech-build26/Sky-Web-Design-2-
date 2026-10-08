@@ -1,0 +1,576 @@
+{
+  "origin": "http://127.0.0.1:3002/",
+  "scope": "Local production HTTP and static asset checks; not a mobile network or Core Web Vitals benchmark.",
+  "timings": [
+    {
+      "run": 1,
+      "headersMs": 85.29,
+      "completeMs": 89.66,
+      "decodedHtmlBytes": 130101
+    },
+    {
+      "run": 2,
+      "headersMs": 5.8,
+      "completeMs": 7.02,
+      "decodedHtmlBytes": 130101
+    },
+    {
+      "run": 3,
+      "headersMs": 4.77,
+      "completeMs": 6.56,
+      "decodedHtmlBytes": 130101
+    }
+  ],
+  "uniqueIds": 30,
+  "fragmentLinkCount": 53,
+  "intactLogos": true,
+  "contactRouteValidation": true,
+  "resources": [
+    {
+      "asset": "/_next/static/media/archivo_latin_variable-s.p.1h4hl0m83hjjz.woff2",
+      "status": 200,
+      "decodedBytes": 90104,
+      "contentType": "font/woff2"
+    },
+    {
+      "asset": "/_next/static/media/inter_latin_variable-s.p.0gsaq8ukbf34m.woff2",
+      "status": 200,
+      "decodedBytes": 48256,
+      "contentType": "font/woff2"
+    },
+    {
+      "asset": "/_next/static/chunks/16fkbsit6rq1h.css",
+      "status": 200,
+      "decodedBytes": 3075,
+      "contentType": "text/css; charset=UTF-8"
+    },
+    {
+      "asset": "/_next/static/chunks/3zckq7i6_wn_9.css",
+      "status": 200,
+      "decodedBytes": 53355,
+      "contentType": "text/css; charset=UTF-8"
+    },
+    {
+      "asset": "/_next/static/chunks/31qp8jfkw0x2h.js",
+      "status": 200,
+      "decodedBytes": 22142,
+      "contentType": "application/javascript; charset=UTF-8"
+    },
+    {
+      "asset": "/_next/static/chunks/2cwx0s17guqmh.js",
+      "status": 200,
+      "decodedBytes": 180212,
+      "contentType": "application/javascript; charset=UTF-8"
+    },
+    {
+      "asset": "/_next/static/chunks/0s7mvllxht1mo.js",
+      "status": 200,
+      "decodedBytes": 229597,
+      "contentType": "application/javascript; charset=UTF-8"
+    },
+    {
+      "asset": "/_next/static/chunks/turbopack-2c3mg3r-05n1w.js",
+      "status": 200,
+      "decodedBytes": 11255,
+      "contentType": "application/javascript; charset=UTF-8"
+    },
+    {
+      "asset": "/_next/static/chunks/0umf92h1sb77c.js",
+      "status": 200,
+      "decodedBytes": 13822,
+      "contentType": "application/javascript; charset=UTF-8"
+    },
+    {
+      "asset": "/_next/static/chunks/39j40rb7gbf37.js",
+      "status": 200,
+      "decodedBytes": 46062,
+      "contentType": "application/javascript; charset=UTF-8"
+    },
+    {
+      "asset": "/icon?f1671c05d3c6676b",
+      "status": 200,
+      "decodedBytes": 10282,
+      "contentType": "image/png"
+    },
+    {
+      "asset": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+      "status": 200,
+      "decodedBytes": 112594,
+      "contentType": "application/javascript; charset=UTF-8"
+    },
+    {
+      "asset": "/images/brand/rope-technician.png",
+      "status": 200,
+      "decodedBytes": 10561,
+      "contentType": "image/png"
+    },
+    {
+      "asset": "/images/brand/sky-logo.png",
+      "status": 200,
+      "decodedBytes": 549789,
+      "contentType": "image/png"
+    },
+    {
+      "asset": "/_next/image?url=%2Fimages%2Fhero%2Fhero-sa-urban-facade-01.webp&w=3840&q=75",
+      "status": 200,
+      "decodedBytes": 234228,
+      "contentType": "image/jpeg"
+    },
+    {
+      "asset": "/_next/image?url=%2Fimages%2Fhero%2Fhero-sa-industrial-tower-02.webp&w=3840&q=75",
+      "status": 200,
+      "decodedBytes": 200564,
+      "contentType": "image/jpeg"
+    },
+    {
+      "asset": "/_next/image?url=%2Fimages%2Fhero%2Fhero-sa-steel-structure-03.webp&w=3840&q=75",
+      "status": 200,
+      "decodedBytes": 194884,
+      "contentType": "image/jpeg"
+    },
+    {
+      "asset": "/_next/image?url=%2Fimages%2Fhero%2Fhero-support-inspection.webp&w=3840&q=75",
+      "status": 200,
+      "decodedBytes": 122050,
+      "contentType": "image/jpeg"
+    },
+    {
+      "asset": "/_next/image?url=%2Fimages%2Fhero%2Fhero-support-drone.webp&w=3840&q=75",
+      "status": 200,
+      "decodedBytes": 112035,
+      "contentType": "image/jpeg"
+    },
+    {
+      "asset": "/_next/image?url=%2Fimages%2Fhero%2Fhero-support-infrastructure.webp&w=3840&q=75",
+      "status": 200,
+      "decodedBytes": 100028,
+      "contentType": "image/jpeg"
+    },
+    {
+      "asset": "/_next/image?url=%2Fimages%2Fhero%2Fhero-support-team.webp&w=3840&q=75",
+      "status": 200,
+      "decodedBytes": 113907,
+      "contentType": "image/jpeg"
+    },
+    {
+      "asset": "/images/brand/sky-i-logo.png",
+      "status": 200,
+      "decodedBytes": 244791,
+      "contentType": "image/png"
+    },
+    {
+      "asset": "/_next/image?url=%2Fimages%2Fabout%2Fabout-concrete-rope-access.webp&w=3840&q=75",
+      "status": 200,
+      "decodedBytes": 205672,
+      "contentType": "image/jpeg"
+    },
+    {
+      "asset": "/_next/image?url=%2Fimages%2Fabout%2Fabout-johannesburg-facade.webp&w=3840&q=75",
+      "status": 200,
+      "decodedBytes": 188315,
+      "contentType": "image/jpeg"
+    },
+    {
+      "asset": "/_next/image?url=%2Fimages%2Fservices%2Fservices-cooling-tower.webp&w=3840&q=75",
+      "status": 200,
+      "decodedBytes": 125550,
+      "contentType": "image/jpeg"
+    },
+    {
+      "asset": "/images/safety/safety-quality-artwork.webp",
+      "status": 200,
+      "decodedBytes": 1208702,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/_next/image?url=%2Fimages%2Fsky-i%2Finspection-panorama.webp&w=3840&q=75",
+      "status": 200,
+      "decodedBytes": 193257,
+      "contentType": "image/jpeg"
+    },
+    {
+      "asset": "/_next/image?url=%2Fimages%2Fsky-i%2Felios_3.png&w=3840&q=75",
+      "status": 200,
+      "decodedBytes": 128229,
+      "contentType": "image/png"
+    },
+    {
+      "asset": "/images/contractors/andt_logo - Copy.webp",
+      "status": 200,
+      "decodedBytes": 4498,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/ascentech_logo - Copy.webp",
+      "status": 200,
+      "decodedBytes": 1104,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_afrisam - Copy.webp",
+      "status": 200,
+      "decodedBytes": 4940,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_anglo - Copy.webp",
+      "status": 200,
+      "decodedBytes": 6828,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_babcock - Copy.webp",
+      "status": 200,
+      "decodedBytes": 6938,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_bilfinger - Copy.webp",
+      "status": 200,
+      "decodedBytes": 2438,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_caraba - Copy.webp",
+      "status": 200,
+      "decodedBytes": 7556,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_clearlineis - Copy.webp",
+      "status": 200,
+      "decodedBytes": 7436,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_columbus - Copy.webp",
+      "status": 200,
+      "decodedBytes": 6112,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_egoli-gas-logo - Copy.webp",
+      "status": 200,
+      "decodedBytes": 8314,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_eskom_logo - Copy.webp",
+      "status": 200,
+      "decodedBytes": 9834,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_foskor-logo - Copy.webp",
+      "status": 200,
+      "decodedBytes": 4290,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_grinaker - Copy.webp",
+      "status": 200,
+      "decodedBytes": 5816,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_group-5 - Copy.webp",
+      "status": 200,
+      "decodedBytes": 7392,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_highveld - Copy.webp",
+      "status": 200,
+      "decodedBytes": 6912,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_hitachi - Copy.webp",
+      "status": 200,
+      "decodedBytes": 5512,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_ipmomi_logo2 - Copy.webp",
+      "status": 200,
+      "decodedBytes": 10036,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_kelloggs - Copy.webp",
+      "status": 200,
+      "decodedBytes": 14176,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_kpe - Copy.webp",
+      "status": 200,
+      "decodedBytes": 8432,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_lafarge - Copy.webp",
+      "status": 200,
+      "decodedBytes": 6336,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_merisol - Copy.webp",
+      "status": 200,
+      "decodedBytes": 2818,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_murray_roberts - Copy.webp",
+      "status": 200,
+      "decodedBytes": 5588,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_nui - Copy.webp",
+      "status": 200,
+      "decodedBytes": 11334,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_petrosa - Copy.webp",
+      "status": 200,
+      "decodedBytes": 7258,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_pfg - Copy.webp",
+      "status": 200,
+      "decodedBytes": 5908,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_pmc.webp",
+      "status": 200,
+      "decodedBytes": 6578,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_ppc-logo.webp",
+      "status": 200,
+      "decodedBytes": 14346,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_resolute-mining.webp",
+      "status": 200,
+      "decodedBytes": 4682,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_riggers_steeplejacks.webp",
+      "status": 200,
+      "decodedBytes": 3112,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_rio_tinto.webp",
+      "status": 200,
+      "decodedBytes": 3332,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_royalcanin.webp",
+      "status": 200,
+      "decodedBytes": 8724,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_saltus_logo.webp",
+      "status": 200,
+      "decodedBytes": 8610,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_sappi.webp",
+      "status": 200,
+      "decodedBytes": 8760,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_sasol.webp",
+      "status": 200,
+      "decodedBytes": 4362,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_shanahan-engineering.webp",
+      "status": 200,
+      "decodedBytes": 8080,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_siggs.webp",
+      "status": 200,
+      "decodedBytes": 6202,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_somisy_logo_letterhead.webp",
+      "status": 200,
+      "decodedBytes": 7720,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_steffanutti.webp",
+      "status": 200,
+      "decodedBytes": 7120,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_steinmuller_bilfinger.webp",
+      "status": 200,
+      "decodedBytes": 4886,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_steval.webp",
+      "status": 200,
+      "decodedBytes": 4568,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_stoncor.webp",
+      "status": 200,
+      "decodedBytes": 4442,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_telkom.webp",
+      "status": 200,
+      "decodedBytes": 4638,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_tfmc.webp",
+      "status": 200,
+      "decodedBytes": 2566,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_tiber.webp",
+      "status": 200,
+      "decodedBytes": 6140,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/contractors/clients_wsp.webp",
+      "status": 200,
+      "decodedBytes": 5616,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/hero/hero-sa-industrial-tower-02.webp",
+      "status": 200,
+      "decodedBytes": 279598,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/hero/hero-sa-steel-structure-03.webp",
+      "status": 200,
+      "decodedBytes": 260914,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/hero/hero-sa-urban-facade-01.webp",
+      "status": 200,
+      "decodedBytes": 301292,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/hero/hero-support-drone.webp",
+      "status": 200,
+      "decodedBytes": 126518,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/hero/hero-support-infrastructure.webp",
+      "status": 200,
+      "decodedBytes": 129896,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/hero/hero-support-inspection.webp",
+      "status": 200,
+      "decodedBytes": 143008,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/hero/hero-support-team.webp",
+      "status": 200,
+      "decodedBytes": 118644,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/about/about-concrete-rope-access.webp",
+      "status": 200,
+      "decodedBytes": 290542,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/about/about-johannesburg-facade.webp",
+      "status": 200,
+      "decodedBytes": 213626,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/services/services-cooling-tower.webp",
+      "status": 200,
+      "decodedBytes": 195986,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/sky-i/elios_3.png",
+      "status": 200,
+      "decodedBytes": 192348,
+      "contentType": "image/png"
+    },
+    {
+      "asset": "/images/sky-i/inspection-panorama-source.png",
+      "status": 200,
+      "decodedBytes": 2632624,
+      "contentType": "image/png"
+    },
+    {
+      "asset": "/images/sky-i/inspection-panorama.webp",
+      "status": 200,
+      "decodedBytes": 298432,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/brand/inspection-contours.svg",
+      "status": 200,
+      "decodedBytes": 2326,
+      "contentType": "image/svg+xml"
+    },
+    {
+      "asset": "/icon",
+      "status": 200,
+      "decodedBytes": 10282,
+      "contentType": "image/png"
+    },
+    {
+      "asset": "/opengraph-image",
+      "status": 200,
+      "decodedBytes": 61945,
+      "contentType": "image/png"
+    },
+    {
+      "asset": "/robots.txt",
+      "status": 200,
+      "decodedBytes": 27,
+      "contentType": "text/plain"
+    },
+    {
+      "asset": "/sitemap.xml",
+      "status": 200,
+      "decodedBytes": 110,
+      "contentType": "application/xml"
+    }
+  ]
+}

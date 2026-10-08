@@ -1,0 +1,12 @@
+[
+  {
+    "name": "services-cooling-tower",
+    "source": "assets/source/services/services-cooling-tower.png",
+    "sourceWidth": 1672,
+    "sourceHeight": 941,
+    "destination": "public/images/services/services-cooling-tower.webp",
+    "width": 1672,
+    "height": 941,
+    "bytes": 195986
+  }
+]

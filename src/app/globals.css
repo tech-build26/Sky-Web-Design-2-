@@ -1,0 +1,55 @@
+:root {
+  color-scheme: light;
+  --color-brand: #0050f0;
+  --color-action: #0067e6;
+  --color-brand-deep: #001870;
+  --color-brand-cyan: #00b0f0;
+  --color-ink: #080f19;
+  --color-navy: #071c35;
+  --color-paper: #f5f9fd;
+  --color-white: #ffffff;
+  --color-muted: #556274;
+  --color-line: #d9e5ef;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --radius-card: 8px;
+  --radius-pill: 999px;
+  --motion-fast: 180ms;
+  --motion-reveal: 650ms;
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --stage-max: 1840px;
+  --section-max: 1320px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body), Arial, sans-serif; }
+a { color: inherit; text-decoration: none; }
+button, summary { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; }
+button, a, summary { touch-action: manipulation; }
+svg { display: block; }
+img { max-width: 100%; }
+section[id], article[id], main[id] { scroll-margin-top: 24px; }
+:focus-visible { outline: 3px solid #0050f0; outline-offset: 5px; }
+/* Anchor destinations are reading positions, not controls; avoid a canvas-wide ring. */
+section[tabindex="-1"]:focus, #hero-heading:focus { outline: none; }
+.button { display: inline-flex; justify-content: center; align-items: center; gap: 18px; min-height: 48px; padding: 14px 25px; background: var(--color-action); color: white; border-radius: var(--radius-pill); font-size: 15px; font-weight: 500; white-space: nowrap; transition: background var(--motion-fast), box-shadow var(--motion-fast); }
+.button svg { width: 24px; height: 24px; transition: transform var(--motion-fast); }
+.button:hover, .button:focus-visible { background: #004eb8; }
+.button:hover svg { transform: translateX(3px); }
+.button:focus-visible svg { transform: translateX(3px); }
+@keyframes sectionArrival { from { opacity: .35; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+[data-reveal].arrived { animation: sectionArrival 600ms var(--ease-out) both; }
+.skip-link { position: fixed; z-index: 200; left: 16px; top: 16px; padding: 14px 20px; background: white; color: var(--color-navy); border-radius: 6px; transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

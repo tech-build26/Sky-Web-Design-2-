@@ -1,0 +1,203 @@
+.hero { isolation: isolate; background: #f8fcff; }
+.stage { position: relative; container-type: inline-size; max-width: var(--stage-max); margin: auto; aspect-ratio: 1672 / 941; background: radial-gradient(ellipse at 35% 28%, #fff 0, #f7fbff 48%, #eef6fd 100%); }
+.curves { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 20; }
+.mainPhoto { position: absolute; left: 41.3876%; top: 0; width: 58.6124%; height: 100%; z-index: 10; background: #98b4cb; border-radius: 24px; }
+@supports (clip-path: url("#test")) { .mainPhoto { border-radius: 0; } }
+.mainImage { object-fit: cover; object-position: var(--photo-position, 69% 50%); }
+.slide { position: absolute; inset: 0; opacity: 0; transition: opacity 950ms var(--ease-out); }
+.slide[data-active="true"] { opacity: 1; }
+.photoShade { position: absolute; inset: 0; background: linear-gradient(90deg, transparent 52%, rgba(3, 23, 39, .22) 73%, rgba(3, 23, 39, .91) 100%); pointer-events: none; }
+.header { position: absolute; z-index: 70; top: 0; left: 1.974%; right: 1.495%; height: 9.99%; display: grid; grid-template-columns: 25.25% 1fr auto; align-items: center; border-bottom: 1px solid rgba(202, 220, 235, .45); }
+.brand { position: absolute; top: 0; left: 1.2cqw; display: flex; justify-content: center; align-items: center; width: 10.5cqw; height: 7.2cqw; background: var(--color-navy); border-radius: 0 0 14px 14px; border: 1px solid rgba(121, 190, 233, .3); }
+.brandImage { width: 8.3cqw; height: auto; object-fit: contain; }
+.desktopNav { grid-column: 2; display: flex; align-items: center; gap: 2.25cqw; font-size: .83cqw; font-weight: 500; color: #14233a; }
+.desktopNav > a { padding: 16px 0; white-space: nowrap; }
+.desktopNav > a:hover { color: var(--color-action); }
+.headerCta { grid-column: 3; font-size: .85cqw; gap: 1cqw; padding: .75cqw 1.75cqw; min-height: 2.8cqw; box-shadow: 0 0 24px #009dff35; border: 1px solid #26b6ff; }
+.headerCta svg { width: 1.3cqw; height: 1.3cqw; }
+.dropdown { position: relative; }
+.dropdown summary { list-style: none; display: flex; gap: .6cqw; align-items: center; padding: 16px 0; cursor: pointer; white-space: nowrap; }
+.dropdown summary::-webkit-details-marker, .mobileMenu summary::-webkit-details-marker { display: none; }
+.dropdown summary > svg { width: 12px; height: 12px; }
+.dropdown[open] summary, .dropdown summary:hover { color: var(--color-action); }
+.dropdownPanel { position: absolute; left: -20px; top: 100%; width: 270px; display: grid; padding: 10px; background: #fff; border: 1px solid var(--color-line); border-radius: 8px; box-shadow: 0 12px 38px #071c3518; font-size: 14px; }
+.dropdownPanel a { display: flex; justify-content: space-between; align-items: center; padding: 13px 12px; border-radius: 4px; }
+.dropdownPanel a svg { width: 18px; }
+.dropdownPanel a:hover { color: var(--color-action); background: #f1f7fc; }
+.mobileMenu { display: none; }
+.intro { position: absolute; z-index: 40; top: 13.49%; left: 3.8278%; width: 39%; }
+.eyebrow { margin: 0; display: flex; align-items: center; gap: .7cqw; color: #29446c; font-size: .6cqw; font-weight: 600; letter-spacing: .21em; text-transform: uppercase; white-space: nowrap; }
+.eyebrow span { margin: 0 .1cqw; }
+.eyebrow i { width: 6.4cqw; height: 1px; background: #476081; margin-left: .5cqw; }
+.headline { font-family: var(--font-display), Arial, sans-serif; font-size: 5.68cqw; font-weight: 900; font-variation-settings: "wdth" 125; line-height: .84; letter-spacing: -.045em; margin: 1.3cqw 0 0; text-transform: uppercase; }
+.headline > span { display: block; width: fit-content; transform: scaleX(1.087); transform-origin: left center; }
+.headline > span:nth-child(2) { transform: scaleX(1.04); }
+.headline > span:nth-child(3) { transform: scaleX(1.005); }
+.blueWord { color: #0079f7; }
+.description { font-size: 1.35cqw; line-height: 1.42; color: #152949; margin: .73cqw 0 0; letter-spacing: -.025em; }
+.primaryCta { margin-top: .95cqw; padding: .95cqw 2.2cqw; min-height: 3.45cqw; font-size: .98cqw; gap: 1cqw; }
+.primaryCta svg { width: 1.5cqw; height: 1.5cqw; }
+.specialist { position: absolute; z-index: 40; left: 33.85%; top: 39.25%; margin: 0; font-size: .6cqw; line-height: 1.65; letter-spacing: .22em; text-transform: uppercase; color: #2e4c77; }
+.rightCaption { position: absolute; z-index: 40; top: 13.4%; right: 4.35%; margin: 0; font-size: .72cqw; line-height: 1.75; letter-spacing: .25em; text-transform: uppercase; color: #e5edf6; }
+.supportingWindows { display: contents; }
+.supportWindow { position: absolute; z-index: 30; height: 12.65%; }
+.supportWindow > div { position: relative; width: 100%; height: 100%; overflow: hidden; background: #173e61; }
+.inspectionWindow { left: 79.25%; top: 26.04%; width: 14.05%; }
+.droneWindow { left: 83.07%; top: 39.43%; width: 15.2%; }
+.supportWindow img { object-fit: cover; object-position: 57% 45%; }
+.supportWindow span { position: absolute; right: 10%; bottom: 12%; width: 2cqw; height: 2cqw; display: grid; place-items: center; border-radius: 50%; color: #fff; border: 1px solid #e4f6ff; background: #072c4570; }
+.supportWindow span svg { width: 1.3cqw; }
+.supportWindow:hover span { background: var(--color-action); }
+.photoControls { position: absolute; z-index: 45; right: .2%; top: 24.45%; display: flex; flex-direction: column; align-items: center; color: white; }
+.photoControls::after { content: ""; position: absolute; width: 1px; background: #c9e1f240; top: 8px; bottom: -120px; left: 50%; z-index: -1; }
+.photoControls button { cursor: pointer; display: grid; place-items: center; padding: 0; width: 44px; height: 44px; border: 0; background: transparent; color: white; }
+.photoControls button span { display: block; width: 5px; height: 5px; border-radius: 50%; background: #d7e8f4; }
+.photoControls button[aria-pressed="true"] span { width: 7px; height: 7px; background: #48bdff; box-shadow: 0 0 10px 3px #00a7ff9c; }
+.photoControls button:focus-visible { outline-color: #69d1ff; outline-offset: -3px; }
+.servicesPanel { position: absolute; z-index: 50; left: 1.794%; top: 62.062%; width: 51.08%; height: 24.655%; }
+.servicesShape { position: absolute; width: 100%; height: 100%; inset: 0; pointer-events: none; }
+.servicesContent { position: relative; padding: 1.05cqw 2.05cqw; }
+.servicesHeader { display: flex; justify-content: space-between; align-items: center; }
+.servicesHeader h2 { font-size: .65cqw; font-weight: 650; text-transform: uppercase; letter-spacing: .23em; margin: 0; color: #223c62; }
+.servicesHeader > a { display: flex; align-items: center; gap: .65cqw; text-transform: uppercase; letter-spacing: .18em; font-size: .6cqw; color: #3c5782; min-height: 20px; }
+.servicesHeader > a svg { width: 18px; color: #061b37; }
+.servicesHeader > a:hover { color: var(--color-action); }
+.serviceTiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .85cqw; margin-top: .7cqw; }
+.serviceTile { border-radius: 6px; background: #e9f2f9; }
+.tileImage { position: relative; height: 6.2cqw; border-radius: 6px 6px 0 0; overflow: hidden; }
+.tileImage img { object-fit: cover; object-position: 60% 38%; }
+.serviceTile:nth-child(2) img { object-position: 50% 52%; }
+.serviceTile:nth-child(3) img { object-position: 57% 34%; }
+.tileLabel { display: flex; justify-content: space-between; align-items: center; min-height: 3.85cqw; padding: .5cqw 1.05cqw; font-size: .97cqw; font-weight: 600; line-height: 1.25; letter-spacing: -.03em; background: linear-gradient(115deg, #f3f8fc, #e5f0fa); border-radius: 0 0 6px 6px; }
+.tileArrow { flex-shrink: 0; display: grid; place-items: center; width: 2cqw; height: 2cqw; background: #ffffffdc; border: 1px solid #d1e1f3; color: #0b315f; border-radius: 50%; transition: background var(--motion-fast), color var(--motion-fast); }
+.tileArrow svg { width: 1.2cqw; height: 1.2cqw; }
+.serviceTile:hover .tileArrow { color: #fff; background: var(--color-action); }
+.industryStrip { position: absolute; z-index: 40; left: 3.8278%; top: 89.9%; width: 49%; display: flex; align-items: center; justify-content: space-between; gap: 1cqw; color: #152b4b; }
+.industryIntro { flex-shrink: 0; text-transform: uppercase; font-weight: 600; letter-spacing: .16em; font-size: .58cqw; line-height: 1.8; margin-right: .65cqw; }
+.industryStrip a { display: flex; align-items: center; gap: .6cqw; font-size: .62cqw; line-height: 1.5; white-space: nowrap; min-height: 44px; }
+.industryStrip a:hover { color: var(--color-action); }
+.industryStrip a svg { width: 2cqw; height: 2cqw; flex-shrink: 0; }
+.skyBadge { position: absolute; z-index: 50; bottom: 3%; right: 15%; width: 9.5%; aspect-ratio: 1; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at 50% 42%, #08326a 0, #071c35 72%); border: 1px solid #50beff; box-shadow: 0 0 0 .5cqw #087ffc10, 0 0 40px #00a1ff21; }
+.skyBadge::before { content: ""; position: absolute; inset: 2.2%; border: 1px solid #2783c675; border-radius: inherit; pointer-events: none; }
+.skyLogoBacking { width: 76%; aspect-ratio: 1; background: #f3f8ff; border-radius: 50%; padding: 8px; }
+.skyLogo { display: block; width: 100%; height: auto; object-fit: contain; }
+.skyBadge:hover { border-color: #c0ecff; box-shadow: 0 0 0 .5cqw #087ffc20, 0 0 40px #00a1ff40; }
+.skyBadge:focus-visible { outline-color: #a6eaff; }
+.divisionCaption { position: absolute; z-index: 40; bottom: 5.3%; right: 2.4%; margin: 0; color: #d2e9fc; font-size: .61cqw; line-height: 1.75; letter-spacing: .24em; text-transform: uppercase; padding-left: 1.3cqw; border-left: 1px solid #41bfff; }
+
+@keyframes settle { from { opacity: .15; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes photoSettle { from { opacity: .4; } to { opacity: 1; } }
+.header { animation: settle 500ms var(--ease-out) both; }
+.intro { animation: settle 800ms var(--ease-out) both; }
+.mainPhoto { animation: photoSettle 1100ms var(--ease-out) both; }
+.supportWindow { animation: settle 800ms var(--ease-out) 100ms both; }
+.servicesPanel { animation: settle 700ms var(--ease-out) 180ms both; }
+.skyBadge { animation: photoSettle 850ms var(--ease-out) 180ms both; }
+.desktopNav { font-size: max(12px, .83cqw); }
+.headerCta, .primaryCta { font-size: max(14px, .98cqw); min-height: 44px; }
+.servicesHeader > a { min-height: 44px; }
+.servicesContent { padding-top: .25cqw; }
+
+/* Smaller desktops allow readable content without fixing the viewport height. */
+@media (max-width: 1150px) and (min-width: 901px) {
+  .stage { aspect-ratio: auto; min-height: 850px; }
+  .header { height: 94px; grid-template-columns: 24% 1fr auto; }
+  .desktopNav { gap: 18px; font-size: 12px; }
+  .headerCta { padding: 12px 18px; font-size: 12px; }
+  .brand { width: 150px; height: 113px; }
+  .brandImage { width: 115px; }
+  .intro { top: 150px; width: 57%; }
+  .eyebrow { font-size: 9px; }
+  .headline { font-size: 65px; margin-top: 20px; }
+  .description { font-size: 18px; max-width: 480px; margin-top: 20px; }
+  .primaryCta { font-size: 15px; margin-top: 24px; padding: 16px 26px; }
+  .primaryCta svg { width: 22px; height: 22px; }
+  .specialist, .titleOrnament { display: none; }
+  .rightCaption { font-size: 10px; top: 130px; }
+  .supportWindow { height: 112px; }
+  .inspectionWindow { left: auto; right: 6%; width: 20%; top: 255px; }
+  .droneWindow { left: auto; right: 2%; width: 22%; top: 383px; }
+  .supportWindow span { width: 30px; height: 30px; }
+  .supportWindow span svg { width: 20px; }
+  .servicesPanel { top: 525px; width: 59%; height: 230px; }
+  .servicesHeader h2, .servicesHeader > a { font-size: 10px; }
+  .servicesContent { padding: 22px 24px; }
+  .tileImage { height: 103px; }
+  .tileLabel { min-height: 67px; font-size: 14px; padding: 10px; }
+  .tileArrow { width: 28px; height: 28px; }
+  .tileArrow svg { width: 18px; }
+  .industryStrip { top: 785px; width: 57%; gap: 8px; }
+  .industryStrip a { gap: 5px; font-size: 8px; }
+  .industryStrip a svg { width: 23px; height: 23px; }
+  .industryIntro { font-size: 8px; }
+  .skyBadge { width: 14%; bottom: 3%; right: 15%; }
+  .divisionCaption { display: none; }
+}
+
+/* Native disclosures and anchor destinations remain usable on mobile. */
+@media (max-width: 900px) {
+  .stage { display: flex; flex-direction: column; aspect-ratio: auto; padding: 0 24px 40px; }
+  /* Keep SVG definitions available: hiding the root also hides clip geometry. */
+  .curves { visibility: visible; }
+  .curves > path, .curves > g { display: none; }
+  .header { position: relative; top: auto; left: auto; right: auto; height: 126px; display: flex; align-items: center; justify-content: flex-end; border-bottom: 1px solid var(--color-line); }
+  .brand { width: 140px; height: 116px; top: 0; left: 0; }
+  .brandImage { width: 116px; }
+  .desktopNav, .headerCta { display: none; }
+  .mobileMenu { position: relative; display: block; }
+  .mobileMenu summary { display: flex; align-items: center; justify-content: space-between; min-height: 48px; gap: 16px; padding: 12px 0 12px 16px; list-style: none; font-size: 15px; font-weight: 500; cursor: pointer; }
+  .menuLines { display: grid; gap: 6px; width: 24px; }
+  .menuLines i { height: 1px; width: 24px; background: #142c49; }
+  .mobilePanel { position: absolute; right: 0; top: calc(100% + 12px); width: min(330px, calc(100vw - 48px)); padding: 12px; background: #fff; border: 1px solid #d2e1ee; border-radius: 8px; box-shadow: 0 12px 40px #071c3525; }
+  .mobilePanel a { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 15px 12px; min-height: 48px; font-size: 16px; }
+  .mobilePanel a:hover { background: #eff6fc; color: var(--color-action); }
+  .mobilePanel svg { width: 22px; }
+  .intro { position: relative; left: auto; top: auto; width: 100%; order: 1; padding: 36px 0 32px; }
+  .eyebrow { font-size: 10px; gap: 8px; letter-spacing: .14em; white-space: normal; flex-wrap: wrap; }
+  .eyebrow i { display: none; }
+  .headline { font-size: clamp(45px, 9.5vw, 86px); margin-top: 22px; line-height: .93; letter-spacing: -.055em; }
+  .headline > span, .headline > span:nth-child(2), .headline > span:nth-child(3) { transform: scaleX(1.08); }
+  .description { max-width: 480px; font-size: 18px; margin-top: 24px; line-height: 1.55; letter-spacing: -.015em; }
+  .desktopBreak { display: none; }
+  .primaryCta { margin-top: 24px; padding: 16px 28px; min-height: 54px; font-size: 16px; gap: 28px; }
+  .primaryCta svg { width: 24px; height: 24px; }
+  .mainPhoto { position: relative; order: 2; left: auto; width: 100%; height: clamp(360px, 85vw, 580px); border-radius: 44px 6px 70px 6px; clip-path: polygon(0 7%, 80% 0, 100% 0, 100% 92%, 20% 100%, 0 100%) !important; }
+  .mainImage { object-position: var(--mobile-photo-position, 67% 50%); }
+  .photoShade { background: linear-gradient(0deg, #071c3538, transparent 40%); }
+  .photoControls { position: relative; order: 3; top: auto; right: auto; flex-direction: row; justify-content: flex-end; align-items: center; gap: 8px; height: 58px; margin-bottom: 6px; color: #254568; }
+  .photoControls::after { display: none; }
+  .photoControls button { height: 44px; width: 44px; }
+  .photoControls button span { width: 6px; height: 6px; background: #a0b8ca; }
+  .photoControls button[aria-pressed="true"] span { background: var(--color-action); box-shadow: none; }
+  .specialist, .rightCaption, .divisionCaption { display: none; }
+  .supportingWindows { display: grid; order: 4; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0 0 26px; }
+  .supportWindow { position: relative; width: 100%; height: clamp(110px, 25vw, 180px); top: auto; left: auto; right: auto; }
+  .supportWindow span { width: 30px; height: 30px; }
+  .supportWindow span svg { width: 20px; }
+  .servicesPanel { position: relative; order: 5; left: auto; top: auto; width: 100%; height: auto; }
+  .servicesShape { display: none; }
+  .servicesContent { padding: 24px 0; border-top: 1px solid var(--color-line); border-bottom: 1px solid var(--color-line); }
+  .servicesHeader h2 { font-size: 11px; }
+  .servicesHeader > a { font-size: 10px; min-height: 44px; gap: 10px; }
+  .serviceTiles { gap: 12px; margin-top: 12px; }
+  .tileImage { height: 110px; }
+  .tileLabel { min-height: 76px; font-size: 15px; padding: 12px; }
+  .tileArrow { width: 30px; height: 30px; }
+  .tileArrow svg { width: 18px; height: 18px; }
+  .industryStrip { position: relative; order: 6; left: auto; top: auto; width: 100%; flex-wrap: wrap; gap: 16px; justify-content: flex-start; padding: 28px 0; }
+  .industryIntro { width: 100%; font-size: 10px; }
+  .industryIntro br { display: none; }
+  .industryStrip a { font-size: 12px; gap: 8px; flex: 0 0 calc(33.33% - 11px); }
+  .industryStrip a svg { width: 29px; height: 29px; }
+  .skyBadge { position: relative; order: 7; bottom: auto; right: auto; width: 150px; max-width: 100%; margin: 16px auto 0; }
+}
+@media (max-width: 560px) {
+  .stage { padding-left: 20px; padding-right: 20px; }
+  .headline { font-size: clamp(43px, 12.5vw, 69px); }
+  .eyebrow { font-size: 8px; gap: 6px; }
+  .serviceTiles { grid-template-columns: 1fr; gap: 14px; }
+  .serviceTile { display: grid; grid-template-columns: 44% 1fr; }
+  .tileImage { height: 112px; border-radius: 6px 0 0 6px; }
+  .tileLabel { padding: 14px; font-size: 16px; border-radius: 0 6px 6px 0; }
+  .industryStrip a { flex-basis: calc(50% - 8px); font-size: 11px; }
+}

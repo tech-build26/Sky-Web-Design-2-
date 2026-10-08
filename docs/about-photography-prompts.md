@@ -1,0 +1,17 @@
+# About photography — 7 October 2026
+
+Generated with the built-in imagegen tool. Photographs are illustrative capability imagery, not records of commissioned projects. Accepted after visual review of anatomy, overall equipment plausibility, full-body poses, inland settings and crops. No technical safety certification is implied.
+
+## Main concrete photograph
+
+Use case: photorealistic-natural. Asset type: portrait photograph for Skyriders About section, main slanted photo window. Create a high-resolution editorial industrial rope-access photograph, portrait 1024x1536 or greater native resolution. An adult white South African rope access technician in navy blue coveralls, white protective climbing helmet, dark gloves and boots, full-body industrial rope access harness with realistic carabiners, descender and two separate taut ropes. Seen from three-quarter rear side, full body visible, suspended close to a tall weathered concrete pillar beneath a massive concrete viaduct. One gloved hand operates the rope; knees naturally bent and boots braced against the concrete. Structure fills most of frame, receding concrete underside above, a small bright sky gap right. Subject in middle slightly right with ample concrete around all sides for an angled crop. Natural daylight, realistic scale, tactile concrete, restrained neutral colours, premium crisp commercial documentary photography. Southern African inland setting. Two visible independent rope lines with plausible load and anchors outside frame. No logos, text, watermark, collage, website shapes, graphic overlays, extra limbs or distorted equipment.
+
+Native source: `assets/source/about/about-concrete-rope-access.png`; web derivative: `public/images/about/about-concrete-rope-access.webp`. Object position 52% 51% inside the mirrored trapezoid.
+
+## Facade inset
+
+Use case: photorealistic-natural. Asset type: portrait supporting facade photograph for Skyriders About inset. Create high-resolution portrait 1024x1536 or greater native resolution editorial photograph of an adult Black South African industrial rope-access technician working on the reflective glass and metal facade of a high-rise in inland Johannesburg. Navy blue coveralls, white climbing helmet, dark gloves and boots, complete credible harness, descender and two separate taut vertical ropes. Full body in natural seated suspended posture, one hand touching a vertical facade mullion; boots braced at the facade. Technician at centre slightly right; Johannesburg inland cityscape and dry highveld visible in left background, blue sky, no sea. Bright natural daylight, crisp documentary texture, premium professional photography. Leave ample photographic space around the complete technician to allow portrait inset crop. Realistic anatomy and PPE, no text, logos, watermark, website graphics or coloured overlay. Separate photograph, not a collage.
+
+Native source: `assets/source/about/about-johannesburg-facade.png`; web derivative: `public/images/about/about-johannesburg-facade.webp`. Object position 60% 50% inside the inset. The white main technician and Black inset technician continue balanced representation across the page.
+
+Background collage reuses separately labelled hero team, urban facade and steel structure assets. Navy treatment is a CSS overlay; image files are not recoloured or flipped. See `docs/about-photo-metadata.json` for exact dimensions and bytes.

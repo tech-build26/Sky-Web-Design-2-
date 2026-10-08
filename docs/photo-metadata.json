@@ -1,0 +1,72 @@
+[
+  {
+    "name": "hero-sa-urban-facade-01",
+    "source": "assets/source/hero/hero-sa-urban-facade-01.png",
+    "sourceWidth": 1672,
+    "sourceHeight": 941,
+    "destination": "public/images/hero/hero-sa-urban-facade-01.webp",
+    "width": 1672,
+    "height": 941,
+    "bytes": 301292
+  },
+  {
+    "name": "hero-sa-industrial-tower-02",
+    "source": "assets/source/hero/hero-sa-industrial-tower-02.png",
+    "sourceWidth": 1672,
+    "sourceHeight": 941,
+    "destination": "public/images/hero/hero-sa-industrial-tower-02.webp",
+    "width": 1672,
+    "height": 941,
+    "bytes": 279598
+  },
+  {
+    "name": "hero-sa-steel-structure-03",
+    "source": "assets/source/hero/hero-sa-steel-structure-03.png",
+    "sourceWidth": 1672,
+    "sourceHeight": 941,
+    "destination": "public/images/hero/hero-sa-steel-structure-03.webp",
+    "width": 1672,
+    "height": 941,
+    "bytes": 260914
+  },
+  {
+    "name": "hero-support-team",
+    "source": "assets/source/hero/hero-support-team.png",
+    "sourceWidth": 1672,
+    "sourceHeight": 941,
+    "destination": "public/images/hero/hero-support-team.webp",
+    "width": 1400,
+    "height": 788,
+    "bytes": 118644
+  },
+  {
+    "name": "hero-support-drone",
+    "source": "assets/source/hero/hero-support-drone.png",
+    "sourceWidth": 1672,
+    "sourceHeight": 941,
+    "destination": "public/images/hero/hero-support-drone.webp",
+    "width": 1400,
+    "height": 788,
+    "bytes": 126518
+  },
+  {
+    "name": "hero-support-infrastructure",
+    "source": "assets/source/hero/hero-support-infrastructure.png",
+    "sourceWidth": 1672,
+    "sourceHeight": 941,
+    "destination": "public/images/hero/hero-support-infrastructure.webp",
+    "width": 1400,
+    "height": 788,
+    "bytes": 129896
+  },
+  {
+    "name": "hero-support-inspection",
+    "source": "assets/source/hero/hero-support-inspection.png",
+    "sourceWidth": 1672,
+    "sourceHeight": 941,
+    "destination": "public/images/hero/hero-support-inspection.webp",
+    "width": 1400,
+    "height": 788,
+    "bytes": 143008
+  }
+]

@@ -1,0 +1,77 @@
+.services { position: relative; width: 100%; isolation: isolate; overflow: clip; background: #061b2b; color: #fff; }
+.photograph { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
+.photograph img { object-fit: cover; object-position: 65% 40%; }
+.photograph::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #031524d9 0%, #0518277d 38%, #071c3512 75%), linear-gradient(0deg, #031727a6 0%, transparent 60%); }
+.stage { position: relative; max-width: var(--section-max); margin: auto; padding: clamp(64px, 6vw, 96px) 32px 56px; }
+.eyebrow { margin: 0; font-size: 11px; font-weight: 500; line-height: 1.5; letter-spacing: .21em; text-transform: uppercase; color: #b6ddfa; }
+.copy { max-width: 570px; margin-top: 26px; }
+.copy h2 { font-family: var(--font-display), Arial, sans-serif; font-weight: 600; font-size: clamp(48px, 5.2vw, 74px); line-height: 1.03; letter-spacing: -.055em; margin: 0; }
+.copy h2 > span { color: #7dc8ff; }
+.intro { max-width: 420px; font-size: 15px; line-height: 1.75; color: #d0deea; margin: 24px 0 0; }
+.serviceGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 64px; }
+.serviceTile { display: flex; flex-direction: column; position: relative; padding: 30px; border: 1px solid #d9edff4d; border-radius: 10px; background: linear-gradient(135deg, #d4eaff1c, #b6d9ff08); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); box-shadow: inset 0 1px 0 #ffffff0d, 0 12px 32px #03152412; transition: transform 300ms var(--ease-out), border-color 300ms, background 300ms; scroll-margin-top: 32px; }
+.serviceTile:is(:hover, :focus-within) { transform: translateY(-4px); border-color: #addcff8c; background: linear-gradient(135deg, #d4eaff28, #b6d9ff0f); }
+.tileLabel { font-size: 10px; line-height: 1.5; letter-spacing: .11em; text-transform: uppercase; color: #b6ddfa; margin: 0 0 22px; }
+.serviceTile h3 { font-family: var(--font-display), Arial, sans-serif; font-size: clamp(22px, 1.9vw, 27px); font-weight: 500; letter-spacing: -.035em; line-height: 1.2; margin: 0 0 16px; }
+.tileDescription { font-size: 14px; line-height: 1.8; color: #e0e9f1; margin: 0 0 24px; }
+.serviceTile a { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 16px; margin-top: auto; min-height: 44px; border-top: 1px solid #d9edff30; color: #b8e0ff; font-size: 12px; line-height: 1.6; }
+.serviceTile a svg { flex-shrink: 0; width: 21px; height: 21px; transition: transform 250ms; }
+.serviceTile a:is(:hover, :focus-visible) svg { transform: translateX(4px); }
+.services :focus-visible { outline-color: #8fd0ff; }
+.serviceTile:focus { outline: none; }
+.exploreArea { display: flex; justify-content: center; margin-top: 36px; }
+.explore { display: inline-flex; align-items: center; justify-content: center; gap: 28px; min-height: 54px; padding: 16px 28px; border: 1px solid #ffffff1a; border-radius: var(--radius-pill); color: #fff; background: var(--color-action); font-size: 14px; font-weight: 500; line-height: 1.5; cursor: pointer; transition: background 250ms, box-shadow 250ms; }
+.explore svg { flex-shrink: 0; width: 24px; height: 24px; transition: transform 250ms; }
+.explore:is(:hover, :focus-visible) { background: #0078ee; box-shadow: 0 8px 24px #0067e629; }
+.explore:is(:hover, :focus-visible) svg { transform: translateX(4px); }
+.destination { position: absolute; top: 0; }
+.catalogue { width: min(880px, calc(100% - 40px)); max-height: calc(100dvh - 64px); padding: 0; color: #f4f9ff; background: #071c35; border: 1px solid #34516c; border-radius: 8px; overscroll-behavior: contain; }
+.catalogue::backdrop { background: #020c19c4; backdrop-filter: blur(8px); }
+.catalogue[open] { animation: serviceArrival 350ms var(--ease-out); }
+.cataloguePanel { padding: clamp(24px, 4vw, 48px); }
+.catalogueHeader { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; margin-bottom: 30px; }
+.catalogueHeader h2 { margin: 18px 0 0; font-family: var(--font-display), Arial, sans-serif; font-size: clamp(32px, 4vw, 48px); font-weight: 600; line-height: 1.08; letter-spacing: -.045em; }
+.catalogueHeader h2 span { color: #7dc8ff; }
+.close { display: grid; flex-shrink: 0; place-items: center; width: 44px; height: 44px; color: #d9edff; background: transparent; border: 1px solid #34516c; border-radius: 50%; cursor: pointer; transition: background 200ms; }
+.close svg { width: 24px; height: 24px; }
+.close:hover { background: #183a5b; }
+.catalogueList article { display: flex; align-items: flex-start; gap: 24px; padding: 25px 0; border-top: 1px solid #34516c; }
+.catalogueNumber { padding-top: 4px; color: #8baecb; font-size: 12px; }
+.catalogueList article > div { flex: 1; }
+.catalogueList h3 { font-size: 22px; font-weight: 500; letter-spacing: -.025em; margin: 8px 0; }
+.catalogueList p { font-size: 14px; line-height: 1.7; color: #c4d3e0; margin: 0; }
+.catalogueList .catalogueLabel { font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: #8fd0ff; }
+.catalogueList a { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; color: #8fd0ff; border: 1px solid #34516c; border-radius: 50%; transition: background 200ms; }
+.catalogueList a svg { width: 23px; height: 23px; }
+.catalogueList a:hover { background: #183a5b; }
+.catalogueContact { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 56px; padding-top: 22px; border-top: 1px solid #34516c; color: #8fd0ff; font-size: 14px; line-height: 1.7; }
+.catalogueContact svg { width: 24px; height: 24px; flex-shrink: 0; }
+@keyframes serviceArrival { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 1000px) {
+  .serviceGrid { gap: 14px; }
+  .serviceTile { padding: 24px 20px; }
+  .serviceTile h3 { font-size: 23px; }
+}
+@media (max-width: 700px) {
+  .stage { padding: 64px 24px 48px; }
+  .photograph img { object-position: 72% center; }
+  .photograph::after { background: linear-gradient(90deg, #031524a6, #03152440), linear-gradient(0deg, #03172780, #03172726); }
+  .copy { max-width: none; margin-top: 24px; }
+  .copy h2 { font-size: clamp(40px, 9vw, 62px); }
+  .intro { font-size: 14px; margin-top: 20px; }
+  .serviceGrid { grid-template-columns: 1fr; margin-top: 36px; gap: 16px; }
+  .serviceTile { padding: 26px 24px; }
+  .tileLabel { margin-bottom: 18px; }
+  .serviceTile h3 { font-size: 25px; }
+  .tileDescription { margin-bottom: 20px; }
+  .exploreArea { margin-top: 28px; }
+  .catalogue { width: calc(100% - 24px); max-height: calc(100dvh - 32px); }
+  .cataloguePanel { padding: 24px 20px; }
+  .catalogueList article { gap: 12px; }
+  .catalogueList h3 { font-size: 20px; }
+  .catalogueList p { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .catalogue[open] { animation: none; }
+  .services *, .services *::before, .services *::after { transition: none; }
+}

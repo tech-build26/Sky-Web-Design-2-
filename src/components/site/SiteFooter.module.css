@@ -1,0 +1,31 @@
+.footer { background: #06192d; color: #dce8f3; border-top: 3px solid #0067e6; }
+.inner { max-width: var(--section-max); padding: 0 32px; margin: auto; }
+.topline { display: flex; align-items: center; justify-content: space-between; gap: 28px; border-bottom: 1px solid #5d84a437; padding: 30px 0; }
+.topline p { margin: 0; font-family: var(--font-display), Arial, sans-serif; color: #fff; font-size: clamp(18px, 2.1vw, 29px); letter-spacing: -.02em; font-weight: 650; }
+.topline a { display: inline-flex; align-items: center; gap: 24px; min-height: 44px; font-size: 13px; color: #8ed7ff; }
+.topline svg { width: 24px; }
+.main { display: grid; grid-template-columns: 1.4fr .85fr 1.2fr .8fr; gap: 44px; padding: 42px 0 46px; }
+.brand > a { display: block; width: 155px; }
+.brand img { display: block; width: 155px; height: auto; }
+.brand p { font-size: 13px; color: #a8c0d6; line-height: 1.8; margin: 16px 0 24px; }
+.location { font-size: 8px; letter-spacing: .1em; color: #7699b7; }
+.title { font-size: 9px; letter-spacing: .14em; color: #80c9ff; text-transform: uppercase; font-weight: 500; margin: 8px 0 20px; line-height: 1.6; }
+.links { display: grid; }
+.links a, .contact > a { display: flex; align-items: center; min-height: 34px; padding: 5px 0; color: #b7cde1; font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
+.links a > span { margin-left: 12px; }
+.contact > .whatsapp { display: flex; align-items: center; gap: 10px; color: #25d366; font-size: 11px; line-height: 1.5; border-top: 1px solid #25d36630; padding-top: 18px; margin-top: 14px; }
+.whatsapp svg { width: 20px; flex-shrink: 0; }
+.division { text-align: right; }
+.skyLogo { display: block; width: 125px; height: 125px; padding: 7px; background: #f2f8ff; border-radius: 50%; margin-left: auto; border: 1px solid #77caff; box-shadow: 0 0 30px #007aff12; }
+.skyLogo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.division > p:not(.title) { color: #9eb9d0; font-size: 10px; margin: 16px 0 4px; }
+.skyLink { display: inline-flex; align-items: center; gap: 14px; min-height: 40px; color: #8ed7ff; font-size: 12px; }
+.skyLink svg { width: 20px; }
+.bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid #5d84a437; color: #839fb8; font-size: 10px; padding: 17px 0; }
+.bottom a { display: flex; gap: 20px; align-items: center; min-height: 44px; color: #b7cde1; }
+.bottom a span { color: #8ed7ff; }
+.footer a:hover { color: #fff; }
+.footer .whatsapp:hover { color: #8aefb0; }
+.footer a:focus-visible { outline-color: #8ed7ff; }
+@media (max-width: 1000px) { .main { gap: 28px; grid-template-columns: 1.2fr .9fr 1.1fr; } .division { grid-column: 3; text-align: left; } .skyLogo { margin-left: 0; width: 105px; height: 105px; } .bottom > span:nth-child(2) { display: none; } }
+@media (max-width: 700px) { .inner { padding: 0 20px; } .topline { align-items: flex-start; flex-direction: column; gap: 8px; padding: 24px 0; } .topline p { font-size: 24px; } .main { grid-template-columns: 1fr 1fr; gap: 32px 20px; padding: 30px 0; } .brand { grid-column: 1 / -1; } .brand > a, .brand img { width: 140px; } .brand p { margin-bottom: 14px; } .contact { grid-column: 1 / -1; grid-row: 3; } .division { grid-column: 2; grid-row: 2; text-align: right; } .skyLogo { margin-left: auto; } .title { margin-top: 0; } .bottom { flex-wrap: wrap; gap: 0 20px; padding-top: 16px; } .bottom > span:first-child { flex-basis: 100%; font-size: 9px; } }

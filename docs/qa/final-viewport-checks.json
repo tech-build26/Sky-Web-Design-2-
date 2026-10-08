@@ -1,0 +1,101 @@
+[
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "aboutButtonBottom": 949.5078125,
+    "aboutHeight": 1063.1875,
+    "missingTargets": 0,
+    "scrollWidth": 1905,
+    "width": 1905
+  },
+  {
+    "viewport": {
+      "width": 1672,
+      "height": 941
+    },
+    "aboutButtonBottom": 821.26806640625,
+    "aboutHeight": 924.765625,
+    "missingTargets": 0,
+    "scrollWidth": 1657,
+    "width": 1657
+  },
+  {
+    "viewport": {
+      "width": 1600,
+      "height": 900
+    },
+    "aboutButtonBottom": 781.6282958984375,
+    "aboutHeight": 884.59375,
+    "missingTargets": 0,
+    "scrollWidth": 1585,
+    "width": 1585
+  },
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "aboutButtonBottom": 701.0494384765625,
+    "aboutHeight": 795.296875,
+    "missingTargets": 0,
+    "scrollWidth": 1425,
+    "width": 1425
+  },
+  {
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "aboutButtonBottom": 621.476318359375,
+    "aboutHeight": 706,
+    "missingTargets": 0,
+    "scrollWidth": 1265,
+    "width": 1265
+  },
+  {
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "aboutButtonBottom": 593.506591796875,
+    "aboutHeight": 700,
+    "missingTargets": 0,
+    "scrollWidth": 1009,
+    "width": 1009
+  },
+  {
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "aboutButtonBottom": 600.9306640625,
+    "aboutHeight": 700,
+    "missingTargets": 0,
+    "scrollWidth": 753,
+    "width": 753
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "aboutButtonBottom": 923.1943359375,
+    "aboutHeight": 987.109375,
+    "missingTargets": 0,
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "aboutButtonBottom": 993.226318359375,
+    "aboutHeight": 1057.203125,
+    "missingTargets": 0,
+    "scrollWidth": 305,
+    "width": 305
+  }
+]
