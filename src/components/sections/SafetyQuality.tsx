@@ -15,7 +15,8 @@ export function SafetyQuality() {
       <div className={styles.stage}>
         <div className={styles.referenceArt}>
           <Image src={artwork} alt="Rope-access technician inspecting an industrial concrete tower, wearing a helmet and safety harness." fill sizes="(min-width: 1840px) 1840px, 100vw" unoptimized />
-          <p className="sr-only">Safety builds confidence. Quality builds trust. Safe people. Quality work. Lasting results.</p>
+          <p className={styles.captionTop}><span>Safety builds</span><strong>confidence.</strong><span>Quality builds</span><strong>trust.</strong></p>
+          <p className={styles.captionBottom}><span>Safe people.</span><span>Quality work.</span><em>Lasting results.</em></p>
         </div>
 
         <svg className={styles.paper} viewBox="0 0 1778 885" preserveAspectRatio="none" aria-hidden="true">
@@ -34,8 +35,8 @@ export function SafetyQuality() {
         </svg>
 
         <div className={styles.copy}>
-          <p className={styles.eyebrow}>Safety &amp; quality<span aria-hidden="true" /></p>
-          <h2 id="safety-heading"><span>Careful planning.</span><span>Considered execution.</span></h2>
+          <p className={`${styles.eyebrow} type-label`}>Safety &amp; quality<span aria-hidden="true" /></p>
+          <h2 id="safety-heading" data-type-reveal><span className="type-line">Careful planning.</span>{" "}<span className="type-line">Considered execution.</span></h2>
           <p className={styles.intro}>The access method is one part of the job. The environment, task<br className={styles.desktopBreak} /> and rescue arrangements belong in the plan from the start.</p>
         </div>
 

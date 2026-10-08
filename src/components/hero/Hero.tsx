@@ -19,9 +19,9 @@ export function Hero() {
         <HeroMedia prefix={prefix} />
         <div className={styles.intro}>
           <p className={styles.eyebrow}>People <span>/</span> Access <span>/</span> Higher standards<i aria-hidden="true" /></p>
-          <h1 id="hero-heading" tabIndex={-1} className={styles.headline}><span>Access</span>{" "}<span className={styles.blueWord}>Beyond</span>{" "}<span>Limits</span></h1>
+          <h1 id="hero-heading" tabIndex={-1} className={styles.headline} data-type-reveal><span className="type-line">Access</span>{" "}<span className={`${styles.blueWord} type-line`}>Beyond</span>{" "}<span className="type-line">Limits</span></h1>
           <p className={styles.description}>Rope access, inspections and maintenance<br className={styles.desktopBreak} /> for the world’s most demanding structures.</p>
-          <a className={`button ${styles.primaryCta}`} href="#services">Our Services <Arrow /></a>
+          <a className={`button ${styles.primaryCta}`} href="#services">How we help <Arrow /></a>
         </div>
         <p className={styles.specialist}>Specialist<br />access solutions<br />for South Africa’s<br />toughest environments</p>
         <p className={styles.rightCaption}>Difficult<br />places<br />demand<br />a higher<br />standard</p>

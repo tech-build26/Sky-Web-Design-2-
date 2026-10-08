@@ -4,50 +4,61 @@
   "timings": [
     {
       "run": 1,
-      "headersMs": 85.29,
-      "completeMs": 89.66,
-      "decodedHtmlBytes": 130101
+      "headersMs": 66.98,
+      "completeMs": 71.2,
+      "decodedHtmlBytes": 132011
     },
     {
       "run": 2,
-      "headersMs": 5.8,
-      "completeMs": 7.02,
-      "decodedHtmlBytes": 130101
+      "headersMs": 5.78,
+      "completeMs": 6.94,
+      "decodedHtmlBytes": 132011
     },
     {
       "run": 3,
-      "headersMs": 4.77,
-      "completeMs": 6.56,
-      "decodedHtmlBytes": 130101
+      "headersMs": 4.56,
+      "completeMs": 6.06,
+      "decodedHtmlBytes": 132011
     }
   ],
   "uniqueIds": 30,
   "fragmentLinkCount": 53,
   "intactLogos": true,
   "contactRouteValidation": true,
+  "typography": {
+    "arialAbsent": true,
+    "italicFacePresent": true,
+    "newSectionNames": true
+  },
   "resources": [
     {
-      "asset": "/_next/static/media/archivo_latin_variable-s.p.1h4hl0m83hjjz.woff2",
+      "asset": "/_next/static/media/archivo_latin_italic_variable.p.0py3wv26dczp3.woff2",
+      "status": 200,
+      "decodedBytes": 39156,
+      "contentType": "font/woff2"
+    },
+    {
+      "asset": "/_next/static/media/archivo_latin_variable.p.1h4hl0m83hjjz.woff2",
       "status": 200,
       "decodedBytes": 90104,
       "contentType": "font/woff2"
     },
     {
-      "asset": "/_next/static/media/inter_latin_variable-s.p.0gsaq8ukbf34m.woff2",
+      "asset": "/_next/static/media/inter_latin_variable.p.0gsaq8ukbf34m.woff2",
       "status": 200,
       "decodedBytes": 48256,
       "contentType": "font/woff2"
     },
     {
-      "asset": "/_next/static/chunks/16fkbsit6rq1h.css",
+      "asset": "/_next/static/chunks/25sxdb1avn47e.css",
       "status": 200,
-      "decodedBytes": 3075,
+      "decodedBytes": 4071,
       "contentType": "text/css; charset=UTF-8"
     },
     {
-      "asset": "/_next/static/chunks/3zckq7i6_wn_9.css",
+      "asset": "/_next/static/chunks/3bmiz-i1h0mk5.css",
       "status": 200,
-      "decodedBytes": 53355,
+      "decodedBytes": 56156,
       "contentType": "text/css; charset=UTF-8"
     },
     {
@@ -81,9 +92,9 @@
       "contentType": "application/javascript; charset=UTF-8"
     },
     {
-      "asset": "/_next/static/chunks/39j40rb7gbf37.js",
+      "asset": "/_next/static/chunks/05_1e2w2rdqrd.js",
       "status": 200,
-      "decodedBytes": 46062,
+      "decodedBytes": 46848,
       "contentType": "application/javascript; charset=UTF-8"
     },
     {
@@ -541,6 +552,12 @@
       "status": 200,
       "decodedBytes": 298432,
       "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/brand/industries-contours.svg",
+      "status": 200,
+      "decodedBytes": 5116,
+      "contentType": "image/svg+xml"
     },
     {
       "asset": "/images/brand/inspection-contours.svg",

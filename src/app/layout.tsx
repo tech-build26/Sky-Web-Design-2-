@@ -3,8 +3,13 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { getSiteUrl } from "@/lib/site-url";
 
-const inter = localFont({ src: "./fonts/inter-latin-variable.woff2", weight: "100 900", display: "swap", variable: "--font-body" });
-const archivo = localFont({ src: "./fonts/archivo-latin-variable.woff2", weight: "100 900", display: "swap", variable: "--font-display" });
+const inter = localFont({ src: "./fonts/inter-latin-variable.woff2", weight: "100 900", display: "swap", variable: "--font-body", adjustFontFallback: false, fallback: ["Segoe UI", "sans-serif"] });
+const archivo = localFont({
+  src: [
+    { path: "./fonts/archivo-latin-variable.woff2", weight: "100 900", style: "normal" },
+    { path: "./fonts/archivo-latin-italic-variable.woff2", weight: "100 900", style: "italic" },
+  ], display: "swap", variable: "--font-display", adjustFontFallback: false, fallback: ["Segoe UI", "sans-serif"],
+});
 
 const siteUrl = getSiteUrl();
 const indexable = Boolean(siteUrl) && process.env.NODE_ENV === "production";

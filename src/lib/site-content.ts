@@ -3,7 +3,7 @@ export const HUB_URL = "https://skyadmin.ropeaccess.co.za/dashboard";
 export const navigation = [
   { label: "Services", href: "#services" },
   { label: "Industries", href: "#industries" },
-  { label: "About", href: "#about" },
+  { label: "Who we are", href: "#about" },
 ] as const;
 
 export const services = [

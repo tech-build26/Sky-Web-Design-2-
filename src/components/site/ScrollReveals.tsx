@@ -16,7 +16,12 @@ export function ScrollReveals() {
       }
     }, { threshold: .12 });
     document.querySelectorAll("[data-reveal]").forEach((element) => observer.observe(element));
-    return () => observer.disconnect();
+    // Heading-only reveals replay on a new visit; reading text stays in place.
+    const typeObserver = new IntersectionObserver((entries) => {
+      for (const entry of entries) entry.target.classList.toggle("type-arrived", entry.isIntersecting);
+    }, { threshold: .18 });
+    document.querySelectorAll("[data-type-reveal]").forEach((element) => typeObserver.observe(element));
+    return () => { observer.disconnect(); typeObserver.disconnect(); };
   }, []);
   return null;
 }

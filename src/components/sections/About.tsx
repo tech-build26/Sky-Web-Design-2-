@@ -38,13 +38,13 @@ export function About() {
     <section id="about" tabIndex={-1} className={styles.about} aria-labelledby="about-heading">
       <div className={styles.stage}>
         <AboutArtwork />
-        <div className={styles.copy} data-reveal>
-          <p className={styles.eyebrow}>About us</p>
-          <h2 id="about-heading"><span>Skyriders Access</span>{" "}<span>Specialists</span></h2>
-          <p className={styles.statement}><span>Expertise where access</span>{" "}<span>is the challenge.</span></p>
+        <div className={styles.copy}>
+          <p className={`${styles.eyebrow} type-label`}>Who we are</p>
+          <h2 id="about-heading" data-type-reveal><span className="type-line">Skyriders Access</span>{" "}<span className="type-line">Specialists.</span></h2>
+          <p className={styles.statement} data-type-reveal><span className="type-line">Expertise where <em>access</em></span>{" "}<span className="type-line">is the challenge.</span></p>
           <div className={styles.body}>
-            <p>Since 1999, Skyriders has brought rope access,<br className={styles.referenceBreak} /> inspection and maintenance expertise to demanding<br className={styles.referenceBreak} /> industrial environments in South Africa.</p>
-            <p>From concrete and steel structures to high-rise<br className={styles.referenceBreak} /> facades and confined spaces, the work starts with<br className={styles.referenceBreak} /> understanding the site and choosing an appropriate<br className={styles.referenceBreak} /> access solution.</p>
+            <p>Since 1999, Skyriders has brought rope access, inspection and maintenance expertise to demanding industrial environments in South Africa.</p>
+            <p>From concrete and steel structures to high-rise facades and confined spaces, the work starts with understanding the site and choosing an appropriate access solution.</p>
           </div>
           <a href="#services" className={styles.explore}><span>Explore</span><span className={styles.exploreArrow}><Arrow /></span></a>
         </div>

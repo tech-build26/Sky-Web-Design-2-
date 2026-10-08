@@ -25,13 +25,29 @@
   --ease-out: cubic-bezier(.22, 1, .36, 1);
   --stage-max: 1840px;
   --section-max: 1320px;
+  --type-body: var(--font-body), "Segoe UI", sans-serif;
+  --type-display: var(--font-display), var(--font-body), "Segoe UI", sans-serif;
+  --type-label-size: 11px;
+  --type-label-spacing: .18em;
+  --type-body-size: 16px;
+  --type-body-leading: 1.75;
+  --type-heading-tracking: -.045em;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body), Arial, sans-serif; }
+body { margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--type-body); font-size: var(--type-body-size); line-height: var(--type-body-leading); font-synthesis: none; }
 a { color: inherit; text-decoration: none; }
 button, summary { -webkit-tap-highlight-color: transparent; }
-button { font: inherit; }
+button, input, select, textarea { font: inherit; }
+h1, h2, h3 { font-family: var(--type-display); font-variation-settings: normal; text-wrap: balance; }
+h2 em { margin-inline: .035em; }
+.type-label { font-family: var(--type-body); font-size: var(--type-label-size); font-weight: 600; line-height: 1.5; letter-spacing: var(--type-label-spacing); text-transform: uppercase; }
+.type-line { display: block; }
+.type-italic { font-family: var(--type-display); font-style: italic; font-weight: 450; }
+@keyframes typeArrival { from { opacity: .6; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
+[data-type-reveal].type-arrived .type-line { animation: typeArrival 750ms var(--ease-out) both; }
+[data-type-reveal].type-arrived .type-line:nth-child(2) { animation-delay: 110ms; }
+[data-type-reveal].type-arrived .type-line:nth-child(3) { animation-delay: 200ms; }
 button, a, summary { touch-action: manipulation; }
 svg { display: block; }
 img { max-width: 100%; }
@@ -39,7 +55,7 @@ section[id], article[id], main[id] { scroll-margin-top: 24px; }
 :focus-visible { outline: 3px solid #0050f0; outline-offset: 5px; }
 /* Anchor destinations are reading positions, not controls; avoid a canvas-wide ring. */
 section[tabindex="-1"]:focus, #hero-heading:focus { outline: none; }
-.button { display: inline-flex; justify-content: center; align-items: center; gap: 18px; min-height: 48px; padding: 14px 25px; background: var(--color-action); color: white; border-radius: var(--radius-pill); font-size: 15px; font-weight: 500; white-space: nowrap; transition: background var(--motion-fast), box-shadow var(--motion-fast); }
+.button { display: inline-flex; justify-content: center; align-items: center; gap: 18px; min-height: 48px; padding: 14px 25px; background: var(--color-action); color: white; border-radius: var(--radius-pill); font-size: 15px; line-height: 1.4; font-weight: 500; white-space: nowrap; transition: background var(--motion-fast), box-shadow var(--motion-fast); }
 .button svg { width: 24px; height: 24px; transition: transform var(--motion-fast); }
 .button:hover, .button:focus-visible { background: #004eb8; }
 .button:hover svg { transform: translateX(3px); }

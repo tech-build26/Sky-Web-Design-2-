@@ -1,6 +1,8 @@
 .section { max-width: var(--section-max); padding: clamp(64px, 7vw, 112px) 32px; margin: auto; }
-.section h2 { font-family: var(--font-display), Arial, sans-serif; font-size: clamp(32px, 3.3vw, 53px); font-weight: 600; letter-spacing: -.045em; line-height: 1.12; margin: 16px 0 30px; }
-.section .eyebrow { color: #a2d7ff; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; font-weight: 600; margin: 0; }
+.section h2 { font-family: var(--type-display); font-size: clamp(32px, 3.3vw, 53px); font-weight: 600; letter-spacing: var(--type-heading-tracking); line-height: 1.12; margin: 22px 0 30px; }
+.section h2 > span:last-child { font-size: .8em; font-weight: 400; line-height: 1.35; color: #c3d9e9; margin-top: 10px; }
+.section h2 em { color: #9bddff; font-weight: 450; }
+.section .eyebrow { color: #a2d7ff; font-family: var(--type-body); font-size: var(--type-label-size); letter-spacing: var(--type-label-spacing); text-transform: uppercase; font-weight: 600; margin: 0; }
 .industries { background: #06192d url('/images/brand/industries-contours.svg?v=3') center / cover no-repeat; color: #fff; max-width: none; padding-left: max(32px, calc((100% - 1256px) / 2)); padding-right: max(32px, calc((100% - 1256px) / 2)); }
 .industryGrid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; padding-top: 36px; }
 .industryGrid > div { padding-top: 24px; border-top: 1px solid #6082a352; }

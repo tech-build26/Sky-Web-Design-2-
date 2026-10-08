@@ -27,6 +27,7 @@ assert(/<form[\s>]/.test(html) && html.includes('id="project-enquiry"'), 'Projec
 assert(html.includes('https://wa.me/27832890077'), 'Project WhatsApp destination missing.');
 assert(!html.includes('tel:+27832890077'), 'The project number is WhatsApp only.');
 assert(!ids.includes('insights') && !ids.includes('work'), 'Removed sections must stay removed.');
+assert(html.includes('Who we are') && html.includes('How we help'), 'Updated section names missing.');
 assert(!html.includes('Watch our story') && !html.includes('Discuss your structure'));
 for (const logo of ['sky-logo.png', 'sky-i-logo.png']) {
   const original = await fs.readFile(logo);
@@ -39,17 +40,24 @@ for (const folder of ['public/images/hero', 'public/images/about', 'public/image
 }
 for (const endpoint of ['/icon', '/opengraph-image', '/robots.txt', '/sitemap.xml']) assets.add(endpoint);
 const resourceChecks = [];
+const stylesheetText = [];
 for (const asset of assets) {
   const response = await fetch(new URL(asset, origin));
   assert.equal(response.status, 200, asset);
-  const bytes = (await response.arrayBuffer()).byteLength;
+  const buffer = await response.arrayBuffer();
+  const bytes = buffer.byteLength;
+  if (response.headers.get('content-type')?.includes('text/css')) stylesheetText.push(new TextDecoder().decode(buffer));
   assert(bytes > 0, `Empty asset: ${asset}`);
   resourceChecks.push({ asset, status: response.status, decodedBytes: bytes, contentType: response.headers.get('content-type') });
 }
+const deliveredCSS = stylesheetText.join('\n');
+assert(stylesheetText.length > 0, 'No production stylesheets checked.');
+assert(!/Arial/i.test(deliveredCSS), 'Arial must not appear in delivered CSS or generated font fallbacks.');
+assert(/font-style:\s*italic/.test(deliveredCSS), 'Genuine italic font face missing.');
 const unsupportedContactMethod = await fetch(new URL('/api/contact', origin));
 assert.equal(unsupportedContactMethod.status, 405);
 const invalidEnquiry = await fetch(new URL('/api/contact', origin), { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: origin.origin }, body: '{}' });
 assert.equal(invalidEnquiry.status, 400, 'The live contact route must reject an incomplete enquiry.');
-const report = { origin: origin.href, scope: 'Local production HTTP and static asset checks; not a mobile network or Core Web Vitals benchmark.', timings, uniqueIds: ids.length, fragmentLinkCount: fragmentLinks.length, intactLogos: true, contactRouteValidation: true, resources: resourceChecks };
+const report = { origin: origin.href, scope: 'Local production HTTP and static asset checks; not a mobile network or Core Web Vitals benchmark.', timings, uniqueIds: ids.length, fragmentLinkCount: fragmentLinks.length, intactLogos: true, contactRouteValidation: true, typography: { arialAbsent: true, italicFacePresent: true, newSectionNames: true }, resources: resourceChecks };
 await fs.writeFile('docs/qa/production-http-checks.json', JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({ timings, uniqueIds: ids.length, fragmentLinkCount: fragmentLinks.length, resourceCount: resourceChecks.length, result: 'pass' }, null, 2));

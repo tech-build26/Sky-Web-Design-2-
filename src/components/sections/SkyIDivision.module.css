@@ -3,11 +3,13 @@
 .shade { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, rgb(3 17 31 / 96%) 0%, rgb(3 17 31 / 89%) 29%, rgb(3 17 31 / 40%) 65%, rgb(3 17 31 / 20%) 100%), linear-gradient(0deg, rgb(3 17 31 / 85%), transparent 30%); }
 .inner { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 48px; max-width: var(--section-max); min-height: 490px; margin: auto; padding: 62px 32px 66px; }
 .copy { position: relative; z-index: 2; }
-.eyebrow { display: flex; align-items: center; gap: 12px; margin: 0 0 22px; color: #91ddff; font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+.eyebrow { display: flex; align-items: center; gap: 12px; margin: 0 0 22px; color: #91ddff; font-family: var(--type-body); font-size: var(--type-label-size); font-weight: 600; letter-spacing: var(--type-label-spacing); text-transform: uppercase; }
 .eyebrow > span { width: 22px; height: 2px; background: #52c9ff; box-shadow: 0 0 14px #24b4ff80; }
-.copy h2 { margin: 0 0 22px; font-family: var(--font-display), Arial, sans-serif; font-size: clamp(32px, 3.2vw, 48px); font-weight: 600; letter-spacing: -.045em; line-height: 1.12; }
-.copy h2 > span { color: #9cdbff; }
-.description { max-width: 470px; margin: 0; color: #d1dfe9; font-size: 15px; line-height: 1.75; }
+.copy h2 { margin: 0 0 22px; font-family: var(--type-display); font-size: clamp(32px, 3.2vw, 48px); font-weight: 600; letter-spacing: -.045em; line-height: 1.12; }
+.copy h2 .perspective { color: #e6f0f8; font-size: .8em; font-weight: 400; line-height: 1.4; margin-bottom: 7px; }
+.perspective em { font-style: italic; font-weight: 450; }
+.copy h2 .precision { color: #9cdbff; font-weight: 700; }
+.description { max-width: 470px; margin: 0; color: #d1dfe9; font-size: 16px; line-height: var(--type-body-leading); }
 .applications { display: flex; flex-wrap: wrap; gap: 9px 18px; list-style: none; padding: 0; margin: 22px 0 28px; color: #b4c6d6; font-size: 11px; }
 .applications li { display: flex; align-items: center; gap: 7px; }
 .applications li::before { content: ""; width: 4px; height: 4px; background: #67caff; transform: rotate(45deg); }
@@ -40,7 +42,7 @@
 @media (max-width: 700px) {
   .inner { grid-template-columns: 1fr; gap: 12px; padding: 44px 20px 56px; min-height: auto; }
   .copy h2 { font-size: clamp(29px, 7.6vw, 39px); }
-  .description { font-size: 14px; max-width: 480px; }
+  .description { font-size: 16px; max-width: 480px; }
   .eyebrow { margin-bottom: 18px; }
   .applications { gap: 10px 14px; margin: 18px 0 24px; }
   .stage { height: clamp(220px, 65vw, 320px); width: 100%; max-width: 470px; justify-self: center; }

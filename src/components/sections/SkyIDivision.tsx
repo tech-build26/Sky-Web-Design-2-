@@ -68,8 +68,8 @@ export function SkyIDivision() {
       <div className={styles.shade} aria-hidden="true" />
       <div className={styles.inner}>
         <div className={styles.copy}>
-          <p className={styles.eyebrow}><span />The Sky I division</p>
-          <h2 id="sky-heading">A different perspective.<br /><span>The same precision.</span></h2>
+          <p className={`${styles.eyebrow} type-label`}><span />The Sky I division</p>
+          <h2 id="sky-heading" data-type-reveal><span className={`${styles.perspective} type-line`}>A different <em>perspective.</em></span>{" "}<span className={`${styles.precision} type-line`}>The same precision.</span></h2>
           <p className={styles.description}>A closer look. Even in the hardest places to reach. Sky I brings industrial drone inspection into complex structures and confined spaces, helping you see the condition of your assets from a new perspective.</p>
           <ul className={styles.applications} aria-label="Inspection applications">
             <li>Internal inspections</li><li>Confined spaces</li><li>Industrial assets</li>

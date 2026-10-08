@@ -41,9 +41,9 @@ export function Services() {
         <Image src="/images/services/services-cooling-tower.webp" alt="" fill sizes="100vw" />
       </div>
       <div className={styles.stage}>
-        <p className={styles.eyebrow}>Our services</p>
-        <div className={styles.copy} data-reveal>
-          <h2 id="services-heading">Expertise at<br /><span>every elevation.</span></h2>
+        <p className={`${styles.eyebrow} type-label`}>How we help</p>
+        <div className={styles.copy}>
+          <h2 id="services-heading" data-type-reveal><span className={`${styles.headingLead} type-line`}>Expertise at</span>{" "}<span className="type-line"><em>every</em>{" "}<span className={styles.elevation}>elevation.</span></span></h2>
           <p className={styles.intro}>When access is the challenge, experience is the solution. Explore what we can do for your structure.</p>
         </div>
         <div className={styles.serviceGrid} aria-label="Featured services">
