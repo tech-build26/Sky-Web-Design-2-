@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-08",
+  "origin": "http://127.0.0.1:3012",
+  "reference": "http://127.0.0.1:3013",
+  "layouts": [
+    {
+      "width": 1918,
+      "height": 911,
+      "overflow": 0,
+      "maximumGeometryDifference": 0,
+      "changedPixelChannelFraction": 0
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "overflow": 0,
+      "maximumGeometryDifference": 0,
+      "changedPixelChannelFraction": 0
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "overflow": 0,
+      "maximumGeometryDifference": 0,
+      "changedPixelChannelFraction": 0
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "overflow": 0,
+      "maximumGeometryDifference": 0,
+      "changedPixelChannelFraction": 0
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": 0,
+      "maximumGeometryDifference": 0,
+      "changedPixelChannelFraction": 0
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": 0,
+      "maximumGeometryDifference": 0,
+      "changedPixelChannelFraction": 0
+    },
+    {
+      "width": 320,
+      "height": 700,
+      "overflow": 0,
+      "maximumGeometryDifference": 0,
+      "changedPixelChannelFraction": 0
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "overflow": 0,
+      "maximumGeometryDifference": 0,
+      "changedPixelChannelFraction": 0
+    }
+  ],
+  "checks": [
+    "16 runtime assets copied and served byte-for-byte.",
+    "Four brand links, keyboard captions, ticker pause, and reduced motion preserved.",
+    "Both Skyriders links reach the existing hero; refresh and Back restore the gateway with isolated styles.",
+    "Message rotation, hover pause, pointer movement, modified click, animated departure, and Back passed.",
+    "Mobile touch captions and compact Skyriders handoff passed.",
+    "Desktop/mobile without JavaScript retain the scene and native Skyriders navigation."
+  ],
+  "errors": [],
+  "result": "passed",
+  "assetManifestHash": "c212a4bf4a20657d0e0585e13671cf383fcf45b9cc4dc977ac476419d5cedfbd"
+}

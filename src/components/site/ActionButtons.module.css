@@ -1,0 +1,82 @@
+/* Uiverse.io / faizanullah1999: angular sweep and split outer frame.
+   Adapted to Skyriders colours, typography and anchor navigation. */
+.tacticalFrame { position: relative; display: inline-block; width: fit-content; height: fit-content; }
+.tacticalFrame::before, .tacticalFrame::after {
+  content: ""; position: absolute; left: -5px; width: calc(100% + 10px); height: 50%;
+  border: 1px solid #72c7ff; pointer-events: none; transition: border-color 350ms;
+}
+.tacticalFrame::before { top: -5px; border-bottom: 0; }
+.tacticalFrame::after { bottom: -5px; border-top: 0; }
+.tacticalFrame:has(.tactical:is(:hover, :focus-visible))::before,
+.tacticalFrame:has(.tactical:is(:hover, :focus-visible))::after { border-color: #d7f3ff; }
+.tacticalFrame > .tactical {
+  position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: .8rem 2.1rem; border: 1px solid #071c35; border-radius: 0;
+  font-family: var(--type-body); font-size: 13px; font-weight: 700; line-height: 1.4;
+  letter-spacing: .05rem; text-transform: uppercase; white-space: nowrap; color: #fff;
+  background-color: #071c35;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 531.28 200'%3E%3Cpath fill='%230067e6' d='M415.81 200H0L115.47 0h415.81Z'/%3E%3C/svg%3E");
+  background-size: 200%; background-position: 200%; background-repeat: no-repeat;
+  transition: background-position 500ms ease-in-out, border-color 350ms, color 350ms;
+}
+.tactical:is(:hover, :focus-visible) { border-color: #0067e6; background-position: 40%; }
+.tactical::before, .tactical::after { content: ""; position: absolute; width: 4px; height: 4px; transition: background-color 250ms; }
+.tactical::before { top: -1px; left: -1px; background: #071c35; }
+.tactical::after { right: -1px; bottom: -1px; background: #58c4ff; }
+.tactical:is(:hover, :focus-visible)::before, .tactical:is(:hover, :focus-visible)::after { background: #fff; }
+
+/* Uiverse.io / mrhyddenn: skewed face, counter-skewed label, filling sweep. */
+.skew {
+  position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center;
+  min-height: 54px; padding: 14px 28px; border: 1px solid #c7ddeb; border-radius: 0;
+  background: #fff; color: #071c35; transform: skew(-21deg); cursor: pointer;
+  font: 600 15px/1.4 var(--type-body); letter-spacing: .045em; text-transform: uppercase;
+  transition: color 500ms, border-color 500ms, box-shadow 500ms;
+}
+.skew > span { display: inline-flex; align-items: center; justify-content: center; gap: 22px; transform: skew(21deg); }
+.skew svg { width: 22px; height: 22px; flex-shrink: 0; transition: translate 500ms var(--ease-out); }
+.skew::before { content: ""; position: absolute; inset: 0 100% 0 0; z-index: -1; background: #071c35; opacity: 0; transition: right 550ms var(--ease-out), opacity 400ms; }
+.skew:is(:hover, :focus-visible) { color: #fff; border-color: #071c35; box-shadow: 0 12px 26px #071c3524; }
+.skew:is(:hover, :focus-visible)::before { right: 0; opacity: 1; }
+.skew:is(:hover, :focus-visible) svg { translate: 4px 0; }
+
+/* Services: technical frame with a rising blue face and sliding arrow box. */
+.service {
+  position: relative; isolation: isolate; overflow: hidden; display: inline-flex;
+  align-items: center; justify-content: space-between; gap: 28px; min-height: 56px;
+  padding: 8px 8px 8px 26px; color: #e4f5ff; background: #071c35b3;
+  border: 1px solid #79cfff80; border-radius: 3px 18px 3px 3px; cursor: pointer;
+  font: 600 13px/1.4 var(--type-body); letter-spacing: .04em; text-transform: uppercase;
+  transition: border-color 450ms, box-shadow 450ms, translate 450ms var(--ease-out);
+}
+.service::before { content: ""; position: absolute; inset: 0; z-index: -1; background: #0067e6; transform: translateY(105%); transition: transform 550ms var(--ease-out); }
+.service:is(:hover, :focus-visible) { border-color: #adE6ff; box-shadow: 0 12px 32px #00b0f026; translate: 0 -3px; }
+.service:is(:hover, :focus-visible)::before { transform: translateY(0); }
+.serviceArrow { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid #79cfff66; border-radius: 2px 12px 2px 2px; background: #79cfff15; transition: background 450ms; }
+.serviceArrow svg { width: 22px; height: 22px; transition: transform 450ms var(--ease-out); }
+.service:is(:hover, :focus-visible) .serviceArrow { background: #fff; color: #0067e6; }
+.service:is(:hover, :focus-visible) svg { transform: rotate(-35deg); }
+
+/* Uiverse.io / vinodjangid07: circle expands into a labelled action.
+   The surrounding layout reserves the expanded width to avoid reflow. */
+.expanding {
+  position: relative; display: flex; align-items: center; width: 54px; height: 54px;
+  overflow: hidden; border: 0; border-radius: 50%; background: #0067e6; color: #fff;
+  box-shadow: 2px 2px 12px #071c3526; cursor: pointer;
+  transition: width 550ms var(--ease-out), border-radius 550ms, background 400ms, box-shadow 400ms;
+}
+.sign { display: grid; place-items: center; flex: 0 0 54px; width: 54px; height: 54px; }
+.sign svg { width: 22px; height: 22px; transition: transform 550ms var(--ease-out); }
+.expandingText { position: absolute; left: 58px; right: 18px; opacity: 0; transform: translateX(12px); font: 600 14px/1.35 var(--type-body); transition: opacity 350ms 80ms, transform 500ms var(--ease-out); }
+.expanding:is(:hover, :focus-visible) { width: 100%; border-radius: 30px; background: #0057d4; box-shadow: 0 10px 26px #0067e629; }
+.expanding:is(:hover, :focus-visible) .expandingText { opacity: 1; transform: translateX(0); }
+.expanding:is(:hover, :focus-visible) .sign svg { transform: translateX(3px); }
+.expanding:active { translate: 2px 2px; }
+/* Touch users can always read the CTA; no hover is required to discover it. */
+@media (hover: none), (pointer: coarse), (max-width: 700px) {
+  .expanding { width: 100%; border-radius: 30px; }
+  .expandingText { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service:is(:hover, :focus-visible), .expanding:active { translate: none; }
+}

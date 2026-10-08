@@ -10,7 +10,7 @@ export function HeroServices() {
       <svg className={styles.servicesShape} viewBox="-14 0 882 234" preserveAspectRatio="none" aria-hidden="true"><path d={heroGeometry.servicePanel} fill="#f9fcff" stroke="#d7e7f4" strokeWidth="1" /></svg>
       <div className={styles.servicesContent}>
         <div className={styles.servicesHeader}>
-          <h2 id="hero-services-heading">How we help</h2>
+          <h2 id="hero-services-heading">Our expertise</h2>
           <a href="#services">View all <Arrow /></a>
         </div>
         <div className={styles.serviceTiles}>

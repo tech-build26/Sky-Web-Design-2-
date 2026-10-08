@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
+import "../globals.css";
+import "../motion.css";
 import { getSiteUrl } from "@/lib/site-url";
 
-const inter = localFont({ src: "./fonts/inter-latin-variable.woff2", weight: "100 900", display: "swap", variable: "--font-body", adjustFontFallback: false, fallback: ["Segoe UI", "sans-serif"] });
+const inter = localFont({ src: "../fonts/inter-latin-variable.woff2", weight: "100 900", display: "swap", variable: "--font-body", adjustFontFallback: false, fallback: ["Segoe UI", "sans-serif"] });
 const archivo = localFont({
   src: [
-    { path: "./fonts/archivo-latin-variable.woff2", weight: "100 900", style: "normal" },
-    { path: "./fonts/archivo-latin-italic-variable.woff2", weight: "100 900", style: "italic" },
+    { path: "../fonts/archivo-latin-variable.woff2", weight: "100 900", style: "normal" },
+    { path: "../fonts/archivo-latin-italic-variable.woff2", weight: "100 900", style: "italic" },
   ], display: "swap", variable: "--font-display", adjustFontFallback: false, fallback: ["Segoe UI", "sans-serif"],
 });
 
@@ -18,8 +19,8 @@ export const metadata: Metadata = {
   title: "Skyriders | Access Beyond Limits",
   description: "Skyriders Access Specialists: industrial rope access, inspection and maintenance in South Africa.",
   applicationName: "Skyriders",
-  alternates: siteUrl ? { canonical: "/" } : undefined,
-  openGraph: { title: "Skyriders | Access Beyond Limits", description: "Specialist rope access, inspection and maintenance. South African expertise since 1999.", siteName: "Skyriders", locale: "en_ZA", type: "website", ...(siteUrl ? { url: "/" } : {}) },
+  alternates: siteUrl ? { canonical: "/home" } : undefined,
+  openGraph: { title: "Skyriders | Access Beyond Limits", description: "Specialist rope access, inspection and maintenance. South African expertise since 1999.", siteName: "Skyriders", locale: "en_ZA", type: "website", ...(siteUrl ? { url: "/home" } : {}) },
   twitter: { card: "summary_large_image", title: "Skyriders | Access Beyond Limits", description: "Specialist rope access, inspection and maintenance in South Africa." },
   robots: { index: indexable, follow: indexable },
 };
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-ZA" className={`${inter.variable} ${archivo.variable}`}>
-      <body>
+      <body suppressHydrationWarning>
         <a className="skip-link" href="#hero-heading">Skip to content</a>
         {children}
       </body>

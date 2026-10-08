@@ -57,7 +57,7 @@ export function ContactForm({ emailDeliveryEnabled }: { emailDeliveryEnabled: bo
     }
   }
 
-  return <form id="project-enquiry" className={styles.form} onSubmit={submit}>
+  return <form id="project-enquiry" className={styles.form} data-reveal="right" data-delay="2" onSubmit={submit}>
     <div className={styles.formHeading}><span className={styles.formNumber}>01 /</span><div><h3>Tell us about your project.</h3><p>The right details help us plan the right approach.</p></div></div>
     <div className={styles.fields}>
       <label>Full name <span>*</span><input name="name" required autoComplete="name" maxLength={100} placeholder="Your name" /></label>
@@ -71,7 +71,7 @@ export function ContactForm({ emailDeliveryEnabled }: { emailDeliveryEnabled: bo
     </div>
     <label className={styles.honeypot} aria-hidden="true">Website<input name="website" tabIndex={-1} autoComplete="off" /></label>
     <label className={styles.consent}><input name="consent" type="checkbox" required /><span>I agree to be contacted by Skyriders about this enquiry.</span></label>
-    <div className={styles.formBottom}><span>Fields marked * are required.</span><button className={styles.submit} type="submit" disabled={busy}>{busy ? "Sending…" : emailDeliveryEnabled ? "Send project enquiry" : "Prepare enquiry email"}<Arrow /></button></div>
+    <div className={styles.formBottom}><span>Fields marked * are required.</span><button className={styles.submit} data-button type="submit" disabled={busy}>{busy ? "Sending…" : emailDeliveryEnabled ? "Send project enquiry" : "Prepare enquiry email"}<Arrow /></button></div>
     {!emailDeliveryEnabled && <p className={styles.deliveryNote}>Your details will be prepared for you to send using your email app.</p>}
     {status && <div className={styles.feedback} data-error={failed} role={failed ? "alert" : "status"}><p>{status}</p>{mailLink && <a href={mailLink}>Open email app <Arrow /></a>}</div>}
     <noscript><p>Please email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> to discuss your project.</p></noscript>

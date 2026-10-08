@@ -72,3 +72,19 @@
 @media (max-width: 700px) { .inner { padding: 56px 20px 0; } .header { margin-bottom: 32px; } .header h2 { font-size: 43px; } .header > p:last-child { font-size: 14px; } .header br:last-child { display: none; } .contactGrid { grid-template-columns: 1fr; gap: 32px; } .offices { grid-template-columns: 1fr 1fr; gap: 16px; } .whatsappCard h3 { font-size: 30px; } .form { padding: 24px 20px; } .formHeading { gap: 12px; } .formHeading h3 { font-size: 21px; } .fields { gap: 18px 12px; } .formBottom { flex-direction: column-reverse; align-items: stretch; } .formBottom > span { text-align: center; } .contractors { margin-top: 44px; padding-top: 28px; } .contractorHead { align-items: flex-end; gap: 12px; } .contractorHead h3 { max-width: 230px; font-size: 22px; } .logo { width: 145px; flex-basis: 145px; } }
 @media (max-width: 380px) { .fields, .offices { grid-template-columns: 1fr; } .header h2 { font-size: 37px; } .whatsappLink { font-size: 12px; } .contractorHead h3 { font-size: 19px; } }
 @media (max-width: 700px) { .fields label { font-size: 12px; } .fields input, .fields select, .fields textarea { font-size: 16px; } }
+.whatsappCard { transition: transform 500ms var(--ease-out), box-shadow 500ms, border-color 500ms; }
+.whatsappCard:is(:hover, :focus-within) { transform: translateY(-4px); border-color: #4683b5; box-shadow: 0 18px 40px #071c3526; }
+.chatIcon { animation: chatGlow 5.5s ease-in-out infinite; }
+@keyframes chatGlow { 0%, 100% { filter: drop-shadow(0 0 0 #25d36600); } 50% { filter: drop-shadow(0 0 8px #25d36650); } }
+.form { transition: box-shadow 450ms, border-color 450ms; }
+.form:focus-within { border-color: #acd0f0; box-shadow: 0 20px 60px #0067e60d; }
+.fields label { transition: color 350ms; }
+.fields label:focus-within { color: #0067e6; }
+.fields input, .fields select, .fields textarea { transition: background 350ms, border-color 350ms, box-shadow 350ms; }
+.fields input:focus, .fields select:focus, .fields textarea:focus { background: #fff; }
+.emailContact svg, .offices svg, .submit svg { transition: transform 400ms var(--ease-out); }
+.emailContact a:is(:hover, :focus-visible) svg, .offices a:is(:hover, :focus-visible) svg, .submit:is(:hover, :focus-visible) svg { transform: translateX(4px); }
+.logo img { transition: transform 500ms var(--ease-out); }
+.logo:hover img { transform: scale(1.08); }
+.section[data-motion-visible="false"] .chatIcon { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .whatsappCard:is(:hover, :focus-within), .logo:hover img { transform: none; } }

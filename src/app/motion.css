@@ -1,0 +1,71 @@
+/* Shared choreography. Entrances finish without retaining transforms, so hover
+   effects and the original geometry remain free to move afterward. */
+:root { --motion-reveal: 950ms; --motion-hover: 380ms; }
+[data-delay="1"] { --reveal-delay: 130ms; }
+[data-delay="2"] { --reveal-delay: 260ms; }
+[data-delay="3"] { --reveal-delay: 390ms; }
+[data-delay="4"] { --reveal-delay: 520ms; }
+[data-delay="5"] { --reveal-delay: 650ms; }
+[data-reveal="left"] { --reveal-x: -48px; --reveal-y: 0px; }
+[data-reveal="right"] { --reveal-x: 48px; --reveal-y: 0px; }
+[data-reveal="top"] { --reveal-y: -38px; }
+[data-reveal="zoom"] { --reveal-scale: .91; --reveal-y: 0px; }
+[data-reveal].motion-pending, [data-type-reveal].motion-pending { opacity: 0; }
+[data-reveal].arrived {
+  animation: motionArrival var(--motion-reveal) var(--ease-out) var(--reveal-delay, 0ms) backwards;
+}
+[data-reveal="mask"].arrived { animation-name: motionUncover; }
+[data-type-reveal].type-arrived .type-line {
+  animation: motionUncover 1100ms var(--ease-out) var(--reveal-delay, 0ms) backwards;
+}
+[data-type-reveal].type-arrived .type-line:nth-child(2) { animation-delay: calc(var(--reveal-delay, 0ms) + 150ms); }
+[data-type-reveal].type-arrived .type-line:nth-child(3) { animation-delay: calc(var(--reveal-delay, 0ms) + 300ms); }
+@keyframes motionArrival {
+  from { opacity: 0; transform: translate3d(var(--reveal-x, 0px), var(--reveal-y, 34px), 0) scale(var(--reveal-scale, 1)); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes motionUncover {
+  from { opacity: 0; clip-path: inset(0 0 100% 0); transform: translateY(28px); }
+  to { opacity: 1; clip-path: inset(0); transform: none; }
+}
+[data-ambient] { transform-box: fill-box; transform-origin: center; }
+[data-ambient="float"] { animation: shapeDrift 7s ease-in-out infinite alternate; }
+[data-ambient="float"]:nth-child(2n) { animation-duration: 9s; animation-delay: -3s; }
+[data-ambient="pulse"] { animation: shapePulse 5s ease-in-out infinite; }
+[data-ambient="trace"] { stroke-dasharray: 140 24; animation: shapeTrace 24s linear infinite; }
+/* Individual translate composes with the entrance transform on the same shape. */
+[data-ambient="float"][data-reveal].arrived {
+  animation: motionArrival var(--motion-reveal) var(--ease-out) var(--reveal-delay, 0ms) backwards,
+    shapeDrift 8s ease-in-out calc(var(--reveal-delay, 0ms) + 950ms) infinite alternate;
+}
+@keyframes shapeDrift { from { translate: 0 -8px; } to { translate: 5px 10px; } }
+@keyframes shapePulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+@keyframes shapeTrace { to { stroke-dashoffset: -656; } }
+[data-motion-visible="false"] [data-ambient] { animation-play-state: paused; }
+
+.button, [data-button] {
+  position: relative; isolation: isolate; overflow: hidden;
+  transition: background var(--motion-hover), color var(--motion-hover), border-color var(--motion-hover),
+    box-shadow var(--motion-hover), transform var(--motion-hover) var(--ease-out);
+}
+.button::after, [data-button]::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(110deg, transparent 25%, #fff3 50%, transparent 75%);
+  translate: -120% 0; transition: translate 800ms var(--ease-out);
+}
+.button:is(:hover, :focus-visible), [data-button]:is(:hover, :focus-visible) {
+  transform: translateY(-3px); box-shadow: 0 12px 30px #0067e630;
+}
+.button:is(:hover, :focus-visible)::after, [data-button]:is(:hover, :focus-visible)::after { translate: 120% 0; }
+.button:active, [data-button]:active { transform: translateY(0) scale(.98); }
+[data-button]:disabled { transform: none; box-shadow: none; }
+[data-button]:disabled::after { display: none; }
+
+@media (max-width: 700px) {
+  [data-reveal="left"] { --reveal-x: -24px; }
+  [data-reveal="right"] { --reveal-x: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal].motion-pending, [data-type-reveal].motion-pending { opacity: 1; }
+  .button:is(:hover, :focus-visible), [data-button]:is(:hover, :focus-visible) { transform: none; }
+}

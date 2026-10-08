@@ -68,18 +68,18 @@ export function SkyIDivision() {
       <div className={styles.shade} aria-hidden="true" />
       <div className={styles.inner}>
         <div className={styles.copy}>
-          <p className={`${styles.eyebrow} type-label`}><span />The Sky I division</p>
+          <p className={`${styles.eyebrow} type-label`} data-reveal="left"><span />The Sky I division</p>
           <h2 id="sky-heading" data-type-reveal><span className={`${styles.perspective} type-line`}>A different <em>perspective.</em></span>{" "}<span className={`${styles.precision} type-line`}>The same precision.</span></h2>
-          <p className={styles.description}>A closer look. Even in the hardest places to reach. Sky I brings industrial drone inspection into complex structures and confined spaces, helping you see the condition of your assets from a new perspective.</p>
+          <p className={styles.description} data-reveal="left" data-delay="2">A closer look. Even in the hardest places to reach. Sky I brings industrial drone inspection into complex structures and confined spaces, helping you see the condition of your assets from a new perspective.</p>
           <ul className={styles.applications} aria-label="Inspection applications">
-            <li>Internal inspections</li><li>Confined spaces</li><li>Industrial assets</li>
+            <li data-reveal="bottom" data-delay="2">Internal inspections</li><li data-reveal="bottom" data-delay="3">Confined spaces</li><li data-reveal="bottom" data-delay="4">Industrial assets</li>
           </ul>
-          <a href="http://skyi.co.za/" className={styles.visit}>
+          <a href="http://skyi.co.za/" className={styles.visit} data-reveal data-delay="4" data-button>
             <span>Visit Sky I</span><span className={styles.visitArrow}><Arrow /></span>
           </a>
         </div>
         <div className={styles.stage}>
-          <div className={styles.target} aria-hidden="true"><span /><span /><span /><span /></div>
+          <div className={styles.target} data-reveal="zoom" data-delay="2" aria-hidden="true"><span /><span /><span /><span /></div>
           <div className={styles.arrival}>
             <div ref={parallaxRef} className={styles.parallax}>
               <div className={styles.hover}>
@@ -91,7 +91,7 @@ export function SkyIDivision() {
           </div>
         </div>
       </div>
-      <div className={styles.bottomLine} aria-hidden="true"><span>SKY I / INDUSTRIAL DRONE INSPECTION</span><span>A NEW ANGLE ON ACCESS</span></div>
+      <div className={styles.bottomLine} data-reveal="mask" data-delay="4" aria-hidden="true"><span>SKY I / INDUSTRIAL DRONE INSPECTION</span><span>A NEW ANGLE ON ACCESS</span></div>
     </section>
   );
 }

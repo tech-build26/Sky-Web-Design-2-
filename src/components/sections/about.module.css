@@ -26,13 +26,6 @@
 .statement span:last-child { color: #0072c7; }
 .body { font: 400 clamp(15px, 1.1cqw, 18px)/var(--type-body-leading) var(--type-body); margin-top: 28px; max-width: 48ch; color: #53687d; }
 .body p { margin: 0 0 20px; }
-.explore { position: relative; display: inline-flex; align-items: center; justify-content: space-between; gap: 3cqw; min-width: 19.92cqw; min-height: 4.2cqw; border-radius: 999px; padding: .9cqw 2.2cqw; margin-top: .2cqw; color: #fff; background: #006bd9; font: 500 15px/1.4 var(--type-body); overflow: hidden; isolation: isolate; transition: background 220ms, box-shadow 220ms, transform 220ms; }
-.explore::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(110deg, transparent 15%, #fff3 50%, transparent 80%); transform: translateX(-110%); transition: transform 700ms var(--ease-out); }
-.exploreArrow { display: grid; place-items: center; }
-.explore svg { width: 1.6cqw; height: 1.6cqw; transition: transform 300ms var(--ease-out); }
-.explore:is(:hover, :focus-visible) { background: #005bc4; box-shadow: 0 12px 28px #006ad929; transform: translateY(-2px); }
-.explore:is(:hover, :focus-visible)::before { transform: translateX(110%); }
-.explore:is(:hover, :focus-visible) svg { transform: translateX(5px); }
 @media (max-width: 1250px) and (min-width: 701px) {
   .stage { aspect-ratio: auto; min-height: 700px; display: grid; grid-template-columns: 48% 48%; gap: 4%; padding: 64px 32px 64px 0; }
   .artwork { position: relative; width: 100%; height: auto; aspect-ratio: 1094 / 1143; align-self: center; }
@@ -44,8 +37,6 @@
   .body { font-size: 16px; margin-top: 24px; }
   .body p { margin-bottom: 24px; }
   .referenceBreak { display: none; }
-  .explore { min-width: 210px; min-height: 56px; padding: 16px 24px; font-size: 15px; gap: 40px; }
-  .explore svg { width: 24px; height: 24px; }
   .since span { font-size: clamp(11px, 1.4vw, 16px); }
   .since strong { font-size: clamp(16px, 2vw, 23px); }
 }
@@ -60,10 +51,26 @@
   .body { font-size: 16px; line-height: var(--type-body-leading); margin-top: 28px; }
   .body p { margin-bottom: 24px; }
   .referenceBreak { display: none; }
-  .explore { min-width: 210px; min-height: 56px; font-size: 15px; gap: 40px; padding: 16px 26px; margin-top: 4px; }
-  .explore svg { width: 24px; height: 24px; }
   .insetFrame { padding: 10px; border-width: 1px; }
   .since { box-shadow: inset 0 0 0 5px #071d32, inset 0 0 0 6px #0074ce; }
   .since span { font-size: clamp(11px, 3vw, 20px); }
   .since strong { font-size: clamp(16px, 4vw, 27px); }
 }
+/* The collage enters in layers; the date badge keeps a quiet living halo. */
+.artwork { overflow: clip; }
+.since { transition: transform 500ms var(--ease-out), box-shadow 500ms; }
+.since::after { content: ""; position: absolute; inset: -7%; border-radius: 50%; border: 1px solid #168eee66; animation: dateHalo 5.5s ease-in-out infinite; }
+.since:hover { transform: scale(1.06) rotate(-4deg); }
+@keyframes dateHalo { 0%, 100% { scale: .98; opacity: .4; } 50% { scale: 1.09; opacity: .85; } }
+.mainPhoto img { transition: transform 1100ms var(--ease-out); }
+.insetPhoto img { transition: transform 1100ms var(--ease-out); }
+.artwork:hover .mainPhoto img { transform: scale(1.035); }
+.artwork:hover .insetPhoto img { transform: scale(1.25); }
+.about[data-motion-visible="false"] .since::after { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .since:hover, .artwork:hover .mainPhoto img { transform: none; }
+  .artwork:hover .insetPhoto img { transform: scale(1.2); }
+}
+
+.explore { width: fit-content; margin: 4px 0 0 10px; }
+.explore > a { min-width: clamp(210px, 19.92cqw, 330px); }

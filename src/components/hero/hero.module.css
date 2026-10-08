@@ -1,7 +1,7 @@
 .hero { isolation: isolate; background: #f8fcff; }
 .stage { position: relative; container-type: inline-size; max-width: var(--stage-max); margin: auto; aspect-ratio: 1672 / 941; background: radial-gradient(ellipse at 35% 28%, #fff 0, #f7fbff 48%, #eef6fd 100%); }
 .curves { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 20; }
-.mainPhoto { position: absolute; left: 41.3876%; top: 0; width: 58.6124%; height: 100%; z-index: 10; background: #98b4cb; border-radius: 24px; }
+.mainPhoto { position: absolute; left: 41.3876%; top: 0; width: 58.6124%; height: 100%; z-index: 10; background: #98b4cb; border-radius: 24px; overflow: hidden; }
 @supports (clip-path: url("#test")) { .mainPhoto { border-radius: 0; } }
 .mainImage { object-fit: cover; object-position: var(--photo-position, 69% 50%); }
 .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 950ms var(--ease-out); }
@@ -13,7 +13,7 @@
 .desktopNav { grid-column: 2; display: flex; align-items: center; gap: 2.25cqw; font-size: .83cqw; font-weight: 500; color: #14233a; }
 .desktopNav > a { padding: 16px 0; white-space: nowrap; }
 .desktopNav > a:hover { color: var(--color-action); }
-.headerCta { grid-column: 3; font-size: .85cqw; gap: 1cqw; padding: .75cqw 1.75cqw; min-height: 2.8cqw; box-shadow: 0 0 24px #009dff35; border: 1px solid #26b6ff; }
+.headerCta { grid-column: 3; justify-self: end; margin-right: 5px; }
 .headerCta svg { width: 1.3cqw; height: 1.3cqw; }
 .dropdown { position: relative; }
 .dropdown summary { list-style: none; display: flex; gap: .6cqw; align-items: center; padding: 16px 0; cursor: pointer; white-space: nowrap; }
@@ -35,20 +35,21 @@
 .headline > span:nth-child(3) { transform: none; }
 .blueWord { color: #0067e6; }
 @supports (-webkit-text-stroke: 1px #0067e6) { .headline .blueWord { color: transparent; -webkit-text-stroke: 1.5px #0067e6; } }
+.beyondAccent { color: #004eb8; -webkit-text-stroke: 0; }
+@supports (background-clip: text) {
+  .beyondAccent { background: linear-gradient(90deg, #004eb82e, #004eb8); background-clip: text; -webkit-background-clip: text; color: transparent; }
+}
 .description { font-size: 1.35cqw; line-height: 1.42; color: #152949; margin: .73cqw 0 0; letter-spacing: -.025em; }
-.primaryCta { margin-top: .95cqw; padding: .95cqw 2.2cqw; min-height: 3.45cqw; font-size: .98cqw; gap: 1cqw; }
+.primaryCta { width: fit-content; margin-top: .95cqw; margin-left: 10px; }
 .primaryCta svg { width: 1.5cqw; height: 1.5cqw; }
 .specialist { position: absolute; z-index: 40; left: 33.85%; top: 39.25%; margin: 0; font-size: .6cqw; line-height: 1.65; letter-spacing: .22em; text-transform: uppercase; color: #2e4c77; }
-.rightCaption { position: absolute; z-index: 40; top: 13.4%; right: 4.35%; margin: 0; font-size: .72cqw; line-height: 1.75; letter-spacing: .25em; text-transform: uppercase; color: #e5edf6; }
-.supportingWindows { display: contents; }
-.supportWindow { position: absolute; z-index: 30; height: 12.65%; }
-.supportWindow > div { position: relative; width: 100%; height: 100%; overflow: hidden; background: #173e61; }
-.inspectionWindow { left: 79.25%; top: 26.04%; width: 14.05%; }
-.droneWindow { left: 83.07%; top: 39.43%; width: 15.2%; }
-.supportWindow img { object-fit: cover; object-position: 57% 45%; }
-.supportWindow span { position: absolute; right: 10%; bottom: 12%; width: 2cqw; height: 2cqw; display: grid; place-items: center; border-radius: 50%; color: #fff; border: 1px solid #e4f6ff; background: #072c4570; }
-.supportWindow span svg { width: 1.3cqw; }
-.supportWindow:hover span { background: var(--color-action); }
+.rightCaption { position: absolute; z-index: 40; top: 32%; right: 4.35%; margin: 0; padding: .15cqw 0 .3cqw 1.2cqw; text-transform: uppercase; color: #e5edf6; }
+.rightCaption::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: linear-gradient(#61c4ff, #61c4ff20); }
+.rightCaption::after { content: ""; position: absolute; top: 0; left: -2px; width: 5px; height: 5px; border-radius: 50%; background: #80d0ff; }
+.captionLead { display: block; font-size: max(12px, 1.05cqw); font-weight: 500; line-height: 1.4; letter-spacing: .15em; }
+.captionBridge { display: block; margin: .65cqw 0; font-size: max(10px, .58cqw); line-height: 1.5; letter-spacing: .28em; color: #b8cbdc; }
+.captionEmphasis { display: block; font-family: var(--type-display); font-size: max(16px, 1.25cqw); font-weight: 650; line-height: 1.25; letter-spacing: .035em; color: #f5fbff; }
+.captionEmphasis > span { color: #80d0ff; }
 .photoControls { position: absolute; z-index: 45; right: .2%; top: 24.45%; display: flex; flex-direction: column; align-items: center; color: white; }
 .photoControls::after { content: ""; position: absolute; width: 1px; background: #c9e1f240; top: 8px; bottom: -120px; left: 50%; z-index: -1; }
 .photoControls button { cursor: pointer; display: grid; place-items: center; padding: 0; width: 44px; height: 44px; border: 0; background: transparent; color: white; }
@@ -86,16 +87,8 @@
 .skyBadge:focus-visible { outline-color: #a6eaff; }
 .divisionCaption { position: absolute; z-index: 40; bottom: 5.3%; right: 2.4%; margin: 0; color: #d2e9fc; font-size: .61cqw; line-height: 1.75; letter-spacing: .24em; text-transform: uppercase; padding-left: 1.3cqw; border-left: 1px solid #41bfff; }
 
-@keyframes settle { from { opacity: .15; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-@keyframes photoSettle { from { opacity: .4; } to { opacity: 1; } }
-.header { animation: settle 500ms var(--ease-out) both; }
-.intro { animation: settle 800ms var(--ease-out) both; }
-.mainPhoto { animation: photoSettle 1100ms var(--ease-out) both; }
-.supportWindow { animation: settle 800ms var(--ease-out) 100ms both; }
-.servicesPanel { animation: settle 700ms var(--ease-out) 180ms both; }
-.skyBadge { animation: photoSettle 850ms var(--ease-out) 180ms both; }
 .desktopNav { font-size: max(12px, .83cqw); }
-.headerCta, .primaryCta { font-size: max(14px, .98cqw); min-height: 44px; }
+
 .servicesHeader > a { min-height: 44px; }
 .servicesContent { padding-top: .25cqw; }
 
@@ -104,22 +97,17 @@
   .stage { aspect-ratio: auto; min-height: 850px; }
   .header { height: 94px; grid-template-columns: 24% 1fr auto; }
   .desktopNav { gap: 18px; font-size: 12px; }
-  .headerCta { padding: 12px 18px; font-size: 12px; }
+
   .brand { width: 150px; height: 113px; }
   .brandImage { width: 115px; }
   .intro { top: 150px; width: 57%; }
   .eyebrow { font-size: 9px; }
   .headline { font-size: 65px; margin-top: 20px; }
   .description { font-size: 18px; max-width: 480px; margin-top: 20px; }
-  .primaryCta { font-size: 15px; margin-top: 24px; padding: 16px 26px; }
+  .primaryCta { margin-top: 24px; }
   .primaryCta svg { width: 22px; height: 22px; }
   .specialist, .titleOrnament { display: none; }
-  .rightCaption { font-size: 10px; top: 130px; }
-  .supportWindow { height: 112px; }
-  .inspectionWindow { left: auto; right: 6%; width: 20%; top: 255px; }
-  .droneWindow { left: auto; right: 2%; width: 22%; top: 383px; }
-  .supportWindow span { width: 30px; height: 30px; }
-  .supportWindow span svg { width: 20px; }
+  .rightCaption { top: 285px; padding-left: 16px; }
   .servicesPanel { top: 525px; width: 59%; height: 230px; }
   .servicesHeader h2, .servicesHeader > a { font-size: 10px; }
   .servicesContent { padding: 22px 24px; }
@@ -144,7 +132,7 @@
   .header { position: relative; top: auto; left: auto; right: auto; height: 126px; display: flex; align-items: center; justify-content: flex-end; border-bottom: 1px solid var(--color-line); }
   .brand { width: 140px; height: 116px; top: 0; left: 0; }
   .brandImage { width: 116px; }
-  .desktopNav, .headerCta { display: none; }
+  .desktopNav, .header .headerCta { display: none; }
   .mobileMenu { position: relative; display: block; }
   .mobileMenu summary { display: flex; align-items: center; justify-content: space-between; min-height: 48px; gap: 16px; padding: 12px 0 12px 16px; list-style: none; font-size: 15px; font-weight: 500; cursor: pointer; }
   .menuLines { display: grid; gap: 6px; width: 24px; }
@@ -153,6 +141,7 @@
   .mobilePanel a { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 15px 12px; min-height: 48px; font-size: 16px; }
   .mobilePanel a:hover { background: #eff6fc; color: var(--color-action); }
   .mobilePanel svg { width: 22px; }
+  .mobilePanel > span { display: block; width: fit-content; margin: 14px 12px 12px; }
   .intro { position: relative; left: auto; top: auto; width: 100%; order: 1; padding: 36px 0 32px; }
   .eyebrow { font-size: 10px; gap: 8px; letter-spacing: .14em; white-space: normal; flex-wrap: wrap; }
   .eyebrow i { display: none; }
@@ -160,7 +149,7 @@
   .headline > span, .headline > span:nth-child(2), .headline > span:nth-child(3) { transform: none; }
   .description { max-width: 480px; font-size: 18px; margin-top: 24px; line-height: 1.55; letter-spacing: -.015em; }
   .desktopBreak { display: none; }
-  .primaryCta { margin-top: 24px; padding: 16px 28px; min-height: 54px; font-size: 16px; gap: 28px; }
+  .primaryCta { margin-top: 24px; }
   .primaryCta svg { width: 24px; height: 24px; }
   .mainPhoto { position: relative; order: 2; left: auto; width: 100%; height: clamp(360px, 85vw, 580px); border-radius: 44px 6px 70px 6px; clip-path: polygon(0 7%, 80% 0, 100% 0, 100% 92%, 20% 100%, 0 100%) !important; }
   .mainImage { object-position: var(--mobile-photo-position, 67% 50%); }
@@ -171,10 +160,6 @@
   .photoControls button span { width: 6px; height: 6px; background: #a0b8ca; }
   .photoControls button[aria-pressed="true"] span { background: var(--color-action); box-shadow: none; }
   .specialist, .rightCaption, .divisionCaption { display: none; }
-  .supportingWindows { display: grid; order: 4; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0 0 26px; }
-  .supportWindow { position: relative; width: 100%; height: clamp(110px, 25vw, 180px); top: auto; left: auto; right: auto; }
-  .supportWindow span { width: 30px; height: 30px; }
-  .supportWindow span svg { width: 20px; }
   .servicesPanel { position: relative; order: 5; left: auto; top: auto; width: 100%; height: auto; }
   .servicesShape { display: none; }
   .servicesContent { padding: 24px 0; border-top: 1px solid var(--color-line); border-bottom: 1px solid var(--color-line); }
@@ -202,3 +187,116 @@
   .tileLabel { padding: 14px; font-size: 16px; border-radius: 0 6px 6px 0; }
   .industryStrip a { flex-basis: calc(50% - 8px); font-size: 11px; }
 }
+/* A composed opening: logo, navigation, lettering, then supporting details. */
+@keyframes enterTop { from { opacity: 0; transform: translateY(-36px); } to { opacity: 1; transform: none; } }
+@keyframes enterLeft { from { opacity: 0; transform: translateX(-38px); } to { opacity: 1; transform: none; } }
+@keyframes enterBottom { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: none; } }
+@keyframes uncover { from { opacity: 0; clip-path: inset(0 0 100% 0); transform: translateY(34px); } to { opacity: 1; clip-path: inset(0); transform: none; } }
+@keyframes imageArrival { from { opacity: 0; transform: scale(1.05); } to { opacity: 1; transform: none; } }
+.brand { animation: enterTop 1100ms var(--ease-out) 80ms backwards; transition: box-shadow 400ms, background 400ms; }
+.brandImage { transition: transform 500ms var(--ease-out); }
+.brand:is(:hover, :focus-visible) { box-shadow: 0 10px 32px #0067e638; background: #0c2a4b; }
+.brand:is(:hover, :focus-visible) .brandImage { transform: scale(1.06); }
+.desktopNav > *, .mobileMenu { animation: enterTop 900ms var(--ease-out) 220ms backwards; }
+.desktopNav > :nth-child(2) { animation-delay: 340ms; }
+.desktopNav > :nth-child(3) { animation-delay: 460ms; }
+.desktopNav > :nth-child(4) { animation-delay: 580ms; }
+.headerCta { animation: enterTop 1000ms var(--ease-out) 650ms backwards; }
+.desktopNav > a, .dropdown summary { position: relative; transition: color 300ms; }
+.desktopNav > a::after, .dropdown summary::after { content: ""; position: absolute; left: 0; right: 0; bottom: 8px; height: 1px; background: #0067e6; scale: 0 1; transform-origin: left; transition: scale 400ms var(--ease-out); }
+.desktopNav > a:is(:hover, :focus-visible)::after, .dropdown:is(:hover, [open]) summary::after { scale: 1; }
+.dropdown summary > svg { transition: rotate 350ms; }
+.dropdown[open] summary > svg { rotate: 180deg; }
+.dropdown[open] .dropdownPanel { animation: navArrival 500ms var(--ease-out) backwards; }
+.mobileMenu[open] .mobilePanel { animation: enterTop 450ms var(--ease-out) backwards; }
+.mobileMenu[open] .mobilePanel a { animation: enterLeft 550ms var(--ease-out) backwards; }
+.mobilePanel a:nth-child(2) { animation-delay: 60ms; }
+.mobilePanel a:nth-child(3) { animation-delay: 120ms; }
+.mobilePanel a:nth-child(4) { animation-delay: 180ms; }
+.mobilePanel a:nth-child(5) { animation-delay: 240ms; }
+.eyebrow { animation: enterLeft 1000ms var(--ease-out) 220ms backwards; }
+.headline > span { animation: uncover 1200ms var(--ease-out) 350ms backwards; }
+.headline > span:nth-child(2) { animation-delay: 520ms; }
+.headline > span:nth-child(3) { animation-delay: 690ms; }
+.description { animation: enterLeft 1050ms var(--ease-out) 800ms backwards; }
+.primaryCta { animation: enterBottom 950ms var(--ease-out) 980ms backwards; }
+.mainPhoto { animation: imageArrival 1600ms var(--ease-out) 120ms backwards; }
+.specialist { animation: uncover 1200ms var(--ease-out) 1000ms backwards; }
+.rightCaption > * { animation: uncover 1100ms var(--ease-out) 800ms backwards; }
+.rightCaption > :nth-child(2) { animation-delay: 980ms; }
+.rightCaption > :nth-child(3) { animation-delay: 1160ms; }
+.servicesShape { animation: enterLeft 1200ms var(--ease-out) 550ms backwards; }
+.servicesHeader { animation: enterLeft 950ms var(--ease-out) 750ms backwards; }
+.serviceTile { animation: enterBottom 1000ms var(--ease-out) 900ms backwards; transition: transform 450ms var(--ease-out), box-shadow 450ms; }
+.serviceTile:nth-child(2) { animation-delay: 1050ms; }
+.serviceTile:nth-child(3) { animation-delay: 1200ms; }
+.serviceTile:is(:hover, :focus-visible) { transform: translateY(-6px) scale(1.025); box-shadow: 0 14px 30px #071c3524; }
+.tileImage img { transition: transform 650ms var(--ease-out); }
+.serviceTile:is(:hover, :focus-visible) img { transform: scale(1.09); }
+.tileArrow { transition: background 350ms, color 350ms, transform 450ms var(--ease-out); }
+.serviceTile:is(:hover, :focus-visible) .tileArrow { transform: rotate(-35deg); background: var(--color-action); color: #fff; }
+.industryStrip > * { animation: enterBottom 950ms var(--ease-out) 1100ms backwards; }
+.industryStrip > :nth-child(2) { animation-delay: 1200ms; }
+.industryStrip > :nth-child(3) { animation-delay: 1300ms; }
+.industryStrip > :nth-child(4) { animation-delay: 1400ms; }
+.industryStrip > :nth-child(5) { animation-delay: 1500ms; }
+.industryStrip > :nth-child(6) { animation-delay: 1600ms; }
+.industryStrip a, .industryStrip svg { transition: transform 400ms var(--ease-out), color 350ms; }
+.industryStrip a:is(:hover, :focus-visible) svg { transform: translateY(-4px) rotate(-6deg); }
+.skyBadge { animation: imageArrival 1200ms var(--ease-out) 1100ms backwards; transition: transform 450ms var(--ease-out), box-shadow 450ms; }
+.skyBadge:is(:hover, :focus-visible) { transform: translateY(-5px) scale(1.05); }
+.skyBadge::before { animation: badgeHalo 5s ease-in-out infinite; }
+.divisionCaption { animation: uncover 1100ms var(--ease-out) 1400ms backwards; }
+@keyframes badgeHalo { 0%, 100% { opacity: .45; scale: 1; } 50% { opacity: 1; scale: 1.06; } }
+@keyframes blueprintDraw { from { opacity: 0; stroke-dashoffset: 2400; } to { opacity: .6; stroke-dashoffset: 0; } }
+.blueprint { stroke-dasharray: 2400; animation: blueprintDraw 3200ms var(--ease-out) 200ms backwards; }
+.titleOrnament > path { stroke-dasharray: 1400; animation: blueprintDraw 2600ms var(--ease-out) 450ms backwards; }
+.curveNode { transform-box: fill-box; transform-origin: center; animation: badgeHalo 6s ease-in-out infinite; }
+.divisionSweep { animation: imageArrival 1600ms var(--ease-out) 400ms backwards; }
+.hero[data-motion-visible="false"] .skyBadge::before, .hero[data-motion-visible="false"] .curveNode { animation-play-state: paused; }
+
+/* Three deliberately different photo transitions; the shade stays fixed. */
+.slide { opacity: 0; transition: none; }
+.slide[data-active="true"] { opacity: 1; z-index: 1; }
+.mainPhoto[data-changing="true"] .slide[data-previous="true"] { opacity: 1; }
+.mainPhoto[data-changing="true"][data-effect="fade"] .slide[data-active="true"] { animation: photoFade 2300ms ease-in-out both; }
+.mainPhoto[data-changing="true"][data-effect="diagonal"] .slide[data-active="true"] { animation: photoDiagonal 2500ms var(--ease-out) both; }
+@keyframes photoFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes photoDiagonal { from { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); } to { clip-path: polygon(0 0, 125% 0, 100% 100%, 0 100%); } }
+.photoShade { z-index: 3; }
+.tileTransition { position: absolute; inset: 0; z-index: 2; display: grid; grid-template-columns: repeat(var(--tile-columns), 1fr); grid-template-rows: repeat(var(--tile-rows), 1fr); pointer-events: none; perspective: 1400px; }
+.flipTile { position: relative; overflow: hidden; backface-visibility: hidden; transform-origin: center; animation: tileFlip 1800ms cubic-bezier(.45, 0, .2, 1) var(--tile-delay) both; }
+.tileFragment { position: absolute; width: calc(var(--tile-columns) * 100%); height: calc(var(--tile-rows) * 100%); }
+@keyframes tileFlip { 0% { opacity: 1; transform: rotateY(0); } 65% { opacity: 1; } 100% { opacity: 0; transform: rotateY(100deg) scale(.9); } }
+.photoControls { animation: enterTop 1000ms var(--ease-out) 1200ms backwards; }
+.photoControls button span { position: relative; transition: transform 350ms, box-shadow 350ms; }
+.photoControls button:is(:hover, :focus-visible) span { transform: scale(1.4); }
+.photoControls button[aria-pressed="true"] .slideDot::after { content: ""; position: absolute; inset: -6px; border: 1px solid #80d0ff; border-radius: 50%; }
+.photoControls[data-autoplay="running"] button[aria-pressed="true"] .slideDot::after { animation: dotCycle var(--slide-interval) linear both; }
+@keyframes dotCycle { from { scale: .65; opacity: .95; } to { scale: 1.35; opacity: .2; } }
+@media (prefers-reduced-motion: reduce) {
+  .tileTransition { display: none; }
+  .mainPhoto[data-changing="true"] .slide[data-previous="true"] { opacity: 0; }
+  .mainPhoto .slide[data-active="true"] { opacity: 1; clip-path: none; }
+  .serviceTile:is(:hover, :focus-visible), .brand:is(:hover, :focus-visible) .brandImage, .skyBadge:is(:hover, :focus-visible), .serviceTile:is(:hover, :focus-visible) img { transform: none; }
+}
+/* Keep each photograph gently moving throughout its time on screen. */
+.mainPhoto .slide[data-active="true"] .mainImage { animation: photoZoom var(--slide-interval) linear both; }
+.mainPhoto .slide[data-previous="true"][data-active="false"] .mainImage,
+.tileFragment .mainImage { transform: scale(1.045); }
+@keyframes photoZoom { from { transform: scale(1); } to { transform: scale(1.045); } }
+@media (prefers-reduced-motion: reduce) {
+  .mainPhoto .mainImage { transform: none !important; }
+}
+
+/* Easy pointer travel, smooth dismissal, and consistent link/arrow feedback. */
+@keyframes navArrival { from { opacity: 0; transform: translateY(-10px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes navDeparture { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(-6px) scale(.98); } }
+.dropdown[data-closing="true"] .dropdownPanel { animation: navDeparture 260ms ease-in both; }
+.dropdownPanel a, .mobilePanel a { transition: background-color 350ms, color 350ms, translate 400ms var(--ease-out); }
+.dropdownPanel a:is(:hover, :focus-visible), .mobilePanel a:is(:hover, :focus-visible) { translate: 3px 0; }
+.dropdownPanel a svg, .mobilePanel a svg, .servicesHeader > a svg { transition: transform 450ms var(--ease-out); }
+.dropdownPanel a:is(:hover, :focus-visible) svg, .mobilePanel a:is(:hover, :focus-visible) svg, .servicesHeader > a:is(:hover, :focus-visible) svg { transform: translateX(4px); }
+/* Cool tonal depth without obscuring the technicians or structure. */
+.photoShade { background: linear-gradient(90deg, #06385b10 0%, transparent 38%, #03172740 74%, #031727eb 100%), linear-gradient(180deg, #0067e614 0%, transparent 35%, #071c3533 100%); }
+@media (max-width: 900px) { .photoShade { background: linear-gradient(180deg, #0067e60d, transparent 32%, #071c3547 100%), linear-gradient(90deg, #07345a12, transparent 65%); } }

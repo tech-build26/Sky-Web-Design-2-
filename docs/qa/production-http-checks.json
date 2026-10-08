@@ -1,27 +1,27 @@
 {
-  "origin": "http://127.0.0.1:3002/",
+  "origin": "http://127.0.0.1:3012/",
   "scope": "Local production HTTP and static asset checks; not a mobile network or Core Web Vitals benchmark.",
   "timings": [
     {
       "run": 1,
-      "headersMs": 66.98,
-      "completeMs": 71.2,
-      "decodedHtmlBytes": 132011
+      "headersMs": 37.38,
+      "completeMs": 40.84,
+      "decodedHtmlBytes": 134843
     },
     {
       "run": 2,
-      "headersMs": 5.78,
-      "completeMs": 6.94,
-      "decodedHtmlBytes": 132011
+      "headersMs": 5.53,
+      "completeMs": 6.5,
+      "decodedHtmlBytes": 134843
     },
     {
       "run": 3,
-      "headersMs": 4.56,
-      "completeMs": 6.06,
-      "decodedHtmlBytes": 132011
+      "headersMs": 3.57,
+      "completeMs": 4.67,
+      "decodedHtmlBytes": 134843
     }
   ],
-  "uniqueIds": 30,
+  "uniqueIds": 29,
   "fragmentLinkCount": 53,
   "intactLogos": true,
   "contactRouteValidation": true,
@@ -50,21 +50,21 @@
       "contentType": "font/woff2"
     },
     {
-      "asset": "/_next/static/chunks/25sxdb1avn47e.css",
+      "asset": "/_next/static/chunks/391rltlufxwwe.css",
       "status": 200,
-      "decodedBytes": 4071,
+      "decodedBytes": 6892,
       "contentType": "text/css; charset=UTF-8"
     },
     {
-      "asset": "/_next/static/chunks/3bmiz-i1h0mk5.css",
+      "asset": "/_next/static/chunks/2q1g1xe8dtxmt.css",
       "status": 200,
-      "decodedBytes": 56156,
+      "decodedBytes": 77521,
       "contentType": "text/css; charset=UTF-8"
     },
     {
-      "asset": "/_next/static/chunks/31qp8jfkw0x2h.js",
+      "asset": "/_next/static/chunks/3ieqvmcg3hofj.js",
       "status": 200,
-      "decodedBytes": 22142,
+      "decodedBytes": 23088,
       "contentType": "application/javascript; charset=UTF-8"
     },
     {
@@ -74,9 +74,9 @@
       "contentType": "application/javascript; charset=UTF-8"
     },
     {
-      "asset": "/_next/static/chunks/0s7mvllxht1mo.js",
+      "asset": "/_next/static/chunks/025e_g9ksha1v.js",
       "status": 200,
-      "decodedBytes": 229597,
+      "decodedBytes": 228651,
       "contentType": "application/javascript; charset=UTF-8"
     },
     {
@@ -92,9 +92,9 @@
       "contentType": "application/javascript; charset=UTF-8"
     },
     {
-      "asset": "/_next/static/chunks/05_1e2w2rdqrd.js",
+      "asset": "/_next/static/chunks/3t0-vdfan7tzm.js",
       "status": 200,
-      "decodedBytes": 46848,
+      "decodedBytes": 52377,
       "contentType": "application/javascript; charset=UTF-8"
     },
     {
@@ -143,12 +143,6 @@
       "asset": "/_next/image?url=%2Fimages%2Fhero%2Fhero-support-inspection.webp&w=3840&q=75",
       "status": 200,
       "decodedBytes": 122050,
-      "contentType": "image/jpeg"
-    },
-    {
-      "asset": "/_next/image?url=%2Fimages%2Fhero%2Fhero-support-drone.webp&w=3840&q=75",
-      "status": 200,
-      "decodedBytes": 112035,
       "contentType": "image/jpeg"
     },
     {

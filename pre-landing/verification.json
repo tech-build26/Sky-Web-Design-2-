@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-08",
+  "environment": "Headless installed Chrome; relocated temporary copy served independently; original comparison at localhost:3000",
+  "layouts": [
+    {
+      "width": 1440,
+      "height": 900,
+      "overflow": 0,
+      "loadedImages": true,
+      "geometryDifferences": []
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "overflow": 0,
+      "loadedImages": true,
+      "geometryDifferences": []
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "overflow": 0,
+      "loadedImages": true,
+      "geometryDifferences": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": 0,
+      "loadedImages": true,
+      "geometryDifferences": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": 0,
+      "loadedImages": true,
+      "geometryDifferences": []
+    },
+    {
+      "width": 320,
+      "height": 700,
+      "overflow": 0,
+      "loadedImages": true,
+      "geometryDifferences": []
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "overflow": 0,
+      "loadedImages": true,
+      "geometryDifferences": []
+    }
+  ],
+  "checks": [
+    "Seven responsive layouts match original element geometry and typography within 0.5 CSS px, with no overflow or missing assets.",
+    "Correct four public routes; keyboard caption/focus and ticker pause; pointer motion and opposite-subject blur; all three messages cycle and hover pauses; dynamic reduced motion; departure, native navigation and Back. Home destination is a verification fixture, not shipped.",
+    "Desktop and mobile with JavaScript disabled retain complete scene, one reduced-motion sector list and working native /home/ navigation.",
+    "Touch emulation shows descriptions and activates current-brand destination.",
+    "Five supplied master images verified byte-identical to the original app; relocated copy serves all page assets independently."
+  ],
+  "errors": [],
+  "result": "passed"
+}

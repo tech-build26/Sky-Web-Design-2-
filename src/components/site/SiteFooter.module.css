@@ -31,3 +31,16 @@
 .footer a:focus-visible { outline-color: #8ed7ff; }
 @media (max-width: 1000px) { .main { gap: 28px; grid-template-columns: 1.2fr .9fr 1.1fr; } .division { grid-column: 3; text-align: left; } .skyLogo { margin-left: 0; width: 105px; height: 105px; } .bottom > span:nth-child(2) { display: none; } }
 @media (max-width: 700px) { .inner { padding: 0 20px; } .topline { align-items: flex-start; flex-direction: column; gap: 8px; padding: 24px 0; } .topline p { font-size: 24px; } .main { grid-template-columns: 1fr 1fr; gap: 32px 20px; padding: 30px 0; } .brand { grid-column: 1 / -1; } .brand > a, .brand img { width: 140px; } .brand p { margin-bottom: 14px; } .contact { grid-column: 1 / -1; grid-row: 3; } .division { grid-column: 2; grid-row: 2; text-align: right; } .skyLogo { margin-left: auto; } .title { margin-top: 0; } .bottom { flex-wrap: wrap; gap: 0 20px; padding-top: 16px; } .bottom > span:first-child { flex-basis: 100%; font-size: 9px; } }
+.footer { position: relative; isolation: isolate; overflow: clip; }
+.footer::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse at 85% 65%, #007aff16, transparent 45%); animation: footerGlow 10s ease-in-out infinite alternate; }
+@keyframes footerGlow { from { opacity: .35; translate: -18px 0; } to { opacity: 1; translate: 18px 0; } }
+.footer[data-motion-visible="false"]::before { animation-play-state: paused; }
+.footer a { transition: color 350ms, transform 450ms var(--ease-out); }
+.links a:is(:hover, :focus-visible), .contact > a:is(:hover, :focus-visible) { transform: translateX(4px); }
+.brand > a:is(:hover, :focus-visible) { transform: translateY(-4px) scale(1.04); }
+.skyLogo { transition: transform 550ms var(--ease-out), box-shadow 550ms; }
+.skyLogo:is(:hover, :focus-visible) { transform: rotate(-5deg) scale(1.06); box-shadow: 0 0 32px #007aff38; }
+.topline svg, .whatsapp svg, .skyLink svg, .bottom a span { transition: transform 450ms var(--ease-out); }
+.topline a:is(:hover, :focus-visible) svg, .whatsapp:is(:hover, :focus-visible) svg, .skyLink:is(:hover, :focus-visible) svg { transform: translateX(5px); }
+.bottom a:is(:hover, :focus-visible) span { transform: translateY(-4px); }
+@media (prefers-reduced-motion: reduce) { .footer a:is(:hover, :focus-visible) { transform: none; } }

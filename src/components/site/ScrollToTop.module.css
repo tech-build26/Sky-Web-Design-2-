@@ -1,0 +1,25 @@
+.button {
+  position: fixed; z-index: 90;
+  right: calc(24px + env(safe-area-inset-right, 0px));
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  display: grid; place-items: center; width: 46px; height: 46px; padding: 0;
+  border: 1px solid #75caff66; border-radius: 50%;
+  background: #071c35ed; color: #b9e6ff; cursor: pointer;
+  box-shadow: 0 6px 24px #071c3533; backdrop-filter: blur(8px);
+  opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(14px) scale(.9);
+  transition: opacity 350ms, transform 450ms var(--ease-out), background 350ms,
+    border-color 350ms, box-shadow 350ms, visibility 0s 450ms;
+}
+.button[data-visible="true"] {
+  opacity: 1; visibility: visible; pointer-events: auto; transform: none;
+  transition-delay: 0s;
+}
+.button svg { width: 22px; height: 22px; transition: transform 350ms var(--ease-out); }
+.button:is(:hover, :focus-visible) { background: #0067e6; color: #fff; border-color: #8bd5ff; box-shadow: 0 8px 26px #0067e638; transform: translateY(-3px); }
+.button:is(:hover, :focus-visible) svg { transform: translateY(-2px); }
+.button:focus-visible { outline-color: #8bd5ff; }
+.button:active { transform: scale(.95); }
+@media (max-width: 700px) {
+  .button { width: 44px; height: 44px; right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+}
+@media (prefers-reduced-motion: reduce) { .button, .button svg { transition: none; transform: none; } }

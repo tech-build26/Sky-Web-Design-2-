@@ -10,7 +10,7 @@ const timings = [];
 let html;
 for (let run = 0; run < 3; run++) {
   const start = performance.now();
-  const response = await fetch(origin);
+  const response = await fetch(new URL('/home/', origin));
   const headersAt = performance.now();
   assert.equal(response.status, 200);
   html = await response.text();
@@ -27,7 +27,7 @@ assert(/<form[\s>]/.test(html) && html.includes('id="project-enquiry"'), 'Projec
 assert(html.includes('https://wa.me/27832890077'), 'Project WhatsApp destination missing.');
 assert(!html.includes('tel:+27832890077'), 'The project number is WhatsApp only.');
 assert(!ids.includes('insights') && !ids.includes('work'), 'Removed sections must stay removed.');
-assert(html.includes('Who we are') && html.includes('How we help'), 'Updated section names missing.');
+assert(html.includes('Who we are') && html.includes('Our expertise'), 'Updated section names missing.');
 assert(!html.includes('Watch our story') && !html.includes('Discuss your structure'));
 for (const logo of ['sky-logo.png', 'sky-i-logo.png']) {
   const original = await fs.readFile(logo);

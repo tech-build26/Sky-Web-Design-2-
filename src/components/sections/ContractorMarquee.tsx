@@ -75,7 +75,7 @@ export function ContractorMarquee() {
     move(event.key === "ArrowRight" ? 200 : -200);
   }
 
-  return <div className={styles.contractors}>
+  return <div className={styles.contractors} data-reveal="bottom">
     <div className={styles.contractorHead}>
       <div><p className={styles.eyebrow}>Experience across industry</p><h3>Working alongside industry leaders.</h3></div>
     </div>

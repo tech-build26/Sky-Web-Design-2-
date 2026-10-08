@@ -1,5 +1,9 @@
 # Skyriders website
 
+The approved division gateway now lives at `/`: **Enter Skyriders** (and its logo) opens the existing website at `/home/`, beginning with its hero. Both **Sky I** choices open `https://skyi.co.za/`. The gateway keeps the supplied artwork, fonts, copy, CSS, animations and responsive behavior. Each page has its own root layout so their styles remain isolated.
+
+Gateway components are in `src/components/prelanding/`; its permanent runtime assets are in `public/pre-landing/`. The existing website page is `src/app/(website)/home/page.tsx`; the gateway route is `src/app/(prelanding)/page.tsx`. The original `pre-landing/` handoff folder remains untouched for approval and is no longer a runtime dependency. Integration evidence and browser verification details are in `docs/prelanding-integration.md`.
+
 Completed Next.js landing page: reference hero/navigation, intact supplied logos, accessible three-image slideshow, mirrored About with generated portraits and animated Explore, cinematic services section, safety, industries, capabilities, Sky I, insights, contacts and footer. The services section features one unchanged cooling-tower interior photograph across the full section, three frosted glass tiles, and an Explore all services button that opens the full catalogue; the dedicated services page is deferred. Services design, image prompt and provenance are in `docs/services-design.md`. Evidence and limits are in `docs/final-qa.md`; `design.md` contains the current checklist.
 
 Safety & quality follows the supplied “Planned Excellence” reference with its original technician photograph, right-hand graphics and planning icons, traced panel geometry, live heading/process copy, and a working contact CTA. Reference measurements, lossless asset provenance and current verification are in `docs/reference/safety-quality-reference.md`.
@@ -13,7 +17,7 @@ npm.cmd ci
 npm.cmd run dev
 ```
 
-Visit http://localhost:3000. To use another port: `npm.cmd run dev -- --port 3001`.
+Visit http://localhost:3000 for the gateway, or http://localhost:3000/home/ for the Skyriders website. To use another port: `npm.cmd run dev -- --port 3001`.
 
 ```powershell
 npm.cmd run lint
@@ -44,6 +48,6 @@ About photography has labelled native sources in `assets/source/about/`, WebP de
 
 The slideshow crossfades every eight seconds when visible and unengaged. Explicit pause persists until Play; manual selection pauses it. Focus, hover, offscreen, hidden-document and reduced-motion conditions stop autoplay. Reduced motion disables transitions/entrances. Native disclosures/anchors work without JS; all text starts visible in server HTML. Unsupported metrics, credential badges, search and story-video controls are absent.
 
-After starting production on port 3001, run `node scripts/verify-production.mjs` to verify page/assets, internal destinations and intact logos. Measurements go to `docs/qa/production-http-checks.json`; these are local checks, not real-device Core Web Vitals benchmarks.
+After starting production on port 3001, run `node scripts/verify-production.mjs` to verify the `/home/` page/assets, internal destinations and intact logos. Measurements go to `docs/qa/production-http-checks.json`; these are local checks, not real-device Core Web Vitals benchmarks.
 
 The folder initially had no Git checkout. The authenticated GitHub connector verified the private repository `tech-build26/Sky-Web-Design-2-` is empty with no branches. Local Git now uses an unborn `main` branch and the exact URL as `origin`. Command-line Git authentication is not configured and returns “Repository not found” for this private repository; configure GitHub access before future fetch/push work. No commits, pushes or publication are authorized by the phase A/B request.

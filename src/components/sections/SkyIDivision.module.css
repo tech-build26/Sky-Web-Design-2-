@@ -57,3 +57,17 @@
   .parallax, .hover { transform: none; animation: none; transition: none; }
   .visit:is(:hover, :focus-visible), .visit:is(:hover, :focus-visible) svg { transform: none; }
 }
+/* Reticle corners breathe around the existing drone flight and hover. */
+.target > span { animation: targetLock 5.5s ease-in-out infinite; }
+.target > span:nth-child(2), .target > span:nth-child(3) { animation-delay: -1.4s; }
+@keyframes targetLock { 0%, 100% { opacity: .35; scale: .85; } 50% { opacity: 1; scale: 1.15; } }
+.target::after { content: ""; position: absolute; top: 0; left: 8%; right: 8%; height: 1px; background: linear-gradient(90deg, transparent, #80d4ff75, transparent); box-shadow: 0 0 16px #00b0f044; animation: scanPass 6.5s ease-in-out infinite; }
+@keyframes scanPass { 0%, 100% { top: 8%; opacity: 0; } 25% { opacity: .65; } 75% { opacity: .65; } 90% { top: 90%; opacity: 0; } }
+.applications li { transition: color 350ms; }
+.applications li:hover { color: #e4f6ff; }
+.applications li::before { animation: applicationPulse 4.5s ease-in-out infinite; }
+.applications li:nth-child(2)::before { animation-delay: -1.5s; }
+.applications li:nth-child(3)::before { animation-delay: -3s; }
+@keyframes applicationPulse { 0%, 100% { box-shadow: 0 0 0 #67caff00; } 50% { box-shadow: 0 0 9px #67caff80; } }
+.section[data-in-view="false"] .hover, .section[data-in-view="false"] .target > span,
+.section[data-in-view="false"] .target::after, .section[data-in-view="false"] .applications li::before { animation-play-state: paused; }

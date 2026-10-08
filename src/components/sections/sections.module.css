@@ -9,3 +9,12 @@
 .industryGrid svg { width: 38px; height: 38px; color: #a2d7ff; margin-bottom: 20px; }
 .industryGrid h3 { font-size: 16px; font-weight: 500; line-height: 1.5; margin: 0; }
 @media (max-width: 700px) { .section { padding-left: 20px; padding-right: 20px; } .section h2 { font-size: 36px; } .industryGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; } }
+.industries { position: relative; isolation: isolate; overflow: clip; background-image: none; }
+.industries::before { content: ""; position: absolute; inset: -25px; z-index: -1; background: url('/images/brand/industries-contours.svg?v=3') center / cover no-repeat; pointer-events: none; animation: contourDrift 16s ease-in-out infinite alternate; }
+@keyframes contourDrift { from { transform: translate(-8px, -8px) scale(1); } to { transform: translate(8px, 8px) scale(1.025); } }
+.industries[data-motion-visible="false"]::before { animation-play-state: paused; }
+.industryGrid > div { position: relative; transition: transform 500ms var(--ease-out), border-color 500ms; }
+.industryGrid > div:hover { transform: translateY(-5px) scale(1.025); border-color: #92d9ff; }
+.industryGrid svg { transition: transform 650ms var(--ease-out), filter 500ms; }
+.industryGrid > div:hover svg { transform: rotate(-7deg) scale(1.1); filter: drop-shadow(0 0 10px #00b0f04d); }
+@media (prefers-reduced-motion: reduce) { .industryGrid > div:hover, .industryGrid > div:hover svg { transform: none; } }
