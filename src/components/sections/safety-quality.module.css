@@ -15,10 +15,7 @@
 .step:nth-child(2) { left: 21.71cqw; }
 .step:nth-child(3) { left: 42.24cqw; }
 .icon { --icon-size: 5.062cqw; position: absolute; top: 0; left: 0; width: var(--icon-size); height: var(--icon-size); overflow: hidden; }
-.icon img { position: absolute; top: calc(var(--icon-size) * -4.911111); width: calc(var(--icon-size) * 19.755556); height: calc(var(--icon-size) * 9.833333); max-width: none; }
-.icon0 img { left: calc(var(--icon-size) * -1.377778); }
-.icon1 img { left: calc(var(--icon-size) * -5.666667); }
-.icon2 img { left: calc(var(--icon-size) * -9.722222); }
+.icon img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .stepCopy { margin-left: 6.524cqw; padding-top: .72cqw; }
 .step:nth-child(2) .stepCopy, .step:nth-child(3) .stepCopy { margin-left: 6.355cqw; }
 .stepNumber { color: #bdcede; font-size: 1.47cqw; font-weight: 700; line-height: 1.2; margin: 0; }

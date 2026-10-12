@@ -1,0 +1,13 @@
+# Cookie consent
+
+Both root layouts mount the shared consent UI, with settings links in the gateway and website footers. Optional purposes default to denied during server rendering and hydration. Accept and reject have equal prominence; dismissing preferences does not save a choice. The native modal supplies keyboard focus containment and Escape dismissal. Reduced-motion preferences disable entrance/toggle animations.
+
+The only optional integration currently installed is Google Maps. Both office-map iframes are inside `ConsentGate`, so no map DOM or network request occurs until `externalMedia` is explicitly true. Withdrawing consent unmounts the maps immediately. Existing local interface scripts and application-form Turnstile security checks remain necessary; no analytics or marketing scripts are installed.
+
+`src/lib/cookie-consent.ts` validates the first-party local-storage record (`skyriders.cookie-consent`), including version, boolean purpose, timestamps and a 180-day validity period. Expired, corrupt, future-dated and incompatible choices fail closed. Changes propagate within the page and across tabs; active pages also revoke expired consent. Blocked storage applies the visitor's choice for the current document and shows an explanation. An expired record is ignored rather than used; browser site-data controls can remove it.
+
+When adding optional vendors, declare their actual purposes, update the preference UI and `/cookie-policy`, and increment `CONSENT_VERSION` to request new consent. Wrap vendor components in `ConsentGate`; never put optional scripts in unconditional layouts, preload tags or tag managers. Scripts that leave global listeners/timers running need a vendor-specific shutdown and cookie cleanup on withdrawal; unmounting a script tag alone does not stop code already executed. Third-party domain cookies cannot be deleted by this origin.
+
+The user-facing cookie notice identifies the company, storage duration, Google Maps processing and external providers, withdrawal, privacy contact and complaint routes. The implementation follows explicit opt-in and easy withdrawal principles from the [EDPB cookie banner taskforce](https://www.edpb.europa.eu/documents/task-force-report/report-of-the-work-undertaken-by-the-cookie-banner-taskforce_en) and the [South African Information Regulator](https://inforegulator.org.za/privacy-notice/). This is an implementation of consent controls, not certification of the company's wider POPIA/GDPR obligations or third-party transfer arrangements.
+
+Run `npm run test:consent`, `npm run lint`, `npm run typecheck`, and `npm run build` to verify changes.

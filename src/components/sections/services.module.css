@@ -28,28 +28,6 @@
 .serviceTile:focus { outline: none; }
 .exploreArea { display: flex; justify-content: center; margin-top: 36px; }
 .destination { position: absolute; top: 0; }
-.catalogue { width: min(880px, calc(100% - 40px)); max-height: calc(100dvh - 64px); padding: 0; color: #f4f9ff; background: #071c35; border: 1px solid #34516c; border-radius: 8px; overscroll-behavior: contain; }
-.catalogue::backdrop { background: #020c19c4; backdrop-filter: blur(8px); }
-.catalogue[open] { animation: serviceArrival 350ms var(--ease-out); }
-.cataloguePanel { padding: clamp(24px, 4vw, 48px); }
-.catalogueHeader { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; margin-bottom: 30px; }
-.catalogueHeader h2 { margin: 18px 0 0; font-family: var(--type-display); font-size: clamp(32px, 4vw, 48px); font-weight: 600; line-height: 1.08; letter-spacing: -.045em; }
-.catalogueHeader h2 span { color: #7dc8ff; }
-.close { display: grid; flex-shrink: 0; place-items: center; width: 44px; height: 44px; color: #d9edff; background: transparent; border: 1px solid #34516c; border-radius: 50%; cursor: pointer; transition: background 200ms; }
-.close svg { width: 24px; height: 24px; }
-.close:hover { background: #183a5b; }
-.catalogueList article { display: flex; align-items: flex-start; gap: 24px; padding: 25px 0; border-top: 1px solid #34516c; }
-.catalogueNumber { padding-top: 4px; color: #8baecb; font-size: 12px; }
-.catalogueList article > div { flex: 1; }
-.catalogueList h3 { font-size: 22px; font-weight: 500; letter-spacing: -.025em; margin: 8px 0; }
-.catalogueList p { font-size: 14px; line-height: 1.7; color: #c4d3e0; margin: 0; }
-.catalogueList .catalogueLabel { font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: #8fd0ff; }
-.catalogueList a { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; color: #8fd0ff; border: 1px solid #34516c; border-radius: 50%; transition: background 200ms; }
-.catalogueList a svg { width: 23px; height: 23px; }
-.catalogueList a:hover { background: #183a5b; }
-.catalogueContact { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 56px; padding-top: 22px; border-top: 1px solid #34516c; color: #8fd0ff; font-size: 14px; line-height: 1.7; }
-.catalogueContact svg { width: 24px; height: 24px; flex-shrink: 0; }
-@keyframes serviceArrival { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 1100px) {
   .topRow { grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; gap: 24px 20px; }
   .sectionIntro { grid-column: 1 / -1; }
@@ -79,14 +57,8 @@
   .serviceTile h3 { font-size: 25px; }
   .tileDescription { margin-bottom: 20px; }
   .exploreArea { margin-top: 28px; }
-  .catalogue { width: calc(100% - 24px); max-height: calc(100dvh - 32px); }
-  .cataloguePanel { padding: 24px 20px; }
-  .catalogueList article { gap: 12px; }
-  .catalogueList h3 { font-size: 20px; }
-  .catalogueList p { font-size: 13px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .catalogue[open] { animation: none; }
   .services *, .services *::before, .services *::after { transition: none; }
 }
 .serviceTile { transition: transform 450ms var(--ease-out), border-color 450ms, background 450ms, box-shadow 450ms; overflow: hidden; }
@@ -96,6 +68,4 @@
 .tileLabel, .serviceTile h3, .tileDescription { transition: translate 500ms var(--ease-out); }
 .serviceTile:hover .tileLabel { translate: 0 -2px; }
 .serviceTile:hover h3 { translate: 0 -3px; }
-.catalogue[open] .catalogueList article { animation: catalogueItem 750ms var(--ease-out) backwards; }
-@keyframes catalogueItem { from { opacity: 0; transform: translateX(28px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .serviceTile:is(:hover, :focus-within) { transform: none; } }

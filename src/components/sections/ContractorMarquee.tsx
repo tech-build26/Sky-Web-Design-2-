@@ -22,8 +22,10 @@ export function ContractorMarquee() {
     let previous = 0;
     let fractionalTravel = 0;
     let visible = false;
-    const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; });
-    observer.observe(element);
+    let groupWidth = firstGroup.offsetWidth;
+    const resize = new ResizeObserver(() => { groupWidth = firstGroup.offsetWidth; });
+    resize.observe(firstGroup);
+    const running = () => visible && !document.hidden && !preference.matches;
     const tick = (time: number) => {
       const elapsed = previous ? Math.min(time - previous, 48) : 0;
       previous = time;
@@ -33,12 +35,24 @@ export function ContractorMarquee() {
         const pixels = Math.floor(distance);
         fractionalTravel = distance - pixels;
         element.scrollLeft += pixels;
-        if (element.scrollLeft >= firstGroup.offsetWidth) element.scrollLeft -= firstGroup.offsetWidth;
+        if (groupWidth && element.scrollLeft >= groupWidth) element.scrollLeft -= groupWidth;
       }
-      frame = requestAnimationFrame(tick);
+      frame = running() ? requestAnimationFrame(tick) : 0;
     };
-    frame = requestAnimationFrame(tick);
-    return () => { cancelAnimationFrame(frame); observer.disconnect(); };
+    const sync = () => {
+      cancelAnimationFrame(frame);
+      previous = 0;
+      frame = running() ? requestAnimationFrame(tick) : 0;
+    };
+    const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; sync(); });
+    observer.observe(element);
+    document.addEventListener("visibilitychange", sync);
+    preference.addEventListener("change", sync);
+    return () => {
+      cancelAnimationFrame(frame); observer.disconnect(); resize.disconnect();
+      document.removeEventListener("visibilitychange", sync);
+      preference.removeEventListener("change", sync);
+    };
   }, []);
 
   function move(distance: number) {

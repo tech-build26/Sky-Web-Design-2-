@@ -1,3 +1,5 @@
+
+import { SiteLink } from "../site/SiteLink";
 import { industries } from "@/lib/site-content";
 import { Arrow, IndustryIcon } from "../site/Icons";
 import styles from "./sections.module.css";
@@ -15,7 +17,7 @@ export function PageDestinations() {
     <section id="industries" tabIndex={-1} className={`${styles.section} ${styles.industries}`} aria-labelledby="industries-heading">
       <p className={`${styles.eyebrow} type-label`} data-reveal="left">Industries we serve</p><h2 id="industries-heading" data-type-reveal><span className="type-line">Different structures.</span>{" "}<span className="type-line">The same <em>attention</em> to detail.</span></h2>
       <div className={styles.industryGrid}>{industries.map((industry, index) => <div key={industry.title} data-reveal="bottom" data-delay={index}><IndustryIcon name={industry.icon} /><h3>{industry.title}</h3></div>)}</div>
-      <a className={styles.industryMore} href="/industries" data-reveal="bottom" data-delay="2">Explore More <Arrow /></a>
+      <SiteLink className={styles.industryMore} href="/industries" data-reveal="bottom" data-delay="2">Explore More <Arrow /></SiteLink>
     </section>
     <SkyIDivision />
     <Contact />

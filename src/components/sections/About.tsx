@@ -1,3 +1,5 @@
+
+import { SiteLink } from "../site/SiteLink";
 import Image from "next/image";
 import { Arrow } from "../site/Icons";
 import styles from "./about.module.css";
@@ -48,7 +50,7 @@ export function About() {
             <p>From concrete and steel structures to high-rise facades and confined spaces, the work starts with understanding the site and choosing an appropriate access solution.</p>
           </div>
           <div className={styles.explore} data-reveal data-delay="3">
-            <a href="/about" className={buttons.skew}><span>Learn more <Arrow /></span></a>
+            <SiteLink href="/about" className={buttons.skew}><span>Learn more <Arrow /></span></SiteLink>
           </div>
         </div>
       </div>

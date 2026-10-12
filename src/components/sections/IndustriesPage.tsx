@@ -1,3 +1,5 @@
+
+import { SiteLink } from "../site/SiteLink";
 import Image from "next/image";
 import { industryDetails, type IndustryDetail } from "@/lib/industry-pages";
 import { industries } from "@/lib/site-content";
@@ -11,11 +13,11 @@ function IndustryHero() {
       <SiteHeader active="industries" />
       <div className={styles.heroLines} aria-hidden="true" />
       <div className={styles.heroCopy}>
-        <div className={styles.breadcrumb} data-reveal="left"><a href="/home">Home</a><span>/</span><span>Industries</span></div>
+        <div className={styles.breadcrumb} data-reveal="left"><SiteLink href="/home">Home</SiteLink><span>/</span><span>Industries</span></div>
         <p className={styles.eyebrow} data-reveal="left" data-delay="1">Industries we serve</p>
         <h1 id="hero-heading" tabIndex={-1} data-type-reveal><span className="type-line">Every asset has</span><span className="type-line">a different <em>challenge.</em></span></h1>
         <p className={styles.heroLead} data-reveal="bottom" data-delay="2">From the city skyline to the plant floor, we plan the right access for the structure, the work and the people around it.</p>
-        <a className={styles.heroAction} href="#industry-index" data-reveal="bottom" data-delay="3">Explore the industries <Arrow /></a>
+        <SiteLink className={styles.heroAction} href="#industry-index" data-reveal="bottom" data-delay="3">Explore the industries <Arrow /></SiteLink>
       </div>
       <div className={styles.heroPhoto} data-reveal="right" data-delay="1">
         <Image src="/images/industries/industries-bridge-access.webp" alt="Illustrative view of rope access technicians inspecting the underside of a concrete bridge." fill preload sizes="(max-width: 900px) 100vw, 53vw" />
@@ -32,12 +34,12 @@ function IndustryIndex() {
       <div className={styles.indexHeading} data-reveal="fade"><p className={styles.eyebrow}>Find your environment</p><h2>Explore by <em>industry.</em></h2><p>Choose a sector to see the assets, priorities and specialist services that fit.</p></div>
       <div className={styles.indexGrid}>{industryDetails.map((detail, index) => {
         const icon = industries.find((industry) => industry.id === detail.id)?.icon ?? "building";
-        return <a href={`#${detail.id}`} key={detail.id} data-reveal={index % 2 === 0 ? "bottom" : "top"} data-delay={index}>
+        return <SiteLink href={`#${detail.id}`} key={detail.id} data-reveal={index % 2 === 0 ? "bottom" : "top"} data-delay={index}>
           <span className={styles.indexTop}><span>0{index + 1}</span><Arrow /></span>
           <IndustryIcon name={icon} />
           <strong>{detail.title}</strong>
           <small>{detail.kicker}</small>
-        </a>;
+        </SiteLink>;
       })}</div>
     </div>
   </nav>;
@@ -58,7 +60,7 @@ function IndustrySection({ detail, number }: { detail: IndustryDetail; number: n
         <p className={styles.body} data-reveal="bottom" data-delay="1">{detail.body}</p>
         <div className={styles.assetBlock} data-reveal="bottom" data-delay="2"><h3>Typical assets</h3><ul>{detail.assets.map((asset) => <li key={asset}>{asset}</li>)}</ul></div>
         <div className={styles.focusGrid}>{detail.focus.map((item, index) => <div key={item.title} data-reveal={index === 0 ? "left" : "right"} data-delay="2"><h3>{item.title}</h3><p>{item.copy}</p></div>)}</div>
-        <div className={styles.serviceBlock} data-reveal="bottom" data-delay="3"><h3>Relevant services</h3><div>{detail.services.map((service) => <a href={service.href} key={service.title}>{service.title} <Arrow /></a>)}</div></div>
+        <div className={styles.serviceBlock} data-reveal="bottom" data-delay="3"><h3>Relevant services</h3><div>{detail.services.map((service) => <SiteLink href={service.href} key={service.title}>{service.title} <Arrow /></SiteLink>)}</div></div>
         <p className={styles.planning} data-reveal="bottom" data-delay="4"><strong>Planning focus</strong><span>{detail.planning}</span></p>
       </div>
     </div>
@@ -86,7 +88,7 @@ export function IndustriesPage() {
     <Approach />
     <section className={styles.closing} aria-labelledby="industries-closing-heading"><div className={styles.closingInner}>
       <div><p className={styles.eyebrow} data-reveal="left">Your project, properly scoped</p><h2 id="industries-closing-heading" data-type-reveal><span className="type-line">Tell us what needs</span><span className="type-line">to be <em>reached.</em></span></h2><p data-reveal="bottom">Share the asset, location, photos or drawings, and any operating constraints. We’ll discuss the most useful next step.</p></div>
-      <a href="/contact#project-enquiry" className={styles.closingAction} data-reveal="zoom">Start a project enquiry <Arrow /></a>
+      <SiteLink href="/contact#project-enquiry" className={styles.closingAction} data-reveal="zoom">Start a project enquiry <Arrow /></SiteLink>
     </div></section>
   </>;
 }

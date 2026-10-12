@@ -1,28 +1,28 @@
 {
-  "origin": "http://127.0.0.1:3012/",
+  "origin": "http://localhost:3001/",
   "scope": "Local production HTTP and static asset checks; not a mobile network or Core Web Vitals benchmark.",
   "timings": [
     {
       "run": 1,
-      "headersMs": 37.38,
-      "completeMs": 40.84,
-      "decodedHtmlBytes": 134843
+      "headersMs": 39.91,
+      "completeMs": 43.72,
+      "decodedHtmlBytes": 183563
     },
     {
       "run": 2,
-      "headersMs": 5.53,
-      "completeMs": 6.5,
-      "decodedHtmlBytes": 134843
+      "headersMs": 5.88,
+      "completeMs": 7,
+      "decodedHtmlBytes": 183563
     },
     {
       "run": 3,
-      "headersMs": 3.57,
-      "completeMs": 4.67,
-      "decodedHtmlBytes": 134843
+      "headersMs": 4.59,
+      "completeMs": 6.05,
+      "decodedHtmlBytes": 183563
     }
   ],
-  "uniqueIds": 29,
-  "fragmentLinkCount": 53,
+  "uniqueIds": 35,
+  "fragmentLinkCount": 9,
   "intactLogos": true,
   "contactRouteValidation": true,
   "typography": {
@@ -50,33 +50,45 @@
       "contentType": "font/woff2"
     },
     {
-      "asset": "/_next/static/chunks/391rltlufxwwe.css",
+      "asset": "/_next/static/chunks/2oeoy1po-jvc2.css",
       "status": 200,
-      "decodedBytes": 6892,
+      "decodedBytes": 15689,
       "contentType": "text/css; charset=UTF-8"
     },
     {
-      "asset": "/_next/static/chunks/2q1g1xe8dtxmt.css",
+      "asset": "/_next/static/chunks/1vnmmod9bpjy7.css",
       "status": 200,
-      "decodedBytes": 77521,
+      "decodedBytes": 118848,
       "contentType": "text/css; charset=UTF-8"
     },
     {
-      "asset": "/_next/static/chunks/3ieqvmcg3hofj.js",
+      "asset": "/_next/static/chunks/3kz1d--dlo4s8.css",
       "status": 200,
-      "decodedBytes": 23088,
+      "decodedBytes": 9782,
+      "contentType": "text/css; charset=UTF-8"
+    },
+    {
+      "asset": "/_next/static/chunks/1kexj4s7oxhs2.js",
+      "status": 200,
+      "decodedBytes": 6530,
       "contentType": "application/javascript; charset=UTF-8"
     },
     {
-      "asset": "/_next/static/chunks/2cwx0s17guqmh.js",
+      "asset": "/_next/static/chunks/2bzlqb104tejm.js",
       "status": 200,
-      "decodedBytes": 180212,
+      "decodedBytes": 33760,
       "contentType": "application/javascript; charset=UTF-8"
     },
     {
       "asset": "/_next/static/chunks/025e_g9ksha1v.js",
       "status": 200,
       "decodedBytes": 228651,
+      "contentType": "application/javascript; charset=UTF-8"
+    },
+    {
+      "asset": "/_next/static/chunks/2ncbf4y854cqe.js",
+      "status": 200,
+      "decodedBytes": 163145,
       "contentType": "application/javascript; charset=UTF-8"
     },
     {
@@ -92,9 +104,27 @@
       "contentType": "application/javascript; charset=UTF-8"
     },
     {
-      "asset": "/_next/static/chunks/3t0-vdfan7tzm.js",
+      "asset": "/_next/static/chunks/0vysm3jc16c2j.js",
       "status": 200,
-      "decodedBytes": 52377,
+      "decodedBytes": 18847,
+      "contentType": "application/javascript; charset=UTF-8"
+    },
+    {
+      "asset": "/_next/static/chunks/0tvalf641lr2t.js",
+      "status": 200,
+      "decodedBytes": 24807,
+      "contentType": "application/javascript; charset=UTF-8"
+    },
+    {
+      "asset": "/_next/static/chunks/2f3nmym85vzsi.js",
+      "status": 200,
+      "decodedBytes": 214,
+      "contentType": "application/javascript; charset=UTF-8"
+    },
+    {
+      "asset": "/_next/static/chunks/12_ba5b7g1vw3.js",
+      "status": 200,
+      "decodedBytes": 38343,
       "contentType": "application/javascript; charset=UTF-8"
     },
     {
@@ -110,33 +140,51 @@
       "contentType": "application/javascript; charset=UTF-8"
     },
     {
-      "asset": "/images/brand/rope-technician.png",
+      "asset": "/_next/image?url=%2Fimages%2Fbrand%2Frope-technician.png&w=3840&q=75",
       "status": 200,
-      "decodedBytes": 10561,
+      "decodedBytes": 2933,
       "contentType": "image/png"
     },
     {
-      "asset": "/images/brand/sky-logo.png",
+      "asset": "/home",
       "status": 200,
-      "decodedBytes": 549789,
+      "decodedBytes": 183563,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "asset": "/_next/image?url=%2Fimages%2Fbrand%2Fsky-logo.png&w=3840&q=75",
+      "status": 200,
+      "decodedBytes": 132977,
       "contentType": "image/png"
+    },
+    {
+      "asset": "/industries",
+      "status": 200,
+      "decodedBytes": 137426,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "asset": "/about",
+      "status": 200,
+      "decodedBytes": 125874,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "asset": "/careers",
+      "status": 200,
+      "decodedBytes": 90900,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "asset": "/contact",
+      "status": 200,
+      "decodedBytes": 96504,
+      "contentType": "text/html; charset=utf-8"
     },
     {
       "asset": "/_next/image?url=%2Fimages%2Fhero%2Fhero-sa-urban-facade-01.webp&w=3840&q=75",
       "status": 200,
       "decodedBytes": 234228,
-      "contentType": "image/jpeg"
-    },
-    {
-      "asset": "/_next/image?url=%2Fimages%2Fhero%2Fhero-sa-industrial-tower-02.webp&w=3840&q=75",
-      "status": 200,
-      "decodedBytes": 200564,
-      "contentType": "image/jpeg"
-    },
-    {
-      "asset": "/_next/image?url=%2Fimages%2Fhero%2Fhero-sa-steel-structure-03.webp&w=3840&q=75",
-      "status": 200,
-      "decodedBytes": 194884,
       "contentType": "image/jpeg"
     },
     {
@@ -158,10 +206,16 @@
       "contentType": "image/jpeg"
     },
     {
-      "asset": "/images/brand/sky-i-logo.png",
+      "asset": "/_next/image?url=%2Fimages%2Fbrand%2Fsky-i-logo.png&w=3840&q=75",
       "status": 200,
-      "decodedBytes": 244791,
+      "decodedBytes": 251763,
       "contentType": "image/png"
+    },
+    {
+      "asset": "/_next/image?url=%2Fimages%2Fhero%2Fhero-sa-steel-structure-03.webp&w=3840&q=75",
+      "status": 200,
+      "decodedBytes": 194884,
+      "contentType": "image/jpeg"
     },
     {
       "asset": "/_next/image?url=%2Fimages%2Fabout%2Fabout-concrete-rope-access.webp&w=3840&q=75",
@@ -182,10 +236,28 @@
       "contentType": "image/jpeg"
     },
     {
-      "asset": "/images/safety/safety-quality-artwork.webp",
+      "asset": "/_next/image?url=%2Fimages%2Fsafety%2Fsafety-quality-display.webp&w=3840&q=75",
       "status": 200,
-      "decodedBytes": 1208702,
-      "contentType": "image/webp"
+      "decodedBytes": 116752,
+      "contentType": "image/jpeg"
+    },
+    {
+      "asset": "/_next/image?url=%2Fimages%2Fsafety%2Fplanning-1.webp&w=3840&q=75",
+      "status": 200,
+      "decodedBytes": 2200,
+      "contentType": "image/jpeg"
+    },
+    {
+      "asset": "/_next/image?url=%2Fimages%2Fsafety%2Fplanning-2.webp&w=3840&q=75",
+      "status": 200,
+      "decodedBytes": 1896,
+      "contentType": "image/jpeg"
+    },
+    {
+      "asset": "/_next/image?url=%2Fimages%2Fsafety%2Fplanning-3.webp&w=3840&q=75",
+      "status": 200,
+      "decodedBytes": 1949,
+      "contentType": "image/jpeg"
     },
     {
       "asset": "/_next/image?url=%2Fimages%2Fsky-i%2Finspection-panorama.webp&w=3840&q=75",
@@ -470,6 +542,24 @@
       "contentType": "image/webp"
     },
     {
+      "asset": "/services/inspection-concrete-access",
+      "status": 200,
+      "decodedBytes": 112888,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "asset": "/services/maintenance-confined-space-drone",
+      "status": 200,
+      "decodedBytes": 111264,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "asset": "/cookie-policy",
+      "status": 200,
+      "decodedBytes": 77693,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
       "asset": "/images/hero/hero-sa-industrial-tower-02.webp",
       "status": 200,
       "decodedBytes": 279598,
@@ -524,9 +614,105 @@
       "contentType": "image/webp"
     },
     {
+      "asset": "/images/about/assessment-architecture.webp",
+      "status": 200,
+      "decodedBytes": 200700,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/about/onsite-assessment.webp",
+      "status": 200,
+      "decodedBytes": 168634,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/about/partner-industrial-silo.webp",
+      "status": 200,
+      "decodedBytes": 210508,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/about/partner-rope-technician.webp",
+      "status": 200,
+      "decodedBytes": 290240,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/about/partner-safety-technician.webp",
+      "status": 200,
+      "decodedBytes": 127982,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/services/concrete-services.webp",
+      "status": 200,
+      "decodedBytes": 262016,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/services/confined-space.webp",
+      "status": 200,
+      "decodedBytes": 220206,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/services/drone-inspection.webp",
+      "status": 200,
+      "decodedBytes": 224842,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/services/industrial-access.webp",
+      "status": 200,
+      "decodedBytes": 272046,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/services/inspection-ndt.webp",
+      "status": 200,
+      "decodedBytes": 198434,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/services/maintenance-cleaning.webp",
+      "status": 200,
+      "decodedBytes": 299406,
+      "contentType": "image/webp"
+    },
+    {
       "asset": "/images/services/services-cooling-tower.webp",
       "status": 200,
       "decodedBytes": 195986,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/safety/planning-1.webp",
+      "status": 200,
+      "decodedBytes": 2500,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/safety/planning-2.webp",
+      "status": 200,
+      "decodedBytes": 1982,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/safety/planning-3.webp",
+      "status": 200,
+      "decodedBytes": 2094,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/safety/safety-quality-artwork.webp",
+      "status": 200,
+      "decodedBytes": 1208702,
+      "contentType": "image/webp"
+    },
+    {
+      "asset": "/images/safety/safety-quality-display.webp",
+      "status": 200,
+      "decodedBytes": 107100,
       "contentType": "image/webp"
     },
     {
@@ -558,6 +744,24 @@
       "status": 200,
       "decodedBytes": 2326,
       "contentType": "image/svg+xml"
+    },
+    {
+      "asset": "/images/brand/rope-technician.png",
+      "status": 200,
+      "decodedBytes": 10561,
+      "contentType": "image/png"
+    },
+    {
+      "asset": "/images/brand/sky-i-logo.png",
+      "status": 200,
+      "decodedBytes": 244791,
+      "contentType": "image/png"
+    },
+    {
+      "asset": "/images/brand/sky-logo.png",
+      "status": 200,
+      "decodedBytes": 549789,
+      "contentType": "image/png"
     },
     {
       "asset": "/icon",

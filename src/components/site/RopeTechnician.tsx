@@ -32,6 +32,7 @@ export function RopeTechnician() {
       // The worker moves down the viewport as well as down the document,
       // arriving just above the footer's bottom edge at the end of the page.
       position = progress * Math.max(0, viewportHeight - width * 174 / 134 - 28);
+      if (!frame && !motion.matches && !document.hidden) frame = window.requestAnimationFrame(draw);
     };
     const draw = (time: number) => {
       const sway = Math.sin(time / 1400) * Math.min(3, width * .08);
@@ -41,15 +42,13 @@ export function RopeTechnician() {
         rope?.setAttribute("x2", String(width * anchor + sway));
         rope?.setAttribute("y2", String(position + 1));
       }
-      frame = window.requestAnimationFrame(draw);
+      frame = 0;
     };
     const restart = () => {
       window.cancelAnimationFrame(frame);
+      frame = 0;
       measure();
       updatePosition();
-      if (!motion.matches && document.visibilityState === "visible") {
-        frame = window.requestAnimationFrame(draw);
-      }
     };
     const resize = new ResizeObserver(() => { measure(); updatePosition(); });
     resize.observe(document.body);
@@ -76,7 +75,7 @@ export function RopeTechnician() {
         <line ref={safetyRope} x1="70.1%" x2="70.1%" y1="0" y2="0" />
       </svg>
       <div ref={worker} className={styles.worker}>
-        <Image src="/images/brand/rope-technician.png" alt="" width={134} height={174} loading="eager" unoptimized />
+        <Image src="/images/brand/rope-technician.png" alt="" width={134} height={174} sizes="34px" />
       </div>
     </div>
   );

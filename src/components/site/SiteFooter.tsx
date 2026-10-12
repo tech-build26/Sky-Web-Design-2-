@@ -1,7 +1,10 @@
+
+import { SiteLink } from "./SiteLink";
 import Image from "next/image";
 import { HUB_URL } from "@/lib/site-content";
 import { CONTACT_EMAIL, WHATSAPP_URL } from "@/lib/contact";
 import { Arrow } from "./Icons";
+import { CookieSettingsButton } from "./CookieSettingsButton";
 import styles from "./SiteFooter.module.css";
 
 const facebookUrl = "https://web.facebook.com/SkyridersIndustrialRopeAccess";
@@ -24,24 +27,24 @@ export function SiteFooter() {
       <div className={styles.calloutInner}>
         <p className={styles.calloutBrand}>Access beyond <span /> <strong>limits</strong></p>
         <p className={styles.calloutCopy}><strong>Ready to talk about your project?</strong><span>Our team is here to discuss practical solutions for complex access challenges.</span></p>
-        <a href="/contact#project-enquiry" className={styles.calloutAction}>Let’s get started <Arrow /></a>
+        <SiteLink href="/contact#project-enquiry" className={styles.calloutAction}>Let’s get started <Arrow /></SiteLink>
       </div>
     </div>
     <div className={styles.inner}>
       <div className={styles.main}>
         <div className={styles.brand} data-reveal="left">
-          <a href="/home" aria-label="Skyriders home"><Image src="/images/brand/sky-logo.png" alt="" width={1500} height={1250} unoptimized /></a>
+          <SiteLink href="/home" aria-label="Skyriders home"><Image src="/images/brand/sky-logo.png" alt="" width={1500} height={1250} sizes="150px" /></SiteLink>
           <p>Specialist access. Practical solutions.<br />South African expertise since 1999.</p>
-          <nav className={styles.socials} aria-label="Social media"><a href={linkedInUrl} target="_blank" rel="noopener noreferrer" aria-label="Skyriders on LinkedIn"><SocialIcon kind="linkedin" /></a><a href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Skyriders on Facebook"><SocialIcon kind="facebook" /></a></nav>
+          <nav className={styles.socials} aria-label="Social media"><SiteLink href={linkedInUrl} target="_blank" rel="noopener noreferrer" aria-label="Skyriders on LinkedIn"><SocialIcon kind="linkedin" /></SiteLink><SiteLink href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Skyriders on Facebook"><SocialIcon kind="facebook" /></SiteLink></nav>
         </div>
         <div data-reveal data-delay="1"><h2 className={styles.title}>Explore</h2><nav className={styles.links} aria-label="Footer navigation">
-          <a href="/about">Who we are <Arrow /></a><a href="/services/inspection-concrete-access#service-index">All services <Arrow /></a><a href="/services/inspection-concrete-access">Inspection, concrete &amp; access <Arrow /></a><a href="/services/maintenance-confined-space-drone">Maintenance, confined space &amp; drones <Arrow /></a><a href="/industries">Industries <Arrow /></a><a href="/home/#safety">Safety &amp; quality <Arrow /></a><a href="/about#credentials">Certifications <Arrow /></a><a href="/careers">Careers <Arrow /></a><a href="/contact">Contact <Arrow /></a><a href={HUB_URL} target="_blank" rel="noopener noreferrer">Team Hub <Arrow /><span className="sr-only"> (opens in a new tab)</span></a>
+          <SiteLink href="/about">Who we are <Arrow /></SiteLink><SiteLink href="/services/inspection-concrete-access#service-index">All services <Arrow /></SiteLink><SiteLink href="/services/inspection-concrete-access">Inspection, concrete &amp; access <Arrow /></SiteLink><SiteLink href="/services/maintenance-confined-space-drone">Maintenance, confined space &amp; drones <Arrow /></SiteLink><SiteLink href="/industries">Industries <Arrow /></SiteLink><SiteLink href="/home/#safety">Safety &amp; quality <Arrow /></SiteLink><SiteLink href="/about#credentials">Certifications <Arrow /></SiteLink><SiteLink href="/careers">Careers <Arrow /></SiteLink><SiteLink href="/contact">Contact <Arrow /></SiteLink><SiteLink href={HUB_URL} target="_blank" rel="noopener noreferrer">Team Hub <Arrow /><span className="sr-only"> (opens in a new tab)</span></SiteLink>
         </nav></div>
-        <div className={styles.contact} data-reveal data-delay="2"><h2 className={styles.title}>Contact</h2><a href={`mailto:${CONTACT_EMAIL}`}><span><FooterIcon kind="mail" /></span>{CONTACT_EMAIL}</a><a href="tel:+27861000759"><span><FooterIcon kind="phone" /></span>0861 000 759</a><a href="tel:+27136925219"><span><FooterIcon kind="mobile" /></span>013 692 5219</a><a href="/contact#location-map"><span><FooterIcon kind="pin" /></span>Find our offices</a><a className={styles.whatsapp} href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"><span><FooterIcon kind="chat" /></span>Project enquiries on WhatsApp <Arrow /><span className="sr-only"> (opens in a new tab)</span></a></div>
-        <div className={styles.division} data-reveal="right" data-delay="2"><h2 className={styles.title}>A different perspective</h2><a href="https://skyi.co.za/" target="_blank" rel="noopener noreferrer" className={styles.skyLogo} aria-label="Visit the Sky I website"><Image src="/images/brand/sky-i-logo.png" alt="Sky I" width={1254} height={1254} unoptimized /></a><p>Industrial drone inspection.</p><a href="https://skyi.co.za/" target="_blank" rel="noopener noreferrer" className={styles.skyLink}>Visit Sky I <Arrow /><span className="sr-only"> (opens in a new tab)</span></a></div>
-        <div className={styles.certifications} data-reveal="right" data-delay="3"><h2 className={styles.title}>Our certifications</h2><div className={styles.badges} aria-label="Documents listed in the company certification library"><span><b>ISO</b>9001</span><span><b>ISO</b>45001</span><span><b>IWH</b>Industry</span><span><b>COIDA</b>Good standing</span></div><a href={certificationUrl} target="_blank" rel="noopener noreferrer">View certification library <Arrow /><span className="sr-only"> (opens in a new tab)</span></a></div>
+        <div className={styles.contact} data-reveal data-delay="2"><h2 className={styles.title}>Contact</h2><SiteLink href={`mailto:${CONTACT_EMAIL}`}><span><FooterIcon kind="mail" /></span>{CONTACT_EMAIL}</SiteLink><SiteLink href="tel:+27861000759"><span><FooterIcon kind="phone" /></span>0861 000 759</SiteLink><SiteLink href="tel:+27136925219"><span><FooterIcon kind="mobile" /></span>013 692 5219</SiteLink><SiteLink href="/contact#location-map"><span><FooterIcon kind="pin" /></span>Find our offices</SiteLink><SiteLink className={styles.whatsapp} href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"><span><FooterIcon kind="chat" /></span>Project enquiries on WhatsApp <Arrow /><span className="sr-only"> (opens in a new tab)</span></SiteLink></div>
+        <div className={styles.division} data-reveal="right" data-delay="2"><h2 className={styles.title}>A different perspective</h2><SiteLink href="https://skyi.co.za/" target="_blank" rel="noopener noreferrer" className={styles.skyLogo} aria-label="Visit the Sky I website"><Image src="/images/brand/sky-i-logo.png" alt="Sky I" width={1254} height={1254} sizes="130px" /></SiteLink><p>Industrial drone inspection.</p><SiteLink href="https://skyi.co.za/" target="_blank" rel="noopener noreferrer" className={styles.skyLink}>Visit Sky I <Arrow /><span className="sr-only"> (opens in a new tab)</span></SiteLink></div>
+        <div className={styles.certifications} data-reveal="right" data-delay="3"><h2 className={styles.title}>Our certifications</h2><div className={styles.badges} aria-label="Documents listed in the company certification library"><span><b>ISO</b>9001</span><span><b>ISO</b>45001</span><span><b>IWH</b>Industry</span><span><b>COIDA</b>Good standing</span></div><SiteLink href={certificationUrl} target="_blank" rel="noopener noreferrer">View certification library <Arrow /><span className="sr-only"> (opens in a new tab)</span></SiteLink></div>
       </div>
-      <div className={styles.bottom}><span>© 2026 Skyriders Access Specialists (Pty) Ltd.</span><span>Planning · Precision · Possibility</span><a href="#main">Back to top <span aria-hidden="true">↑</span></a></div>
+      <div className={styles.bottom}><span>© 2026 Skyriders Access Specialists (Pty) Ltd.</span><span>Planning · Precision · Possibility</span><nav className={styles.privacyLinks} aria-label="Privacy settings"><SiteLink href="/cookie-policy">Cookie &amp; privacy details</SiteLink><CookieSettingsButton /></nav><SiteLink href="#main">Back to top <span aria-hidden="true">↑</span></SiteLink></div>
     </div>
   </footer>;
 }

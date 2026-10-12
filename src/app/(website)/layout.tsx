@@ -4,6 +4,7 @@ import "../globals.css";
 import "../motion.css";
 import { getSiteUrl } from "@/lib/site-url";
 import { SiteDrawer } from "@/components/site/SiteDrawer";
+import { CookieConsent } from "@/components/site/CookieConsent";
 
 const inter = localFont({ src: "../fonts/inter-latin-variable.woff2", weight: "100 900", display: "swap", variable: "--font-body", adjustFontFallback: false, fallback: ["Segoe UI", "sans-serif"] });
 const archivo = localFont({
@@ -39,12 +40,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     sameAs: ["https://za.linkedin.com/company/skyriders-access-specialists-pty-ltd", "https://web.facebook.com/SkyridersIndustrialRopeAccess"],
   } : null;
   return (
-    <html lang="en-ZA" className={`${inter.variable} ${archivo.variable}`}>
+    <html lang="en-ZA" className={`${inter.variable} ${archivo.variable}`} suppressHydrationWarning>
       <body suppressHydrationWarning>
         <a className="skip-link" href="#main">Skip to content</a>
         {organization && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, "\\u003c") }} />}
         {children}
         <SiteDrawer />
+        <CookieConsent />
       </body>
     </html>
   );

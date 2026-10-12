@@ -48,6 +48,8 @@ npm.cmd run start
 
 Run typecheck after the initial build or dev startup if Next's generated route types are absent. Build must finish before starting production. Use `npm.cmd run start -- --port 3001` for a different production port.
 
+Cookie preferences appear on first visit, persist locally for 180 days, and can be changed from either footer. Google Maps stays blocked until External media consent. See [cookie consent implementation](docs/cookie-consent.md); run `npm.cmd run test:consent` for the persistence, gating and withdrawal checks. The public notice is at `/cookie-policy`.
+
 No environment variables or private credentials are required for the preview. The Hub is a fixed link. For deployment, copy `.env.example` to `.env.local` and set `SITE_URL` to the verified HTTPS origin before building. This enables canonical, sitemap and production indexing; without it the preview stays noindex. No provider/domain has been selected and nothing has been published.
 
 ## Inputs

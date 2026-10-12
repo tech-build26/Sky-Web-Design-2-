@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 // Progressive enhancement: the server output remains readable without JavaScript.
 export function ScrollReveals() {
+  const pathname = usePathname();
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (!("IntersectionObserver" in window)) return;
@@ -25,6 +27,9 @@ export function ScrollReveals() {
     };
     elements.forEach((element) => {
       if (preference.matches) return;
+      // Don't hide already-painted content during hydration or route transitions.
+      const bounds = element.getBoundingClientRect();
+      if (bounds.top < window.innerHeight && bounds.bottom > 0) return;
       element.classList.add("motion-pending");
       observer.observe(element);
     });
@@ -69,6 +74,6 @@ export function ScrollReveals() {
       elements.forEach((element) => element.classList.remove("motion-pending"));
       delete document.documentElement.dataset.motion;
     };
-  }, []);
+  }, [pathname]);
   return null;
 }

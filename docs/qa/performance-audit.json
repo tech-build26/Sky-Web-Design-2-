@@ -1,0 +1,111 @@
+{
+  "origin": "http://localhost:3001",
+  "routes": [
+    {
+      "route": "/",
+      "htmlBytes": 73260,
+      "initialJavaScriptBytes": 584404,
+      "localResponseMs": [
+        43.16,
+        4.55,
+        3.13
+      ]
+    },
+    {
+      "route": "/home",
+      "htmlBytes": 183575,
+      "initialJavaScriptBytes": 652039,
+      "localResponseMs": [
+        4.41,
+        4.06,
+        4.34
+      ]
+    },
+    {
+      "route": "/about",
+      "htmlBytes": 125874,
+      "initialJavaScriptBytes": 626688,
+      "localResponseMs": [
+        3.33,
+        3.22,
+        3.29
+      ]
+    },
+    {
+      "route": "/industries",
+      "htmlBytes": 137426,
+      "initialJavaScriptBytes": 620371,
+      "localResponseMs": [
+        3.22,
+        4.08,
+        4.82
+      ]
+    },
+    {
+      "route": "/services/inspection-concrete-access",
+      "htmlBytes": 112888,
+      "initialJavaScriptBytes": 620371,
+      "localResponseMs": [
+        5.47,
+        4.3,
+        4.25
+      ]
+    },
+    {
+      "route": "/services/maintenance-confined-space-drone",
+      "htmlBytes": 111264,
+      "initialJavaScriptBytes": 620371,
+      "localResponseMs": [
+        3.41,
+        3.48,
+        2.96
+      ]
+    },
+    {
+      "route": "/contact",
+      "htmlBytes": 96504,
+      "initialJavaScriptBytes": 631370,
+      "localResponseMs": [
+        3.03,
+        2.34,
+        2.23
+      ]
+    },
+    {
+      "route": "/cookie-policy",
+      "htmlBytes": 77693,
+      "initialJavaScriptBytes": 615540,
+      "localResponseMs": [
+        2.29,
+        2.02,
+        2.38
+      ]
+    }
+  ],
+  "images": [
+    {
+      "source": "/images/brand/sky-logo.png",
+      "width": 384,
+      "sourceBytes": 549789,
+      "deliveredBytes": 21702,
+      "cacheControl": "public, max-age=86400, must-revalidate"
+    },
+    {
+      "source": "/images/brand/sky-i-logo.png",
+      "width": 384,
+      "sourceBytes": 244791,
+      "deliveredBytes": 57938,
+      "cacheControl": "public, max-age=86400, must-revalidate"
+    },
+    {
+      "source": "/images/safety/safety-quality-display.webp",
+      "width": 1920,
+      "sourceBytes": 107100,
+      "deliveredBytes": 83796,
+      "cacheControl": "public, max-age=86400, must-revalidate"
+    }
+  ],
+  "notes": [
+    "Local production HTTP measurements; these are not Lighthouse, Core Web Vitals or real-device network scores."
+  ]
+}

@@ -8,8 +8,8 @@ import styles from "./hero.module.css";
 const effects = ["tiles", "fade", "diagonal"] as const;
 const interval = 6000;
 const transitionDuration = 3000;
-const columns = 12;
-const rows = 8;
+const columns = 6;
+const rows = 4;
 const tiles = Array.from({ length: columns * rows }, (_, index) => ({ row: Math.floor(index / columns), column: index % columns }));
 
 function subscribeToMotion(callback: () => void) {
@@ -25,12 +25,23 @@ function subscribeToVisibility(callback: () => void) {
 export function HeroMedia({ prefix }: { prefix: string }) {
   const [media, setMedia] = useState({ selected: 0, previous: 0, step: 0, changing: false });
   const [inView, setInView] = useState(false);
+  const [prepareSlides, setPrepareSlides] = useState(false);
+  const [firstLoaded, setFirstLoaded] = useState(false);
+  const [requested, setRequested] = useState<number | null>(null);
+  const loaded = useRef(new Set<number>());
   const root = useRef<HTMLDivElement>(null);
   const reducedMotion = useSyncExternalStore(subscribeToMotion, () => window.matchMedia("(prefers-reduced-motion: reduce)").matches, () => true);
   const visible = useSyncExternalStore(subscribeToVisibility, () => document.visibilityState === "visible", () => false);
-  const running = !reducedMotion && visible && inView;
+  const running = firstLoaded && !reducedMotion && visible && inView;
   const effect = effects[(media.step - 1 + effects.length) % effects.length];
   const previous = heroImages[media.previous];
+
+  useEffect(() => {
+    if (!inView || !visible || prepareSlides) return;
+    // Let the first photograph and critical assets finish before fetching alternates.
+    const timer = window.setTimeout(() => setPrepareSlides(true), 1500);
+    return () => window.clearTimeout(timer);
+  }, [inView, visible, prepareSlides]);
 
   useEffect(() => {
     const photo = root.current;
@@ -42,12 +53,11 @@ export function HeroMedia({ prefix }: { prefix: string }) {
 
   useEffect(() => {
     if (!running) return;
-    const timer = window.setInterval(() => setMedia((current) => ({
-      selected: (current.selected + 1) % heroImages.length,
-      previous: current.selected,
-      step: current.step + 1,
-      changing: true,
-    })), interval);
+    const timer = window.setInterval(() => setMedia((current) => {
+      const next = (current.selected + 1) % heroImages.length;
+      if (!loaded.current.has(next)) return current;
+      return { selected: next, previous: current.selected, step: current.step + 1, changing: true };
+    }), interval);
     return () => window.clearInterval(timer);
   }, [running, media.selected]);
 
@@ -58,7 +68,22 @@ export function HeroMedia({ prefix }: { prefix: string }) {
   }, [media.changing, media.step]);
 
   function choose(index: number) {
+    if (!loaded.current.has(index)) {
+      setRequested(index);
+      setPrepareSlides(true);
+      return;
+    }
+    setRequested(null);
     setMedia((current) => current.selected === index ? current : ({ selected: index, previous: current.selected, step: current.step + 1, changing: true }));
+  }
+
+  function photographLoaded(index: number) {
+    loaded.current.add(index);
+    if (index === 0) setFirstLoaded(true);
+    if (requested === index) {
+      setRequested(null);
+      setMedia(current => current.selected === index ? current : ({ selected: index, previous: current.selected, step: current.step + 1, changing: true }));
+    }
   }
 
   return <>
@@ -67,7 +92,7 @@ export function HeroMedia({ prefix }: { prefix: string }) {
       {heroImages.map((photo, index) => <div key={photo.src} className={styles.slide}
         data-active={media.selected === index} data-previous={media.previous === index} aria-hidden={media.selected !== index}
         style={{ "--photo-position": photo.desktopPosition, "--mobile-photo-position": photo.mobilePosition } as CSSProperties}>
-        <Image src={photo.src} alt={media.selected === index ? photo.alt : ""} fill sizes="(max-width: 900px) 100vw, 60vw" preload={index === 0} loading={index === 0 ? undefined : "eager"} className={styles.mainImage} />
+        {(index === 0 || prepareSlides || media.selected === index) && <Image src={photo.src} alt={media.selected === index ? photo.alt : ""} fill sizes="(max-width: 900px) 100vw, (min-width: 1840px) 1104px, 60vw" preload={index === 0} loading={index === 0 ? undefined : "eager"} fetchPriority={index === 0 ? undefined : "low"} onLoad={() => photographLoaded(index)} className={styles.mainImage} />}
       </div>)}
       {media.changing && effect === "tiles" && !reducedMotion && <div key={media.step} className={styles.tileTransition} aria-hidden="true"
         style={{ "--photo-position": previous.desktopPosition, "--mobile-photo-position": previous.mobilePosition } as CSSProperties}>
@@ -80,7 +105,7 @@ export function HeroMedia({ prefix }: { prefix: string }) {
       </div>}
       <div className={styles.photoShade} />
     </div>
-    <div className={styles.photoControls} role="group" aria-label="Hero slideshow"
+    <div className={styles.photoControls} role="group" aria-label="Hero slideshow" aria-busy={requested !== null}
       data-autoplay={running ? "running" : "paused"} style={{ "--slide-interval": `${interval}ms` } as CSSProperties}>
       {heroImages.map((photo, index) => <button key={photo.src} type="button"
         aria-label={`Show ${photo.title.toLowerCase()} photograph`} aria-pressed={media.selected === index}

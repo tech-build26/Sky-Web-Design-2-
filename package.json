@@ -13,7 +13,8 @@
     "typecheck": "tsc --noEmit",
     "test:careers": "node scripts/test-careers.mjs && node scripts/test-careers-delivery.mjs",
     "audit:website": "node scripts/audit-website.mjs",
-    "test:careers:motion": "node scripts/test-careers-motion.mjs"
+    "test:careers:motion": "node scripts/test-careers-motion.mjs",
+    "test:consent": "node scripts/test-cookie-consent.mjs"
   },
   "dependencies": {
     "@fontsource-variable/archivo": "5.3.0",

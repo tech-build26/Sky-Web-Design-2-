@@ -7,19 +7,21 @@ import ts from 'typescript';
 async function compile(file, requireModule, extras = {}) {
   const source = await fs.readFile(file, 'utf8');
   const output = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText;
-  const context = vm.createContext({ exports: {}, require: requireModule, Request, Response, URL, AbortSignal, ...extras });
+  const context = vm.createContext({ exports: {}, require: requireModule, Request, Response, URL, AbortSignal, Buffer, ...extras });
   vm.runInContext(output, context, { filename: file });
   return context.exports;
 }
 const content = await compile('src/lib/contact.ts');
 const siteUrl = await compile('src/lib/site-url.ts', undefined, { process: { env: {} } });
 const env = {};
+const requestBody = await compile('src/lib/request-body.ts', name => { assert.equal(name, 'server-only'); return {}; });
 let providerStatus = 200;
 let throwTransport = false;
 let delivered;
 let sends = 0;
 const route = await compile('src/app/api/contact/route.ts', name => {
   if (name === '@/lib/site-url') return siteUrl;
+  if (name === '@/lib/request-body') return requestBody;
   assert.equal(name, '@/lib/contact');
   return content;
 }, {

@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import styles from "./ScrollToTop.module.css";
 
 export function ScrollToTop() {
+  const pathname = usePathname();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -14,7 +16,7 @@ export function ScrollToTop() {
     }, { threshold: 0 });
     observer.observe(hero);
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   function returnToTop() {
     document.getElementById("hero-heading")?.focus({ preventScroll: true });

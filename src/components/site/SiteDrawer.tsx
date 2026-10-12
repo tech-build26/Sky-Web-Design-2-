@@ -1,5 +1,7 @@
 "use client";
 
+import { SiteLink } from "./SiteLink";
+
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode } from "react";
@@ -122,7 +124,7 @@ export function SiteDrawer() {
       <button type="button" className={styles.scrim} aria-label="Close navigation menu" onClick={closeDrawer} tabIndex={-1} />
       <div className={styles.panel}>
         <div className={styles.panelHead}>
-          <a href="/home" className={styles.logo} aria-label="Skyriders home" onClick={() => finishClose(false)}><Image src="/images/brand/sky-logo.png" alt="" width={1500} height={1250} unoptimized /></a>
+          <SiteLink href="/home" className={styles.logo} aria-label="Skyriders home" onClick={() => finishClose(false)}><Image src="/images/brand/sky-logo.png" alt="" width={1500} height={1250} sizes="150px" /></SiteLink>
           <button type="button" className={styles.close} aria-label="Close navigation menu" autoFocus onClick={closeDrawer}><span /><span /></button>
         </div>
         <div className={styles.panelScroll}>
@@ -130,18 +132,18 @@ export function SiteDrawer() {
           <nav className={styles.nav} aria-label="Site navigation">
             {links.map((link, index) => {
               const active = link.icon === "services" ? pathname.startsWith("/services") : link.icon === "home" ? pathname === "/home" : link.icon === "industries" ? pathname === "/industries" : link.icon === "about" ? pathname === "/about" : link.icon === "careers" ? pathname === "/careers" : link.icon === "contact" ? pathname === "/contact" : false;
-              return <a key={link.label} href={link.href} aria-current={active ? "page" : undefined} target={link.external ? "_blank" : undefined} rel={link.external ? "noopener noreferrer" : undefined} onClick={() => finishClose(false)} style={{ animationDelay: `${index * 35}ms` }}><MenuIcon name={link.icon} /><span>{link.label}</span>{link.external && <span className="sr-only"> (opens in a new tab)</span>}<Arrow className={styles.linkArrow} /></a>;
+              return <SiteLink key={link.label} href={link.href} aria-current={active ? "page" : undefined} target={link.external ? "_blank" : undefined} rel={link.external ? "noopener noreferrer" : undefined} onClick={() => finishClose(false)} style={{ animationDelay: `${index * 35}ms` }}><MenuIcon name={link.icon} /><span>{link.label}</span>{link.external && <span className="sr-only"> (opens in a new tab)</span>}<Arrow className={styles.linkArrow} /></SiteLink>;
             })}
           </nav>
-          <a className={styles.netting} href="/services/inspection-concrete-access#netting" onClick={() => finishClose(false)}><span><small>Featured capability</small>Netting systems</span><Arrow /></a>
+          <SiteLink className={styles.netting} href="/services/inspection-concrete-access#netting" onClick={() => finishClose(false)}><span><small>Featured capability</small>Netting systems</span><Arrow /></SiteLink>
           <div className={styles.contactBlock}>
-            <a href="/contact#project-enquiry" className={styles.cta} onClick={() => finishClose(false)}>Get in touch <Arrow /></a>
-            <a href="tel:+27861000759" className={styles.contactLink}><span aria-hidden="true">↗</span>0861 000 759</a>
-            <a href={`mailto:${CONTACT_EMAIL}`} className={styles.contactLink}><MenuIcon name="contact" />{CONTACT_EMAIL}</a>
+            <SiteLink href="/contact#project-enquiry" className={styles.cta} onClick={() => finishClose(false)}>Get in touch <Arrow /></SiteLink>
+            <SiteLink href="tel:+27861000759" className={styles.contactLink}><span aria-hidden="true">↗</span>0861 000 759</SiteLink>
+            <SiteLink href={`mailto:${CONTACT_EMAIL}`} className={styles.contactLink}><MenuIcon name="contact" />{CONTACT_EMAIL}</SiteLink>
           </div>
           <div className={styles.socialBlock}>
             <p>Follow us</p>
-            <div><a href="https://za.linkedin.com/company/skyriders-access-specialists-pty-ltd" target="_blank" rel="noopener noreferrer" aria-label="Skyriders on LinkedIn"><SocialIcon kind="linkedin" /></a><a href="https://web.facebook.com/SkyridersIndustrialRopeAccess" target="_blank" rel="noopener noreferrer" aria-label="Skyriders on Facebook"><SocialIcon kind="facebook" /></a></div>
+            <div><SiteLink href="https://za.linkedin.com/company/skyriders-access-specialists-pty-ltd" target="_blank" rel="noopener noreferrer" aria-label="Skyriders on LinkedIn"><SocialIcon kind="linkedin" /></SiteLink><SiteLink href="https://web.facebook.com/SkyridersIndustrialRopeAccess" target="_blank" rel="noopener noreferrer" aria-label="Skyriders on Facebook"><SocialIcon kind="facebook" /></SiteLink></div>
           </div>
         </div>
       </div>

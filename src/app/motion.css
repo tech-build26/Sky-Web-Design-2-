@@ -1,11 +1,11 @@
 /* Shared choreography. Entrances finish without retaining transforms, so hover
    effects and the original geometry remain free to move afterward. */
-:root { --motion-reveal: 950ms; --motion-hover: 380ms; }
-[data-delay="1"] { --reveal-delay: 130ms; }
-[data-delay="2"] { --reveal-delay: 260ms; }
-[data-delay="3"] { --reveal-delay: 390ms; }
-[data-delay="4"] { --reveal-delay: 520ms; }
-[data-delay="5"] { --reveal-delay: 650ms; }
+:root { --motion-reveal: 650ms; --motion-hover: 280ms; }
+[data-delay="1"] { --reveal-delay: 70ms; }
+[data-delay="2"] { --reveal-delay: 140ms; }
+[data-delay="3"] { --reveal-delay: 210ms; }
+[data-delay="4"] { --reveal-delay: 280ms; }
+[data-delay="5"] { --reveal-delay: 350ms; }
 [data-reveal="left"] { --reveal-x: -48px; --reveal-y: 0px; }
 [data-reveal="right"] { --reveal-x: 48px; --reveal-y: 0px; }
 [data-reveal="top"] { --reveal-y: -38px; }
@@ -17,7 +17,7 @@
 }
 [data-reveal="mask"].arrived { animation-name: motionUncover; }
 [data-type-reveal].type-arrived .type-line {
-  animation: motionUncover 1100ms var(--ease-out) var(--reveal-delay, 0ms) backwards;
+  animation: motionUncover 750ms var(--ease-out) var(--reveal-delay, 0ms) backwards;
 }
 [data-type-reveal].type-arrived .type-line:nth-child(2) { animation-delay: calc(var(--reveal-delay, 0ms) + 150ms); }
 [data-type-reveal].type-arrived .type-line:nth-child(3) { animation-delay: calc(var(--reveal-delay, 0ms) + 300ms); }
@@ -63,7 +63,7 @@
 [data-button]:disabled::after { display: none; }
 
 @media (max-width: 700px) {
-  :root { --motion-reveal: 720ms; }
+  :root { --motion-reveal: 500ms; }
   [data-reveal="left"] { --reveal-x: -24px; }
   [data-reveal="right"] { --reveal-x: 24px; }
 }

@@ -1,3 +1,5 @@
+
+import { SiteLink } from "../site/SiteLink";
 import Image from "next/image";
 import { SiteHeader } from "../site/SiteHeader";
 import { Arrow } from "../site/Icons";
@@ -28,7 +30,7 @@ export function AboutMiniHero() {
             Rope access, inspection and maintenance expertise for South Africa&apos;s most demanding structures.
           </p>
           <div className={styles.action} data-reveal="left" data-delay="3">
-            <a href="#assessment" className={buttons.skew}><span>Book a free assessment <Arrow /></span></a>
+            <SiteLink href="#assessment" className={buttons.skew}><span>Book a free assessment <Arrow /></span></SiteLink>
           </div>
           <p className={styles.caption} data-reveal="mask" data-delay="4">South African expertise <span>/</span> Since 1999</p>
         </div>

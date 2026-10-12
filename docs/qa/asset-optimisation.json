@@ -1,0 +1,26 @@
+[
+  {
+    "source": "public/pre-landing/images/sky-logo-20261005.png",
+    "destination": "public/pre-landing/images/variants/sky-logo-480.webp",
+    "originalBytes": 549789,
+    "deliveredBytes": 56058
+  },
+  {
+    "source": "public/pre-landing/images/sky-i-logo-20261005.png",
+    "destination": "public/pre-landing/images/variants/sky-i-logo-420.webp",
+    "originalBytes": 244791,
+    "deliveredBytes": 78324
+  },
+  {
+    "source": "public/pre-landing/images/rope-cutout.png",
+    "destination": "public/pre-landing/images/variants/rope-cutout-560.webp",
+    "originalBytes": 492705,
+    "deliveredBytes": 104448
+  },
+  {
+    "source": "public/images/safety/safety-quality-artwork.webp",
+    "destination": "public/images/safety/safety-quality-display.webp",
+    "originalBytes": 1208702,
+    "deliveredBytes": 107100
+  }
+]

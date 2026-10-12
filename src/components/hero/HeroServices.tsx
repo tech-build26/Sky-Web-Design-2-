@@ -1,3 +1,5 @@
+
+import { SiteLink } from "../site/SiteLink";
 import Image from "next/image";
 import { heroServiceTiles } from "@/lib/site-content";
 import { heroGeometry } from "@/lib/hero-geometry";
@@ -11,13 +13,13 @@ export function HeroServices() {
       <div className={styles.servicesContent}>
         <div className={styles.servicesHeader}>
           <h2 id="hero-services-heading">Our expertise</h2>
-          <a href="/services/inspection-concrete-access#service-index">View all <Arrow /></a>
+          <SiteLink href="/services/inspection-concrete-access#service-index">View all <Arrow /></SiteLink>
         </div>
         <div className={styles.serviceTiles}>
-          {heroServiceTiles.map((tile) => <a key={tile.href} href={tile.href} className={styles.serviceTile}>
+          {heroServiceTiles.map((tile) => <SiteLink key={tile.href} href={tile.href} className={styles.serviceTile}>
             <div className={styles.tileImage}><Image src={tile.image} alt="" fill sizes="(max-width: 560px) 90vw, (max-width: 900px) 30vw, 16vw" /></div>
             <div className={styles.tileLabel}><span>{tile.title[0]}<br />{tile.title[1]}</span><span className={styles.tileArrow}><Arrow /></span></div>
-          </a>)}
+          </SiteLink>)}
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 const origin = new URL(process.argv[2] || 'http://localhost:3001');
 if (!['localhost', '127.0.0.1'].includes(origin.hostname)) throw new Error('Use a local test server.');
-const paths = ['/', '/home', '/about', '/industries', '/services/inspection-concrete-access', '/services/maintenance-confined-space-drone', '/contact', '/careers', '/careers/admin'];
+const paths = ['/', '/home', '/about', '/industries', '/services/inspection-concrete-access', '/services/maintenance-confined-space-drone', '/contact', '/cookie-policy', '/careers', '/careers/admin'];
 const pages = new Map();
 const report = { origin: origin.origin, pages: [], problems: [], resourcesChecked: 0, endpointChecks: [] };
 for (const path of paths) {

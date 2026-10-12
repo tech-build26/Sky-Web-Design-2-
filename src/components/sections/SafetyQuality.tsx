@@ -3,7 +3,7 @@ import { Arrow } from "../site/Icons";
 import styles from "./safety-quality.module.css";
 import buttons from "../site/ActionButtons.module.css";
 
-const artwork = "/images/safety/safety-quality-artwork.webp";
+const artwork = "/images/safety/safety-quality-display.webp";
 const steps = [
   { title: "Understand", subtitle: "Start with the site.", description: "Define the structure, work scope and environment before choosing the access approach." },
   { title: "Prepare", subtitle: "Plan the work.", description: "Discuss access, task requirements and rescue standby needs with the project team." },
@@ -15,7 +15,7 @@ export function SafetyQuality() {
     <section id="safety" tabIndex={-1} className={styles.safety} aria-labelledby="safety-heading">
       <div className={styles.stage}>
         <div className={styles.referenceArt} data-reveal="right">
-          <Image src={artwork} alt="Rope-access technician inspecting an industrial concrete tower, wearing a helmet and safety harness." fill sizes="(min-width: 1840px) 1840px, 100vw" unoptimized />
+          <Image src={artwork} alt="Rope-access technician inspecting an industrial concrete tower, wearing a helmet and safety harness." fill sizes="(min-width: 1840px) 1840px, (max-width: 700px) 200vw, (max-width: 1250px) 200vw, 100vw" />
           <p className={styles.captionTop} data-reveal="mask" data-delay="3"><span>Safety builds</span><strong>confidence.</strong><span>Quality builds</span><strong>trust.</strong></p>
           <p className={styles.captionBottom} data-reveal="mask" data-delay="4"><span>Safe people.</span><span>Quality work.</span><em>Lasting results.</em></p>
         </div>
@@ -45,7 +45,7 @@ export function SafetyQuality() {
           {steps.map((step, index) => (
             <li key={step.title} className={styles.step} data-reveal="bottom" data-delay={index + 1}>
               <div className={`${styles.icon} ${styles[`icon${index}`]}`} aria-hidden="true">
-                <Image src={artwork} alt="" width={1778} height={885} unoptimized />
+                <Image src={`/images/safety/planning-${index + 1}.webp`} alt="" width={90} height={90} sizes="(max-width: 1250px) 68px, 94px" />
               </div>
               <div className={styles.stepCopy}>
                 <p className={styles.stepNumber}>0{index + 1}<span aria-hidden="true"> /</span></p>
