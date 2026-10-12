@@ -1,0 +1,280 @@
+{
+  "origin": "http://localhost:3001",
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "title": "Skyriders | Critical reach. Advanced inspection.",
+      "h1Count": 1,
+      "bytes": 67734,
+      "noindex": true,
+      "cacheControl": "s-maxage=31536000",
+      "securityHeaders": [
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "x-frame-options",
+          "DENY"
+        ],
+        [
+          "content-security-policy",
+          "frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
+        ]
+      ]
+    },
+    {
+      "path": "/home",
+      "status": 200,
+      "title": "Skyriders | Industrial Rope Access, Inspection &amp; Maintenance",
+      "h1Count": 1,
+      "bytes": 166212,
+      "noindex": true,
+      "cacheControl": "s-maxage=31536000",
+      "securityHeaders": [
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "x-frame-options",
+          "DENY"
+        ],
+        [
+          "content-security-policy",
+          "frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
+        ]
+      ]
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "title": "About Skyriders | Built for the hard-to-reach",
+      "h1Count": 1,
+      "bytes": 114349,
+      "noindex": true,
+      "cacheControl": "s-maxage=31536000",
+      "securityHeaders": [
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "x-frame-options",
+          "DENY"
+        ],
+        [
+          "content-security-policy",
+          "frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
+        ]
+      ]
+    },
+    {
+      "path": "/industries",
+      "status": 200,
+      "title": "Industries We Serve | Skyriders Access Specialists",
+      "h1Count": 1,
+      "bytes": 125536,
+      "noindex": true,
+      "cacheControl": "s-maxage=31536000",
+      "securityHeaders": [
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "x-frame-options",
+          "DENY"
+        ],
+        [
+          "content-security-policy",
+          "frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
+        ]
+      ]
+    },
+    {
+      "path": "/services/inspection-concrete-access",
+      "status": 200,
+      "title": "Inspection, Concrete Services &amp; Industrial Access | Skyriders",
+      "h1Count": 1,
+      "bytes": 101099,
+      "noindex": true,
+      "cacheControl": "s-maxage=31536000",
+      "securityHeaders": [
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "x-frame-options",
+          "DENY"
+        ],
+        [
+          "content-security-policy",
+          "frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
+        ]
+      ]
+    },
+    {
+      "path": "/services/maintenance-confined-space-drone",
+      "status": 200,
+      "title": "Maintenance, Confined Space &amp; Drone Inspection | Skyriders",
+      "h1Count": 1,
+      "bytes": 99553,
+      "noindex": true,
+      "cacheControl": "s-maxage=31536000",
+      "securityHeaders": [
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "x-frame-options",
+          "DENY"
+        ],
+        [
+          "content-security-policy",
+          "frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
+        ]
+      ]
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "title": "Contact Skyriders | Plan your next project",
+      "h1Count": 1,
+      "bytes": 84678,
+      "noindex": true,
+      "cacheControl": "s-maxage=31536000",
+      "securityHeaders": [
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "x-frame-options",
+          "DENY"
+        ],
+        [
+          "content-security-policy",
+          "frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
+        ]
+      ]
+    },
+    {
+      "path": "/careers",
+      "status": 200,
+      "title": "Careers at Skyriders | Your next assignment",
+      "h1Count": 1,
+      "bytes": 73878,
+      "noindex": true,
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "securityHeaders": [
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "x-frame-options",
+          "DENY"
+        ],
+        [
+          "content-security-policy",
+          "frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
+        ]
+      ]
+    },
+    {
+      "path": "/careers/admin",
+      "status": 200,
+      "title": "Recruitment administration | Skyriders",
+      "h1Count": 1,
+      "bytes": 20570,
+      "noindex": true,
+      "cacheControl": "private, no-store",
+      "securityHeaders": [
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "x-frame-options",
+          "DENY"
+        ],
+        [
+          "content-security-policy",
+          "frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
+        ]
+      ]
+    }
+  ],
+  "problems": [],
+  "resourcesChecked": 110,
+  "endpointChecks": [
+    {
+      "path": "/api/careers/admin",
+      "method": "GET",
+      "status": 503,
+      "body": {
+        "error": "Recruitment administration is not configured."
+      }
+    },
+    {
+      "path": "/api/careers/admin",
+      "method": "POST",
+      "status": 403,
+      "body": {
+        "error": "Please submit from this website."
+      }
+    },
+    {
+      "path": "/api/careers/apply",
+      "method": "POST",
+      "status": 403,
+      "body": {
+        "error": "Please submit from this website."
+      }
+    },
+    {
+      "path": "/api/careers/apply",
+      "method": "POST",
+      "status": 403,
+      "body": {
+        "error": "Please submit from this website."
+      }
+    },
+    {
+      "path": "/api/contact",
+      "method": "POST",
+      "status": 403,
+      "body": {
+        "error": "Please send your enquiry from this website."
+      }
+    },
+    {
+      "path": "/api/assessment",
+      "method": "POST",
+      "status": 403,
+      "body": {
+        "error": "Please send your request from this website."
+      }
+    },
+    {
+      "path": "/api/contact",
+      "method": "POST",
+      "status": 413,
+      "body": {
+        "error": "Your enquiry is too long."
+      }
+    },
+    {
+      "path": "/api/assessment",
+      "method": "POST",
+      "status": 413,
+      "body": {
+        "error": "Your request is too long."
+      }
+    }
+  ]
+}

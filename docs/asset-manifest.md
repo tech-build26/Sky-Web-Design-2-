@@ -56,3 +56,30 @@ About photo derivatives total 504,168 bytes. All nine photography files total ab
 ## Safety & quality artwork — 8 October 2026
 
 The user-supplied `Safety & Quality_ Planned Excellence.png` is retained unchanged at `docs/reference/safety-quality-reference.png`. The native 1778 × 885 artwork supplies the technician photograph, right-hand decorative panels and three planning icons. A lossless WebP is delivered as `public/images/safety/safety-quality-artwork.webp` (1,208,702 bytes); decoded pixel equality with the supplied PNG was verified. Main copy, process descriptions, left-panel geometry and the contact CTA are rebuilt in HTML/SVG/CSS. Measurements and details are in `docs/reference/safety-quality-reference.md`. No new image generation was used for this section.
+
+## Onsite assessment photograph — 11 October 2026
+
+`public/images/about/onsite-assessment.webp` is a 1672 × 941, 168,634-byte WebP derivative of one built-in ImageGen output retained under the Codex generated-images directory. It illustrates a ground-level site walkdown with one client, two technical managers, a plan, and an industrial smokestack. It is illustrative campaign photography, not an actual Skyriders client visit or a safety record. The scene was visually reviewed for a clear pointing gesture, plausible PPE, a readable plan discussion, and a crop that works on desktop and mobile.
+
+Final generation prompt: “Create a single photorealistic editorial photograph for a premium South African industrial rope access company's About page. Scene: a genuine free onsite technical assessment at a large inland South African industrial facility, with a tall concrete and brick smokestack clearly visible in the background. In the foreground, one client representative in smart workwear and two Skyriders technical managers in navy/blue industrial workwear, white hard hats and appropriate site PPE stand together safely on the ground beside a site plan or clipboard. One technical manager points up toward a specific area of the smokestack while the client follows the gesture; the other manager discusses the scope using the plan. Their interaction must clearly communicate collaborative site scoping before a quotation, not a rope access operation. Diverse South African professionals with natural expressions and believable hands/poses. Wide landscape composition 16:9, participants primarily on the right half with some clean architectural space on the left for a website crop. Warm bright highveld daylight, realistic textures, refined blue-grey neutral grading, premium documentary photography, physically credible plant infrastructure. No visible company logos, signs, words, watermark, UI, borders, dramatic smoke, hazards, fake PPE, or extra people.”
+
+## Trust-page redesign imagery — 11 October 2026
+
+The three supplied PNG mockups in Downloads were used as visual layout references. Their text is not treated as instructions or as independent evidence for safety claims. The live sections use HTML, CSS, and four new built-in ImageGen photographs, with native PNG outputs retained in `assets/source/about/` and optimized WebP copies in `public/images/about/`.
+
+| WebP file | Scene and use | Dimensions / bytes |
+| --- | --- | --- |
+| `partner-safety-technician.webp` | Rope technician against an industrial tank in the blue safety card | 1672 × 941 / 127,982 |
+| `partner-industrial-silo.webp` | Pale concrete silo and railings in the competence card | 1672 × 941 / 210,508 |
+| `partner-rope-technician.webp` | Vertical technician on a silo at the right edge of the partner section | 1024 × 1536 / 290,240 |
+| `assessment-architecture.webp` | Dramatic close industrial structure behind the onsite assessment panel and subtly in the insurance card | 1672 × 941 / 200,700 |
+
+The earlier `onsite-assessment.webp` forms the background of section 01, Safety & compliance guarantee, immediately after the About hero. The generated scenes illustrate technical access and industrial assets; they do not document an actual Skyriders job or prove a safety outcome. Prompts emphasized plausible two-line rope systems and PPE where technicians appear, South African inland industrial context, clean composition for text overlays, and no logos, words, or UI.
+
+## Contact page hero — 11 October 2026
+
+`assets/source/contact/contact-industrial-rope-hero.png` is the native built-in ImageGen output. `public/images/contact/contact-industrial-rope-hero.webp` is its 1600 × 800 Sharp-encoded derivative (165,842 bytes). The user-supplied contact page mockup guided its composition: close industrial steelwork, rigging lines and a rope-access technician in a restrained navy/blue palette. The photograph is illustrative and has no company logos or text. It was visually checked for believable rigging and an effective crop behind the diagonal hero mask.
+
+## Industries hero
+
+`public/images/industries/industries-bridge-access.webp` is a 1672 × 941, 317,258-byte WebP derivative of a built-in ImageGen photograph. The native PNG remains in the Codex generated image store. It illustrates two rope access technicians inspecting a concrete viaduct in a dry South African landscape. It is illustrative imagery, not a record of a Skyriders project.

@@ -76,7 +76,7 @@ export function RopeTechnician() {
         <line ref={safetyRope} x1="70.1%" x2="70.1%" y1="0" y2="0" />
       </svg>
       <div ref={worker} className={styles.worker}>
-        <Image src="/images/brand/rope-technician.png" alt="" width={134} height={174} unoptimized />
+        <Image src="/images/brand/rope-technician.png" alt="" width={134} height={174} loading="eager" unoptimized />
       </div>
     </div>
   );

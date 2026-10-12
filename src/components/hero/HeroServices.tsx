@@ -11,7 +11,7 @@ export function HeroServices() {
       <div className={styles.servicesContent}>
         <div className={styles.servicesHeader}>
           <h2 id="hero-services-heading">Our expertise</h2>
-          <a href="#services">View all <Arrow /></a>
+          <a href="/services/inspection-concrete-access#service-index">View all <Arrow /></a>
         </div>
         <div className={styles.serviceTiles}>
           {heroServiceTiles.map((tile) => <a key={tile.href} href={tile.href} className={styles.serviceTile}>

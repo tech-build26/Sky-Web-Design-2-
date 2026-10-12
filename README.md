@@ -1,5 +1,25 @@
 # Skyriders website
 
+## Careers (11 October 2026)
+
+Careers is available at `/careers`, with desktop/mobile/drawer/footer navigation. Vacancy administration is `/careers/admin`. Development without credentials includes a clearly labelled editor design preview with saving disabled. Production never exposes that preview and refuses recruitment access until configured.
+
+Confirmed design: Supabase stores vacancies and administrator membership; PDF CVs up to 5 MB are checked in transient memory and emailed to **reception@ropeaccess.co.za**, without a website CV/application archive. Admin sign-in requires a password and Authenticator code, exact approved account UUID membership, and database/API MFA enforcement. No live accounts, Supabase project, scanner or email provider have been provisioned by this task.
+
+Read [the site audit](docs/website-audit.md) and [the production plan](docs/careers-production-plan.md) before launch. The migration and verified-account bootstrap are in `supabase/`; configuration names are in `.env.example`. A private PDF scanner, Turnstile and verified recruitment email sender are required to accept applications. Do not bypass security controls to enable a preview.
+
+Additional local checks:
+
+```powershell
+npm.cmd run test:careers
+npm.cmd run test:careers:motion
+npm.cmd run audit:website
+```
+
+The audit expects a production preview on localhost port 3001; supply another local origin with `npm.cmd run audit:website -- http://localhost:3000`. Tests use an embedded PostgreSQL engine and mocked provider HTTP; they do not send email or save a CV. Actual Supabase Auth/RLS and mailbox delivery tests remain mandatory before production.
+
+The Careers motion refinement and verification limits are recorded in `docs/careers-motion.md`. Motion interaction tests use development-only jsdom with mocked geometry/timing and were verified on Node 24; jsdom's supported Node ranges are ^20.19.0, ^22.13.0 or >=24.0.0.
+
 The approved division gateway now lives at `/`: **Enter Skyriders** (and its logo) opens the existing website at `/home/`, beginning with its hero. Both **Sky I** choices open `https://skyi.co.za/`. The gateway keeps the supplied artwork, fonts, copy, CSS, animations and responsive behavior. Each page has its own root layout so their styles remain isolated.
 
 Gateway components are in `src/components/prelanding/`; its permanent runtime assets are in `public/pre-landing/`. The existing website page is `src/app/(website)/home/page.tsx`; the gateway route is `src/app/(prelanding)/page.tsx`. The original `pre-landing/` handoff folder remains untouched for approval and is no longer a runtime dependency. Integration evidence and browser verification details are in `docs/prelanding-integration.md`.

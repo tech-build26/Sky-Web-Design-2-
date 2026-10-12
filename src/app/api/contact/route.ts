@@ -1,5 +1,6 @@
 import { CONTACT_EMAIL, enquiryText, isValidEnquiry, type ProjectEnquiry } from "@/lib/contact";
 import { getSiteUrl } from "@/lib/site-url";
+import { BodyTooLargeError, readBoundedBody } from "@/lib/request-body";
 
 const attempts = new Map<string, { count: number; expires: number }>();
 
@@ -13,10 +14,12 @@ export async function POST(request: Request) {
   if (!request.headers.get("content-type")?.includes("application/json")) return Response.json({ error: "Invalid request format." }, { status: 415 });
   let input: unknown;
   try {
-    const raw = await request.text();
-    if (raw.length > 12000) return Response.json({ error: "Your enquiry is too long." }, { status: 413 });
+    const raw = (await readBoundedBody(request, 12000)).toString("utf8");
     input = JSON.parse(raw);
-  } catch { return Response.json({ error: "Please check your enquiry and try again." }, { status: 400 }); }
+  } catch (error) {
+    if (error instanceof BodyTooLargeError) return Response.json({ error: "Your enquiry is too long." }, { status: 413 });
+    return Response.json({ error: "Please check your enquiry and try again." }, { status: 400 });
+  }
   if (!input || typeof input !== "object" || Array.isArray(input)) return Response.json({ error: "Invalid enquiry." }, { status: 400 });
   const data = input as Record<string, unknown>;
   // Quietly discard the hidden field used by simple form bots.

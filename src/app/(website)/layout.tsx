@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "../globals.css";
 import "../motion.css";
 import { getSiteUrl } from "@/lib/site-url";
+import { SiteDrawer } from "@/components/site/SiteDrawer";
 
 const inter = localFont({ src: "../fonts/inter-latin-variable.woff2", weight: "100 900", display: "swap", variable: "--font-body", adjustFontFallback: false, fallback: ["Segoe UI", "sans-serif"] });
 const archivo = localFont({
@@ -26,11 +27,24 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const organization = siteUrl ? {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": new URL("#organization", siteUrl).href,
+    name: "Skyriders Access Specialists (Pty) Ltd",
+    url: siteUrl.href,
+    logo: new URL("images/brand/sky-logo.png", siteUrl).href,
+    email: "info@ropeaccess.co.za",
+    telephone: "+27861000759",
+    sameAs: ["https://za.linkedin.com/company/skyriders-access-specialists-pty-ltd", "https://web.facebook.com/SkyridersIndustrialRopeAccess"],
+  } : null;
   return (
     <html lang="en-ZA" className={`${inter.variable} ${archivo.variable}`}>
       <body suppressHydrationWarning>
-        <a className="skip-link" href="#hero-heading">Skip to content</a>
+        <a className="skip-link" href="#main">Skip to content</a>
+        {organization && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, "\\u003c") }} />}
         {children}
+        <SiteDrawer />
       </body>
     </html>
   );

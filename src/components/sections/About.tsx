@@ -48,7 +48,7 @@ export function About() {
             <p>From concrete and steel structures to high-rise facades and confined spaces, the work starts with understanding the site and choosing an appropriate access solution.</p>
           </div>
           <div className={styles.explore} data-reveal data-delay="3">
-            <a href="#services" className={buttons.skew}><span>Explore <Arrow /></span></a>
+            <a href="/about" className={buttons.skew}><span>Learn more <Arrow /></span></a>
           </div>
         </div>
       </div>

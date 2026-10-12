@@ -74,7 +74,7 @@ export function SkyIDivision() {
           <ul className={styles.applications} aria-label="Inspection applications">
             <li data-reveal="bottom" data-delay="2">Internal inspections</li><li data-reveal="bottom" data-delay="3">Confined spaces</li><li data-reveal="bottom" data-delay="4">Industrial assets</li>
           </ul>
-          <a href="http://skyi.co.za/" className={styles.visit} data-reveal data-delay="4" data-button>
+          <a href="https://skyi.co.za/" className={styles.visit} data-reveal data-delay="4" data-button>
             <span>Visit Sky I</span><span className={styles.visitArrow}><Arrow /></span>
           </a>
         </div>

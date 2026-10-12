@@ -7,7 +7,7 @@ export function ScrollToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const hero = document.getElementById("home");
+    const hero = document.getElementById("home") ?? document.querySelector("main > section");
     if (!hero) return;
     const observer = new IntersectionObserver(([entry]) => {
       setVisible(!entry.isIntersecting && entry.boundingClientRect.bottom <= 0);

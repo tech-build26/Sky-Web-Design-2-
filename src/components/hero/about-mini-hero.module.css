@@ -1,0 +1,73 @@
+.hero { overflow: hidden; background: #f5f9fd; }
+.stage { position: relative; isolation: isolate; container-type: inline-size; max-width: var(--stage-max); height: clamp(600px, 39.5vw, 690px); margin: auto; background: radial-gradient(ellipse at 25% 25%, #fff 0, #f7fbff 55%, #eaf4fb 100%); }
+.blueprint { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.copy { position: absolute; z-index: 30; left: 4.2%; top: 25%; width: 50%; }
+.eyebrow { display: flex; align-items: center; gap: 18px; margin: 0; color: var(--color-action); font: 600 clamp(10px, .72cqw, 13px)/1.5 var(--type-body); letter-spacing: var(--type-label-spacing); text-transform: uppercase; }
+.eyebrow span { display: block; width: 78px; height: 1px; background: var(--color-action); }
+.copy h1 { margin: 22px 0 0; color: var(--color-navy); font-family: var(--type-display); font-size: clamp(56px, 5.4cqw, 96px); font-weight: 850; line-height: .96; letter-spacing: -.057em; }
+.copy h1 span { white-space: nowrap; }
+.copy h1 em { color: var(--color-action); font-style: normal; }
+.description { max-width: 570px; margin: 28px 0 0; color: #213b5b; font: 400 clamp(17px, 1.2cqw, 21px)/1.5 var(--type-body); letter-spacing: -.02em; }
+.action { width: fit-content; margin: 30px 0 0 10px; }
+.action a { min-width: 215px; }
+.caption { margin: 46px 0 0; color: #49637c; font: 600 clamp(10px, .7cqw, 13px)/1.4 var(--type-body); letter-spacing: .17em; text-transform: uppercase; }
+.caption span { color: var(--color-action); padding: 0 11px; }
+.visual { position: absolute; z-index: 10; inset: 0 0 0 51%; }
+.primaryFrame { position: absolute; inset: 0 0 0 8%; overflow: hidden; clip-path: polygon(22% 0, 100% 0, 100% 100%, 0 100%, 0 52%); background: #8bafc9; }
+.primaryImage { object-fit: cover; object-position: 62% 50%; transition: transform 950ms var(--ease-out); }
+.visual:hover .primaryImage { transform: scale(1.035); }
+.supportFrame { position: absolute; z-index: 7; left: -1%; bottom: 5%; width: 39%; height: 34%; overflow: hidden; border: 7px solid #f4faff; clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%, 0 74%); box-shadow: 0 16px 38px #071c3524; background: #7fa5c0; }
+.supportImage { object-fit: cover; object-position: 55% 50%; transition: transform 950ms var(--ease-out); }
+.visual:hover .supportImage { transform: scale(1.05); }
+.geometry { position: absolute; z-index: 6; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+@media (max-width: 1100px) {
+  .stage { height: 610px; }
+  .copy { top: 25%; width: 54%; }
+  .copy h1 { font-size: clamp(52px, 6vw, 70px); }
+  .visual { left: 53%; }
+  .supportFrame { left: -6%; width: 46%; }
+}
+@media (max-width: 900px) {
+  .stage { height: auto; }
+  .copy { position: relative; left: auto; top: auto; width: auto; padding: 32px 24px 44px; }
+  .copy h1 { font-size: clamp(48px, 8vw, 76px); }
+  .visual { position: relative; left: auto; height: clamp(360px, 57vw, 530px); margin: 0 24px 34px; }
+  .primaryFrame { inset: 0; clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 16%); }
+  .supportFrame { left: -1%; bottom: -5%; width: 39%; }
+  .caption { margin-top: 36px; }
+}
+@media (max-width: 560px) {
+  .copy { padding: 26px 20px 38px; }
+  .copy h1 { font-size: clamp(42px, 10vw, 59px); }
+  .description { font-size: 17px; margin-top: 22px; }
+  .action { margin-top: 25px; }
+  .visual { height: 390px; margin: 0 20px 42px; }
+  .primaryImage { object-position: 67% 50%; }
+  .supportFrame { width: 46%; height: 32%; border-width: 5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .primaryImage, .supportImage { transition: none; }
+  .visual:hover .primaryImage, .visual:hover .supportImage { transform: none; }
+}
+
+/* Phone hero: the primary photograph supports the copy as a full backdrop. */
+@media (max-width: 600px) {
+  .stage { --phone-hero-height: max(620px, calc(100svh - 126px)); }
+  .blueprint { display: none; }
+  .visual { position: absolute; z-index: 0; inset: 126px 0 auto; width: 100%; height: var(--phone-hero-height); margin: 0; }
+  .visual::after { content: ""; position: absolute; z-index: 8; inset: 0; pointer-events: none; background: linear-gradient(180deg, #061b3270 0%, #061b3245 26%, #061b32b8 59%, #041322f5 100%); }
+  .primaryFrame { inset: 0; clip-path: none; }
+  .primaryImage { object-position: 63% center; }
+  .supportFrame, .geometry { display: none; }
+  .copy { display: flex; flex-direction: column; justify-content: flex-end; min-height: var(--phone-hero-height); padding: 52px 20px 48px; }
+  .eyebrow { color: #d7edff; text-shadow: 0 1px 8px #031727a6; }
+  .eyebrow span { background: #8bd6ff; }
+  .copy h1 { color: #fff; text-shadow: 0 2px 18px #0317278c; }
+  .copy h1 span { white-space: normal; }
+  .copy h1 em { color: #9bddff; }
+  .description { max-width: 31ch; color: #f2f8ff; line-height: 1.5; text-shadow: 0 2px 12px #031727a6; }
+  .action { margin-top: 27px; }
+  .caption { margin-top: 30px; color: #d9efff; text-shadow: 0 1px 8px #031727a6; }
+  .caption span { color: #8bd6ff; }
+}

@@ -7,7 +7,8 @@ export function ScrollReveals() {
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (!("IntersectionObserver" in window)) return;
-    const elements = document.querySelectorAll<HTMLElement>("[data-reveal], [data-type-reveal]");
+    const selector = "[data-reveal], [data-type-reveal]";
+    const elements = new Set(document.querySelectorAll<HTMLElement>(selector));
     const arrive = (element: Element) => {
       element.classList.remove("motion-pending");
       element.classList.add(element.hasAttribute("data-type-reveal") ? "type-arrived" : "arrived");
@@ -28,6 +29,24 @@ export function ScrollReveals() {
       observer.observe(element);
     });
     updatePreference();
+    // Filtered lists and subsequently inserted cards share the same observer.
+    const candidates = (node: Node) => node instanceof HTMLElement
+      ? [...(node.matches(selector) ? [node] : []), ...node.querySelectorAll<HTMLElement>(selector)] : [];
+    const mutations = new MutationObserver(records => {
+      for (const record of records) {
+        record.removedNodes.forEach(node => candidates(node).forEach(element => {
+          if (element.isConnected) return;
+          observer.unobserve(element); elements.delete(element);
+        }));
+        record.addedNodes.forEach(node => candidates(node).forEach(element => {
+          if (elements.has(element)) return;
+          elements.add(element);
+          if (preference.matches) arrive(element);
+          else { element.classList.add("motion-pending"); observer.observe(element); }
+        }));
+      }
+    });
+    mutations.observe(document.body, { childList: true, subtree: true });
     // Keyboard navigation and hash links must never land on hidden content.
     const revealDestination = (event: FocusEvent) => {
       if (!(event.target instanceof Element)) return;
@@ -43,6 +62,7 @@ export function ScrollReveals() {
     document.querySelectorAll("main > section, main > section section, footer").forEach((element) => ambientObserver.observe(element));
     return () => {
       observer.disconnect();
+      mutations.disconnect();
       ambientObserver.disconnect();
       preference.removeEventListener("change", updatePreference);
       document.removeEventListener("focusin", revealDestination);

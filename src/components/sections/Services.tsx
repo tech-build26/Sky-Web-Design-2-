@@ -9,15 +9,13 @@ import buttons from "../site/ActionButtons.module.css";
 
 const upperServices = [services[1], services[4]];
 const lowerServices = [services[2], services[0], services[3]];
-const featuredServices = [...upperServices, ...lowerServices];
-const additionalServices = services.filter((service) => !featuredServices.some((featured) => featured.id === service.id));
 
 function ServiceTile({ service, delay }: { service: (typeof services)[number]; delay: number }) {
   return <article id={service.id} tabIndex={-1} className={styles.serviceTile} data-reveal="bottom" data-delay={delay}>
     <p className={styles.tileLabel}>{service.label}</p>
     <h3>{service.title}</h3>
     <p className={styles.tileDescription}>{service.description}</p>
-    <a href="#contact" aria-label={`Discuss ${service.title.toLowerCase()}`}>Discuss your project <Arrow /></a>
+    <a href={service.href} aria-label={`Explore ${service.title.toLowerCase()}`}>Explore service <Arrow /></a>
   </article>;
 }
 
@@ -29,16 +27,6 @@ export function Services() {
     catalogue.current?.showModal();
     setCatalogueOpen(true);
   }
-
-  useEffect(() => {
-    function syncDestination() {
-      const id = window.location.hash.slice(1);
-      if (additionalServices.some((service) => service.id === id)) openCatalogue();
-    }
-    syncDestination();
-    window.addEventListener("hashchange", syncDestination);
-    return () => window.removeEventListener("hashchange", syncDestination);
-  }, []);
 
   useEffect(() => {
     if (!catalogueOpen) return;
@@ -73,8 +61,6 @@ export function Services() {
         </div>
       </div>
 
-      {additionalServices.map((service) => <span key={service.id} id={service.id} className={styles.destination} aria-hidden="true" />)}
-
       <dialog ref={catalogue} id="services-catalogue" className={styles.catalogue} aria-labelledby="services-catalogue-heading" onClose={() => setCatalogueOpen(false)} onClick={(event) => { if (event.target === event.currentTarget) catalogue.current?.close(); }}>
         <div className={styles.cataloguePanel}>
           <div className={styles.catalogueHeader}>
@@ -85,7 +71,7 @@ export function Services() {
             {services.map((service, index) => <article key={service.id} style={{ animationDelay: `${index * 90}ms` }}>
               <span className={styles.catalogueNumber}>0{index + 1}</span>
               <div><p className={styles.catalogueLabel}>{service.label}</p><h3>{service.title}</h3><p>{service.description}</p></div>
-              <a href="#contact" aria-label={`Discuss ${service.title.toLowerCase()}`} onClick={() => catalogue.current?.close()}><Arrow /></a>
+              <a href={service.href} aria-label={`Explore ${service.title.toLowerCase()}`} onClick={() => catalogue.current?.close()}><Arrow /></a>
             </article>)}
           </div>
           <a href="#contact" className={styles.catalogueContact} onClick={() => catalogue.current?.close()}>Have a structure in mind? Let’s talk. <Arrow /></a>
