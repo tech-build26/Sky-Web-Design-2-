@@ -186,6 +186,9 @@
 @media (min-width: 768px) and (max-width: 900px) {
   .mobileMenu { display: none; }
 }
+@media (max-width: 767px) {
+  .skyBadge { display: none; }
+}
 @media (max-width: 560px) {
   .stage { padding-left: 20px; padding-right: 20px; }
   .headline { font-size: clamp(43px, 12.5vw, 69px); }
